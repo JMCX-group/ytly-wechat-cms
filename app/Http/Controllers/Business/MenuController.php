@@ -21,8 +21,9 @@ class MenuController extends Controller
     public function index()
     {
         $wxMenus = WxMenu::find(1);
-        $data = json_decode($wxMenus->json, true);
-        if ($data == null) {
+        if (isset($wxMenus->json)) {
+            $data = json_decode($wxMenus->json, true);
+        } else {
             /**
              * 没有就初始化参数：
              */
