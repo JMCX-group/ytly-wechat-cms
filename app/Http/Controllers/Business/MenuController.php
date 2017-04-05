@@ -109,30 +109,30 @@ class MenuController extends Controller
 
         $buttons = [
             [
-                "type" => "click",
-                "name" => "今日歌曲",
-                "key"  => "V1001_TODAY_MUSIC"
+                "type" => "view",
+                "name" => "进入网站",
+                "url"  => "http://mobile.yitongliuyi.com"
             ],
             [
-                "name"       => "菜单",
-                "sub_button" => [
-                    [
-                        "type" => "view",
-                        "name" => "搜索",
-                        "url"  => "http://www.soso.com/"
-                    ],
-                    [
-                        "type" => "view",
-                        "name" => "视频",
-                        "url"  => "http://v.qq.com/"
-                    ],
-                    [
-                        "type" => "click",
-                        "name" => "赞一下我们",
-                        "key" => "V1001_GOOD"
-                    ],
-                ],
+                "type" => "view",
+                "name" => "查询学分",
+                "url"  => "http://baidu.com"
             ],
+//            [
+//                "name"       => "菜单",
+//                "sub_button" => [
+//                    [
+//                        "type" => "view",
+//                        "name" => "视频",
+//                        "url"  => "http://v.qq.com/"
+//                    ],
+//                    [
+//                        "type" => "click",
+//                        "name" => "赞一下我们",
+//                        "key" => "V1001_GOOD"
+//                    ],
+//                ],
+//            ],
         ];
 
         try {
