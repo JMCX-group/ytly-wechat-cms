@@ -9,10 +9,10 @@
 
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-        医者仁心 脉脉相连
+        艺同六艺
     </div>
     <strong>Copyright © {{date('Y')}}
-        <a href="http://www.medi-link.cn">medi-link.cn </a>
+        <a href="http://mobile.yitongliuyi.com">yitongliuyi.com </a>
     </strong>
         All rights reserved.
 </footer>

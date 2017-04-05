@@ -11,37 +11,37 @@
 
 @section("content")
 <div class="row">
-    <div class="col-md-4">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title">基础数据</h3>
-                <div class="box-tools pull-right">
-                    <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-                        <i class="fa fa-minus"></i>
-                    </button>
-                    <button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-                        <i class="fa fa-times"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="box-body">
-                @foreach($data as $datum)
-                <h5>
-                    {{ $datum['name'] }}
-                    <div class="label label-{{$datum['color']}} pull-right">{{$datum['progress']}}</div>
-                </h5>
+    {{--<div class="col-md-4">--}}
+        {{--<div class="box box-primary">--}}
+            {{--<div class="box-header with-border">--}}
+                {{--<h3 class="box-title">基础数据</h3>--}}
+                {{--<div class="box-tools pull-right">--}}
+                    {{--<button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">--}}
+                        {{--<i class="fa fa-minus"></i>--}}
+                    {{--</button>--}}
+                    {{--<button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">--}}
+                        {{--<i class="fa fa-times"></i>--}}
+                    {{--</button>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="box-body">--}}
+                {{--@foreach($data as $datum)--}}
+                {{--<h5>--}}
+                    {{--{{ $datum['name'] }}--}}
+                    {{--<div class="label label-{{$datum['color']}} pull-right">{{$datum['progress']}}</div>--}}
+                {{--</h5>--}}
                 {{--<div class="progress progress-xxs">--}}
                     {{--<div class="progress-bar progress-bar-{{$datum['color']}}" style="width: {{$datum['progress']}}"></div>--}}
                 {{--</div>--}}
-                @endforeach
-            </div>
+                {{--@endforeach--}}
+            {{--</div>--}}
             {{--<div class="box-footer">--}}
                 {{--<form action="#">--}}
                     {{--<input type="text" placeholder="New task" class="form-control input-sm"/>--}}
                 {{--</form>--}}
             {{--</div>--}}
-        </div>
-    </div>
+        {{--</div>--}}
+    {{--</div>--}}
     {{--<div class="col-md-6">--}}
         {{--<div class="box box-primary">--}}
             {{--<div class="box-header with-border">--}}
