@@ -36,11 +36,8 @@ class PeopleController extends Controller
     public function syncUsers()
     {
         $users = EasyWeChat::getAllFans();
-        $users = $users->user_info_list;
-        $usersStr = json_encode($users);
-        $usersArr = json_decode($usersStr, true);
 
-        foreach ($usersArr as $user) {
+        foreach ($users as $user) {
             People::updateOrCreate(['open_id' => $user['openid']], ['nickname' => $user['nickname'], 'head_img_url' => $user['headimgurl']]);
         }
     }

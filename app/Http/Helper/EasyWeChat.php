@@ -70,10 +70,17 @@ class EasyWeChat
     public static function getAllFans()
     {
         $options = self::getOptions();
+
         $app = new Application($options);
         $userService = $app->user;
-        $userInfo = $userService->lists();
 
-        return $userService->batchGet($userInfo->data['openid']);
+        $userInfo = $userService->lists();
+        $users = $userService->batchGet($userInfo->data['openid']);
+        $users = $users->user_info_list;
+
+        $usersStr = json_encode($users);
+        $usersArr = json_decode($usersStr, true);
+
+        return $usersArr;
     }
 }
