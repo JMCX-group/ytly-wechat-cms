@@ -18,14 +18,28 @@ class PeopleController extends Controller
      */
     public function index()
     {
+        /**
+         * 同步微信服务器端的数据：
+         */
+        $this->syncUsers();
+
         $peoples = People::paginate(50);
         $page_title = "人员列表";
         $page_level = $this->page_level;
 
-        $users = EasyWeChat::getAllFans();
-        echo $users;
-
         return view('peoples.index', compact('peoples', 'page_title', 'page_level'));
+    }
+
+    public function syncUsers()
+    {
+        $users = EasyWeChat::getAllFans();
+        $users = $users->user_info_list;
+
+        foreach ($users as $user) {
+            People::updateOrCreate(['open_id' => $user->openid], ['nickname' => $user->nickname, 'head_img_url' => $user->headimgurl]);
+        }
+
+//        echo $users;
     }
 
     /**
