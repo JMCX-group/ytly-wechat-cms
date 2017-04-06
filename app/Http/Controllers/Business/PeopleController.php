@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Business;
 
+use App\Http\Helper\EasyWeChat;
 use App\People;
-use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -22,17 +22,7 @@ class PeopleController extends Controller
         $page_title = "人员列表";
         $page_level = $this->page_level;
 
-
-        $options = [
-            'debug' => true,
-            'app_id' => env('WECHAT_APPID'), // AppID
-            'secret' => env('WECHAT_SECRET'), // AppSecret
-            'token' => env('WECHAT_TOKEN') // Token
-        ];
-        $app = new Application($options);
-        $userService = $app->user;
-        $users = $userService->lists();
-
+        $users = EasyWeChat::getAllFans();
         echo $users;
 
         return view('peoples.index', compact('peoples', 'page_title', 'page_level'));

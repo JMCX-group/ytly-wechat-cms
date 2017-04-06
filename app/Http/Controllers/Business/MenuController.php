@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Business;
 
+use App\Http\Helper\EasyWeChat;
 use App\WxMenu;
-use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -107,15 +107,6 @@ class MenuController extends Controller
         $rightName = $request['right-name'];
         $rightUrl = $request['right-url'];
 
-        $options = [
-            'debug' => true,
-            'app_id' => env('WECHAT_APPID'), // AppID
-            'secret' => env('WECHAT_SECRET'), // AppSecret
-            'token' => env('WECHAT_TOKEN') // Token
-        ];
-        $app = new Application($options);
-        $menu = $app->menu;
-
         if ($rightName == '') {
             $buttons = [
                 [
@@ -138,33 +129,6 @@ class MenuController extends Controller
                 ]
             ];
         }
-//        $buttons = [
-//            [
-//                "type" => "view",
-//                "name" => $leftName,
-//                "url" => $leftUrl
-//            ],
-//            [
-//                "type" => "view",
-//                "name" => $rightName,
-//                "url" => $rightUrl
-//            ],
-//            [
-//                "name"       => "菜单",
-//                "sub_button" => [
-//                    [
-//                        "type" => "view",
-//                        "name" => "视频",
-//                        "url"  => "http://v.qq.com/"
-//                    ],
-//                    [
-//                        "type" => "click",
-//                        "name" => "赞一下我们",
-//                        "key" => "V1001_GOOD"
-//                    ],
-//                ],
-//            ],
-//        ];
 
         /**
          * Save data.
@@ -181,7 +145,7 @@ class MenuController extends Controller
 
         try {
             $wxMenu->save();
-            $menu->add($buttons);
+            EasyWeChat::setMenus($buttons);
 
             return redirect()->route('menu.index')->withSuccess('更新成功');
         } catch (\Exception $e) {
