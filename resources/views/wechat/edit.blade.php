@@ -56,7 +56,7 @@
                         </div>
                     </div>
                     <div class="box-footer">
-                        <a class="btn btn-default" href="{{route('menu.index')}}">返回</a>
+                        {{--<a class="btn btn-default" href="{{route('menu.index')}}">返回</a>--}}
                         <button type="submit" class="btn btn-primary pull-right">提 交</button>
                     </div>
                 </form>

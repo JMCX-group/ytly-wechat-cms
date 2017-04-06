@@ -11,12 +11,12 @@
 <body class="hold-transition">
 
 <div class="login-box">
-    <div class="login-logo">
-        <img class="" src="../images/logo.png">
+    <div class="login-logo" style="height: 100px;">
+        {{--<img class="" src="../images/logo.png">--}}
     </div>
     <div class="login-box-body">
-        <a href="http://www.medi-link.cn">
-            <p class="login-box-msg">艺同六艺</p>
+        <a href="#">
+            <p class="login-box-msg">艺同六艺微信后台管理系统</p>
         </a>
 
         <form action="{{URL::to('/auth/login')}}" method="post" enctype="multipart/form-data">
