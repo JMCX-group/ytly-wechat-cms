@@ -40,7 +40,7 @@
                         @forelse($peoples as $people)
                             <tr>
                                 <td>{{$people->id}}</td>
-                                <td><img src="{{$people->head_img_url}}" style="width: 90px;"></td>
+                                <td><img src="{{$people->head_img_url}}" style="width: 45px;"></td>
                                 @if($people->name == '')
                                     <td>{{$people->nickname}}</td>
                                 @else
