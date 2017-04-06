@@ -10,11 +10,9 @@ class WxAuthController extends Controller
     {
         $options = [
             'debug' => true,
-
-            'app_id' => env('WECHAT_APPID', 'wxaf50aa2e244ab2ce'), // AppID
-            'secret' => env('WECHAT_SECRET', '727c022c2c440f228362e8d52c157b3d'), // AppSecret
-            'token' => env('WECHAT_TOKEN', 'jianji2016'),  // Token
-
+            'app_id' => env('WECHAT_APPID'), // AppID
+            'secret' => env('WECHAT_SECRET'), // AppSecret
+            'token' => env('WECHAT_TOKEN') // Token
             // 'aes_key' => null, // 可选
 
 //    'log' => [

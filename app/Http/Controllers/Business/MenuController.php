@@ -109,25 +109,46 @@ class MenuController extends Controller
 
         $options = [
             'debug' => true,
-
-            'app_id' => env('WECHAT_APPID', 'wxaf50aa2e244ab2ce'), // AppID
-            'secret' => env('WECHAT_SECRET', '727c022c2c440f228362e8d52c157b3d'), // AppSecret
-            'token' => env('WECHAT_TOKEN', 'jianji2016'),  // Token
+            'app_id' => env('WECHAT_APPID'), // AppID
+            'secret' => env('WECHAT_SECRET'), // AppSecret
+            'token' => env('WECHAT_TOKEN') // Token
         ];
         $app = new Application($options);
         $menu = $app->menu;
 
-        $buttons = [
-            [
-                "type" => "view",
-                "name" => $leftName,
-                "url" => $leftUrl
-            ],
-            [
-                "type" => "view",
-                "name" => $rightName,
-                "url" => $rightUrl
-            ],
+        if ($rightName == '') {
+            $buttons = [
+                [
+                    "type" => "view",
+                    "name" => $leftName,
+                    "url" => $leftUrl
+                ]
+            ];
+        } else {
+            $buttons = [
+                [
+                    "type" => "view",
+                    "name" => $leftName,
+                    "url" => $leftUrl
+                ],
+                [
+                    "type" => "view",
+                    "name" => $rightName,
+                    "url" => $rightUrl
+                ]
+            ];
+        }
+//        $buttons = [
+//            [
+//                "type" => "view",
+//                "name" => $leftName,
+//                "url" => $leftUrl
+//            ],
+//            [
+//                "type" => "view",
+//                "name" => $rightName,
+//                "url" => $rightUrl
+//            ],
 //            [
 //                "name"       => "菜单",
 //                "sub_button" => [
@@ -143,7 +164,7 @@ class MenuController extends Controller
 //                    ],
 //                ],
 //            ],
-        ];
+//        ];
 
         /**
          * Save data.
