@@ -39,7 +39,7 @@ class PeopleController extends Controller
 //            People::updateOrCreate(['open_id' => $user->openid], ['nickname' => $user->nickname, 'head_img_url' => $user->headimgurl]);
 //        }
 
-        echo $users;
+        echo json_encode($users);
     }
 
     /**
