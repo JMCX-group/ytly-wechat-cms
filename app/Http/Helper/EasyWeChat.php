@@ -74,7 +74,7 @@ class EasyWeChat
         $userService = $app->user;
         $userInfo = $userService->lists();
 
-        return $userInfo->data;
+        return $userInfo->data['openid'];
 
         return $userService->batchGet($userInfo->data->openid);
     }
