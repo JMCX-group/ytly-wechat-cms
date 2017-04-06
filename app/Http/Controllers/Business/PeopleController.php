@@ -35,9 +35,9 @@ class PeopleController extends Controller
         $users = EasyWeChat::getAllFans();
         $users = $users->user_info_list;
 
-        foreach ($users as $user) {
-            People::updateOrCreate(['open_id' => $user->openid], ['nickname' => $user->nickname, 'head_img_url' => $user->headimgurl]);
-        }
+//        foreach ($users as $user) {
+//            People::updateOrCreate(['open_id' => $user->openid], ['nickname' => $user->nickname, 'head_img_url' => $user->headimgurl]);
+//        }
 
         echo $users;
     }
