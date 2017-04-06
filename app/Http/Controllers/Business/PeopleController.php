@@ -38,7 +38,7 @@ class PeopleController extends Controller
         $usersArr = json_decode($usersStr, true);
 
         foreach ($usersArr as $user) {
-            People::updateOrCreate(['open_id' => $user->openid], ['nickname' => $user->nickname, 'head_img_url' => $user->headimgurl]);
+            People::updateOrCreate(['open_id' => $user['openid']], ['nickname' => $user['nickname'], 'head_img_url' => $user['headimgurl']]);
         }
 
         echo json_encode($usersStr);
