@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Business;
 
+use App\Timetable;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class TimetableController extends Controller
 {
+    public $page_level = "专业管理";
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +17,11 @@ class TimetableController extends Controller
      */
     public function index()
     {
-        //
+        $timetables = Timetable::paginate(50);
+        $page_title = "专业列表";
+        $page_level = $this->page_level;
+
+        return view('timetables.index', compact('timetables', 'page_title', 'page_level'));
     }
 
     /**
