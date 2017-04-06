@@ -34,12 +34,14 @@ class PeopleController extends Controller
     {
         $users = EasyWeChat::getAllFans();
         $users = $users->user_info_list;
+        $usersStr = json_encode($users);
+        $usersArr = json_decode($usersStr, true);
 
-//        foreach ($users as $user) {
-//            People::updateOrCreate(['open_id' => $user->openid], ['nickname' => $user->nickname, 'head_img_url' => $user->headimgurl]);
-//        }
+        foreach ($usersArr as $user) {
+            People::updateOrCreate(['open_id' => $user->openid], ['nickname' => $user->nickname, 'head_img_url' => $user->headimgurl]);
+        }
 
-        echo json_encode($users);
+        echo json_encode($usersStr);
     }
 
     /**
