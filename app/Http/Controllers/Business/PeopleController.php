@@ -30,6 +30,9 @@ class PeopleController extends Controller
         return view('peoples.index', compact('peoples', 'page_title', 'page_level'));
     }
 
+    /**
+     * 同步用户
+     */
     public function syncUsers()
     {
         $users = EasyWeChat::getAllFans();
@@ -40,8 +43,6 @@ class PeopleController extends Controller
         foreach ($usersArr as $user) {
             People::updateOrCreate(['open_id' => $user['openid']], ['nickname' => $user['nickname'], 'head_img_url' => $user['headimgurl']]);
         }
-
-        echo json_encode($usersStr);
     }
 
     /**

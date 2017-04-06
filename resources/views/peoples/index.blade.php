@@ -29,6 +29,8 @@
                 <div class="box-body table-responsive no-padding">
                     <table class="table table-hover">
                         <tr>
+                            <th>ID</th>
+                            <th>头图</th>
                             <th>姓名</th>
                             <th>总分</th>
                             <th>专业</th>
@@ -37,6 +39,8 @@
                         </tr>
                         @forelse($peoples as $people)
                             <tr>
+                                <td>{{$people->id}}</td>
+                                <td><img src="{{$people->head_img_url}}" style="width: 90px;"></td>
                                 @if($people->name == '')
                                     <td>{{$people->nickname}}</td>
                                 @else
