@@ -9,8 +9,8 @@ class Timetable extends Model
     protected $table = "timetables";
 
     protected $fillable = [
-        'name',
-        'course_list',
+        'profession',
+        'course',
         'class_count',
         'status'
     ];
