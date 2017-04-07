@@ -82,7 +82,11 @@ class PeopleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $people = People::find($id);
+        $page_title = "编辑人员";
+        $page_level = $this->page_level;
+
+        return view('peoples.edit', compact('people', 'page_title', 'page_level'));
     }
 
     /**
@@ -94,7 +98,18 @@ class PeopleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $people = People::find($id);
+        $people->name = $request['name'];
+        $people->status = $request['status'];
+        $people->profession = ($request['status'] == '学生') ? $request['profession'] : '无';
+
+        try {
+            $people->save();
+
+            return redirect()->route('people.index')->withSuccess('编辑人员成功');
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(array('error' => $e->getMessage()))->withInput();
+        }
     }
 
     /**

@@ -30,22 +30,20 @@
                     <table class="table table-hover">
                         <tr>
                             <th>ID</th>
-                            <th>头图</th>
+                            <th>头像</th>
+                            <th>昵称</th>
                             <th>姓名</th>
                             <th>总分</th>
                             <th>专业</th>
-                            <th>状态</th>
+                            <th>身份</th>
                             <th>管理操作</th>
                         </tr>
                         @forelse($peoples as $people)
                             <tr>
                                 <td>{{$people->id}}</td>
                                 <td><img src="{{$people->head_img_url}}" style="width: 45px;"></td>
-                                @if($people->name == '')
-                                    <td>{{$people->nickname}}</td>
-                                @else
-                                    <td>{{$people->name}}</td>
-                                @endif
+                                <td>{{$people->nickname}}</td>
+                                <td>{{$people->name}}</td>
                                 <td>{{$people->total_score}}</td>
                                 <td>{{$people->profession}}</td>
                                 <td>{{$people->status}}</td>
