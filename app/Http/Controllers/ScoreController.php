@@ -28,18 +28,28 @@ class ScoreController extends Controller
          */
         $timeTables = Timetable::where('profession', $people->profession)->where('status', '启用')->get();
 
+        /**
+         * 获取所有分数信息：
+         */
         $score = array();
         foreach ($timeTables as $timeTable) {
             $scores = Credit::where('people_id', $people->id)->where('timetable_id', $timeTable->id)->orderBy('num', 'DESC')->get();
 
+            /**
+             * 对专业各科分类排序：
+             */
             $total = 0;
             $finalExam = 0;
             $detail = array();
             foreach ($scores as $scoreItem) {
+                $total += $scoreItem->fraction;
+
+                /**
+                 * 判断是否有期末考试分
+                 */
                 if ($scoreItem->num == 0) {
                     $finalExam = $scoreItem->fraction;
                 } else {
-                    $total += $scoreItem->fraction;
                     array_push($detail, $scoreItem->fraction);
                 }
             }
