@@ -42,6 +42,9 @@
         .page-score-number {
             color: #ff3c00;
         }
+
+        .page-final-exam {
+        }
     </style>
 </head>
 <body class="cf-invisible">
@@ -220,28 +223,37 @@
             </div>
             <?php foreach($score as $info){ ?>
 
-            <div class="cf-row">
-                <div class="cf-row page-class-title" data-cf-layout='{"height": 70}'>
-                    <div class="cf-col-6x"><?php echo $info["course_name"] ?></div>
-                    <div class="cf-col-6x"><?php echo $info["total_score"] ?></div>
-                </div>
-
-                <div class="cf-row page-score-detail-list" data-cf-layout='{
-                    "fontSize": 26
-                }'>
-                    <?php
-                    $score_idx = 1;
-                    foreach($info["detail_score"] as $score_info) {
-                    ?>
-
-                    <div class="cf-row" data-cf-layout='{"height": 70}'>
-                        <div class="cf-col-6x">第 <span class="page-score-number"><?php echo "$score_idx" ?></span> 课</div>
-                        <div class="cf-col-6x"><?php echo "$score_info" ?>分</div>
+                <div class="cf-row">
+                    <div class="cf-row page-class-title" data-cf-layout='{"height": 70}'>
+                        <div class="cf-col-6x"><?php echo $info["course_name"] ?></div>
+                        <div class="cf-col-6x"><?php echo $info["total_score"] ?></div>
                     </div>
 
-                    <?php $score_idx ++; } ?>
+                    <div class="cf-row page-score-detail-list" data-cf-layout='{
+                    "fontSize": 26}'>
+
+                        <?php if(0 != $info["final_exam"]) { ?>
+                        <div class="cf-row page-final-exam" data-cf-layout='{"height": 70}'>
+                            <div class="cf-col-6x">期末考试</div>
+                            <div class="cf-col-6x"><?php echo $info["final_exam"] ?>分</div>
+                        </div>
+                        <?php } ?>
+
+                        <?php
+                        if(!$info["detail_score"]) {
+                            $info["detail_score"] = array();
+                        }
+                        $score_idx = count($info["detail_score"]);
+                        foreach($info["detail_score"] as $score_info) {
+                            ?>
+
+                            <div class="cf-row" data-cf-layout='{"height": 70}'>
+                                <div class="cf-col-6x">第 <span class="page-score-number"><?php echo "$score_idx" ?></span> 课</div>
+                                <div class="cf-col-6x"><?php echo "$score_info" ?>分</div>
+                            </div>
+                        <?php $score_idx --; } ?>
+                    </div>
                 </div>
-            </div>
 
             <?php } ?>
         </div>
