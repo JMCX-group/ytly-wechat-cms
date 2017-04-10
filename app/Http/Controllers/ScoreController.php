@@ -18,7 +18,40 @@ class ScoreController extends Controller
             'user_headimg' => $user->avatar
         ];
 
-        $score = null;
+
+$course_name_key = "course_name";
+$total_score_key = "total_score";
+$detail_scores_key = "detail_score";
+        $score = array(
+    array(
+        $course_name_key=>"钢琴",
+        $total_score_key=>150,
+        $detail_scores_key=>array(
+            10,20,30,40,50
+        )
+    ),
+    array(
+        $course_name_key=>"小提琴",
+        $total_score_key=>150,
+        $detail_scores_key=>array(
+            10,20,30,40,50
+        )
+    ),
+    array(
+        $course_name_key=>"手风琴",
+        $total_score_key=>150,
+        $detail_scores_key=>array(
+            10,20,30,40,50
+        )
+    ),
+    array(
+        $course_name_key=>"竖琴",
+        $total_score_key=>150,
+        $detail_scores_key=>array(
+            10,20,30,40,50
+        )
+    )
+);
 
         return view('score.index', compact('user_info', 'score'));
     }
