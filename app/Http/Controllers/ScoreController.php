@@ -18,6 +18,8 @@ class ScoreController extends Controller
             'user_headimg' => $user->avatar
         ];
 
-        return view('score.index', compact('user_info'));
+        $score = null;
+
+        return view('score.index', compact('user_info', 'score'));
     }
 }
