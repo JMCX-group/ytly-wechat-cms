@@ -14,7 +14,7 @@ class ScoreController extends Controller
 
         $user_info = [
             'user_name' => $user->nickname,
-            'course_name' => $people->peofession,
+            'course_name' => $people->profession,
             'user_headimg' => $user->avatar
         ];
 
