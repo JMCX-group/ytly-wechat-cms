@@ -10,7 +10,7 @@ class ScoreController extends Controller
     {
         $user = session('wechat.oauth_user'); // 拿到授权用户资料
         $openId = $user->id;
-        $people = People::find($openId);
+        $people = People::where('open_id', $openId)->first();
 
         $user_info = [
             'user_name' => $user->nickname,
