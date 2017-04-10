@@ -3,15 +3,55 @@
  * Created by JMCX - WHY
  * Date: 2017/4/9
  */
-?>
 
+$course_name_key = "course_name";
+$total_score_key = "total_score";
+$detail_scores_key = "detail_score";
+
+$score = array(
+    array(
+        $course_name_key=>"钢琴",
+        $total_score_key=>150,
+        $detail_scores_key=>array(
+            10,20,30,40,50
+        )
+    ),
+    array(
+        $course_name_key=>"小提琴",
+        $total_score_key=>150,
+        $detail_scores_key=>array(
+            10,20,30,40,50
+        )
+    ),
+    array(
+        $course_name_key=>"手风琴",
+        $total_score_key=>150,
+        $detail_scores_key=>array(
+            10,20,30,40,50
+        )
+    ),
+    array(
+        $course_name_key=>"竖琴",
+        $total_score_key=>150,
+        $detail_scores_key=>array(
+            10,20,30,40,50
+        )
+    )
+);
+
+$user_info = array(
+        "user_name"=>"高小琴",
+        "course_name"=>"器乐",
+        "user_headimg"=>"https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top_ca79a146.png"
+);
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <title>艺同六艺</title>
-    <base href="http://wx.yitongliuyi.com/ytly/">
     <link rel="stylesheet" href="css/lib/core.css">
     <style>
         body {
@@ -21,7 +61,7 @@
         .score-list{
             border-radius: 6px;
         }
-
+        
         .score-list > .cf-row {
             /*border-bottom: 1px solid rgba(240,240,240,0.4);*/
             color: #666;
@@ -222,8 +262,8 @@
 
             <div class="cf-row">
                 <div class="cf-row page-class-title" data-cf-layout='{"height": 70}'>
-                    <div class="cf-col-6x"><?php echo $info["course_name"] ?></div>
-                    <div class="cf-col-6x"><?php echo $info["total_score"] ?></div>
+                    <div class="cf-col-6x"><?php echo $info[$course_name_key] ?></div>
+                    <div class="cf-col-6x"><?php echo $info[$total_score_key] ?></div>
                 </div>
 
                 <div class="cf-row page-score-detail-list" data-cf-layout='{
@@ -231,7 +271,7 @@
                 }'>
                     <?php
                     $score_idx = 1;
-                    foreach($info["detail_score"] as $score_info) {
+                    foreach($info[$detail_scores_key] as $score_info) {
                     ?>
 
                     <div class="cf-row" data-cf-layout='{"height": 70}'>
