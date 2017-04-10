@@ -13,6 +13,7 @@
         var peoples = {!! $peoples !!};
         var $profession = $("#profession");
         var $course = $("#course");
+        var $type = $("#type");
 
         /**
          * 专业改变后修改课程
@@ -22,8 +23,18 @@
             changePeoples();
         });
 
+        /**
+         * 修改学员名单
+         */
         $course.change(function () {
             changePeoples();
+        });
+
+        /**
+         * 修改学时数量
+         */
+        $type.change(function () {
+            viewHideNum();
         });
 
         /**
@@ -43,15 +54,14 @@
         /**
          * 刷新学生名单
          */
-        function changePeoples(){
+        function changePeoples() {
             var $peopleList = $("#people-list");
-            var courseVal = $course.val();
             var professionVal = $profession.val();
 
             $peopleList.empty();
 
-            for(var peopleKey in peoples) {
-                if(peoples[peopleKey]["profession"] == professionVal){
+            for (var peopleKey in peoples) {
+                if (peoples[peopleKey]["profession"] == professionVal) {
                     $peopleList.append(
                         '<div class="form-group">' +
                         '<div class="col-sm-1"></div>' +
@@ -65,6 +75,20 @@
                         '</div>'
                     );
                 }
+            }
+        }
+
+        /**
+         * 显示/隐藏课时
+         */
+        function viewHideNum() {
+            var typeVal = $type.val();
+            var $num = $("#num");
+
+            if (typeVal == "日常课程") {
+                $num.show();
+            } else {
+                $num.hide();
             }
         }
     </script>

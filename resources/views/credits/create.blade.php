@@ -54,6 +54,16 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="col-sm-3 control-label">评分类型</label>
+                            <div class="col-sm-6">
+                                <select id="type" class="form-control select2" name="type">
+                                    <option value="日常课程">日常课程</option>
+                                    <option value="期末考试">期末考试</option>
+                                </select>
+                                @include('layouts.message.tips',['field'=>'type'])
+                            </div>
+                        </div>
+                        <div id="num" class="form-group">
                             <label for="num" class="col-sm-3 control-label">课时</label>
                             <div class="col-sm-6">
                                 <input type="text" class="form-control" name="num" placeholder="第几课时" value="">

@@ -58,7 +58,7 @@ class CreditController extends Controller
         $data = [
             'people_id' => 0,
             'timetable_id' => $timetableId,
-            'num' => $request['num'],
+            'num' => (isset($request['num']) && $request['num'] != '') ? $request['num'] : 0,
             'fraction' => ''
         ];
 
