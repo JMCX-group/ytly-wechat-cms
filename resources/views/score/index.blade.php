@@ -271,7 +271,7 @@
                 }'>
                     <?php
                     $score_idx = 1;
-                    foreach($info["detail_scores"] as $score_info) {
+                    foreach($info["detail_score"] as $score_info) {
                     ?>
 
                     <div class="cf-row" data-cf-layout='{"height": 70}'>
