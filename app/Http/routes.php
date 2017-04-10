@@ -13,11 +13,7 @@
 Route::get('wx', 'WxAuthController@index');
 
 Route::group(['middleware' => ['wechat.oauth:snsapi_userinfo']], function () {
-    Route::get('wx-user', function () {
-        $user = session('wechat.oauth_user'); // 拿到授权用户资料
-
-        dd($user);
-    });
+    Route::get('my-score', 'ScoreController@index');
 });
 
 /**
