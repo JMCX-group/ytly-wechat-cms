@@ -34,9 +34,9 @@ class ScoreController extends Controller
 
             $total = 0;
             $detail = array();
-            foreach ($scores as $score) {
-                $total += $score->fraction;
-                array_push($detail, $score->fraction);
+            foreach ($scores as $scoreItem) {
+                $total += $scoreItem->fraction;
+                array_push($detail, $scoreItem->fraction);
             }
             $tmpData = array(
                 'course_name' => $timeTable->course,
