@@ -13,7 +13,7 @@
 Route::get('wx', 'WxAuthController@index');
 
 Route::group(['middleware' => ['web', 'wechat.oauth:snsapi_userinfo']], function () {
-    Route::get('/wx_user', function () {
+    Route::get('/wx-user', function () {
         $user = session('wechat.oauth_user'); // 拿到授权用户资料
 
         dd($user);
