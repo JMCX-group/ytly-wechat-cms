@@ -262,8 +262,8 @@
 
             <div class="cf-row">
                 <div class="cf-row page-class-title" data-cf-layout='{"height": 70}'>
-                    <div class="cf-col-6x"><?php echo $info[$course_name_key] ?></div>
-                    <div class="cf-col-6x"><?php echo $info[$total_score_key] ?></div>
+                    <div class="cf-col-6x"><?php echo $info["course_name"] ?></div>
+                    <div class="cf-col-6x"><?php echo $info["total_score"] ?></div>
                 </div>
 
                 <div class="cf-row page-score-detail-list" data-cf-layout='{
@@ -271,7 +271,7 @@
                 }'>
                     <?php
                     $score_idx = 1;
-                    foreach($info[$detail_scores_key] as $score_info) {
+                    foreach($info["detail_scores"] as $score_info) {
                     ?>
 
                     <div class="cf-row" data-cf-layout='{"height": 70}'>
