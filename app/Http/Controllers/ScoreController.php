@@ -29,58 +29,29 @@ class ScoreController extends Controller
         $timeTables = Timetable::where('profession', $people->profession)->where('status', '启用')->get();
 
         $score = array();
-        foreach($timeTables as $timeTable) {
-            $scores = Credit::where('people_id', $people->id)->where('timetable_id', $timeTable->id)->orderBy('num')->get();
+        foreach ($timeTables as $timeTable) {
+            $scores = Credit::where('people_id', $people->id)->where('timetable_id', $timeTable->id)->orderBy('num', 'DESC')->get();
 
             $total = 0;
+            $finalExam = 0;
             $detail = array();
             foreach ($scores as $scoreItem) {
-                $total += $scoreItem->fraction;
-                array_push($detail, $scoreItem->fraction);
+                if ($scoreItem->num == 0) {
+                    $finalExam = $scoreItem->fraction;
+                } else {
+                    $total += $scoreItem->fraction;
+                    array_push($detail, $scoreItem->fraction);
+                }
             }
             $tmpData = array(
                 'course_name' => $timeTable->course,
                 'total_score' => $total,
+                'final_exam' => $finalExam,
                 'detail_score' => $detail
             );
 
             array_push($score, $tmpData);
         }
-
-
-//$course_name_key = "course_name";
-//$total_score_key = "total_score";
-//$detail_scores_key = "detail_score";
-//        $score = array(
-//    array(
-//        $course_name_key=>"钢琴",
-//        $total_score_key=>150,
-//        $detail_scores_key=>array(
-//            10,20,30,40,50
-//        )
-//    ),
-//    array(
-//        $course_name_key=>"小提琴",
-//        $total_score_key=>150,
-//        $detail_scores_key=>array(
-//            10,20,30,40,50
-//        )
-//    ),
-//    array(
-//        $course_name_key=>"手风琴",
-//        $total_score_key=>150,
-//        $detail_scores_key=>array(
-//            10,20,30,40,50
-//        )
-//    ),
-//    array(
-//        $course_name_key=>"竖琴",
-//        $total_score_key=>150,
-//        $detail_scores_key=>array(
-//            10,20,30,40,50
-//        )
-//    )
-//);
 
         return view('score.index', compact('user_info', 'score'));
     }
