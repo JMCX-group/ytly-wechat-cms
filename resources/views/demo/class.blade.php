@@ -3,7 +3,7 @@
     <head>
         <title></title>
         {{--<meta name="viewport" content="width=device-width, initial-scale=1.0">--}}
-        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
         <!-- why begin: 引入评论插件的css，在bootstrap的css之前引入 -->
         <link rel="stylesheet" href="/assets/css/semantic.css" type="text/css" />
@@ -18,6 +18,7 @@
             font-family: 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', sans-serif;
             color: #65696F;
             background: transparent url('/assets/images/logo-background.png');
+            overflow-x: hidden;
         }
 
         .class-row{
