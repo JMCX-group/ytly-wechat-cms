@@ -2,7 +2,8 @@
 <html>
     <head>
         <title></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {{--<meta name="viewport" content="width=device-width, initial-scale=1.0">--}}
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
         <!-- why begin: 引入评论插件的css，在bootstrap的css之前引入 -->
         <link rel="stylesheet" href="/assets/css/semantic.css" type="text/css" />
@@ -232,7 +233,7 @@
             </div>
             <div class="col-xs-7 column">
                 <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
-                <div class="row clearfix img-rounded audio_play_cell" data-target="#audioSrc2">
+                <div class="row clearfix img-rounded audio_play_cell" data-target="#audioSrc3">
                     <div class="col-xs-1 column">
                         <span class="icon_audio_bkg"></span>
                         <span class="icon_audio_playing"></span>
