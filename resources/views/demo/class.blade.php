@@ -409,8 +409,8 @@
 
 
 <!-- why begin: 引入jQuery和bootstrap的js文件 -->
-{{--<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>--}}
-{{--<script src="/assets/js/bootstrap.min.js"></script>--}}
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
 <!-- why end: 引入jQuery和bootstrap的js文件 -->
 
 
