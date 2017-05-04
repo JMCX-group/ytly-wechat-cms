@@ -76,7 +76,7 @@
         <div class="col-xs-1 column class-title">
             <p>1.</p>
         </div>
-        <div class="col-xs-10 column class-title">
+        <div class="col-xs-9 column class-title">
             <p><strong class="text-success">Pencil </strong><small>[ˈpensl] n. 铅笔</small></p>
         </div>
     </div>
@@ -117,7 +117,7 @@
         <div class="col-xs-1 column class-title">
             <p>1).</p>
         </div>
-        <div class="col-xs-10 column class-title">
+        <div class="col-xs-9 column class-title">
             <p>“The <strong class="text-success">pencil</strong> is blunt.”</p>
             <p>"<strong class="text-success">铅笔</strong>秃了。"</p>
         </div>
@@ -147,7 +147,7 @@
         <div class="col-xs-1 column class-title">
             <p>2).</p>
         </div>
-        <div class="col-xs-10 column class-title">
+        <div class="col-xs-9 column class-title">
             <p>“You nearly poked me in the eye with your <strong class="text-success">pencil</strong>!”</p>
             <p>"你的<strong class="text-success">铅笔</strong>差点戳了我的眼睛！"</p>
         </div>
@@ -179,7 +179,7 @@
         <div class="col-xs-1 column class-title">
             <p>2.</p>
         </div>
-        <div class="col-xs-10 column class-title">
+        <div class="col-xs-9 column class-title">
             <p><strong class="text-success">Eraser </strong><small>[ɪ'reɪzə(r)] n. 橡皮擦</small></p>
         </div>
     </div>
@@ -220,7 +220,7 @@
         <div class="col-xs-1 column class-title">
             <p>1).</p>
         </div>
-        <div class="col-xs-10 column class-title">
+        <div class="col-xs-9 column class-title">
             <p>“Is this your <strong class="text-success">eraser</strong> ?”</p>
             <p>"是你的<strong class="text-success">橡皮</strong>？"</p>
         </div>
@@ -250,7 +250,7 @@
         <div class="col-xs-1 column class-title">
             <p>2).</p>
         </div>
-        <div class="col-xs-10 column class-title">
+        <div class="col-xs-9 column class-title">
             <p>“I scrubbed them out with the <strong class="text-success">eraser</strong>!”</p>
             <p>"我用<strong class="text-success">铅笔</strong>把它们完全擦掉了！"</p>
         </div>
@@ -283,7 +283,7 @@
         <div class="row clearfix">
             <div class="row clearfix">
                 <div class="col-xs-1 column"></div>
-                <div class="col-xs-10 column"><hr></div>
+                <div class="col-xs-9 column"><hr></div>
             </div>
             <div class="row clearfix">
                 <div class="col-xs-12 column" style="text-align: center;">
@@ -303,12 +303,14 @@
 <div class="container" style="margin: 80px 0 150px 0;">
     <!-- why begin: 把这段插入到页面最下面就好 -->
     <div class="row clearfix">
-        <div class="col-md-12 column">
+        <div class="col-xs-1 column"></div>
+        <div class="col-xs-9 column">
             <div id="articleComment"></div>
         </div>
     </div>
     <div class="row clearfix">
-        <div class="col-md-12 column">
+        <div class="col-xs-1 column"></div>
+        <div class="col-xs-9 column">
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="评论" id="commentInput" aria-describedby="submitComment">
                 <span class="input-group-addon btn-default" id="submitComment">提交</span>
