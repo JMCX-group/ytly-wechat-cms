@@ -10,6 +10,10 @@
 |
 */
 
+Route::get('class', function () {
+    return view('demo.class');
+});
+
 Route::get('wx', 'WxAuthController@index');
 
 Route::group(['middleware' => ['wechat.oauth:snsapi_userinfo']], function () {
