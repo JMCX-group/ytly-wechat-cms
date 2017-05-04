@@ -177,7 +177,7 @@
         <div class="row clearfix">
             <div class="col-xs-1 column"></div>
             <div class="col-xs-2 column">
-                <img src="/imgs/pencil.png" class="img-avatar img-rounded"/>
+                <img src="/assets/images/avatar.jpeg" class="img-avatar img-rounded"/>
             </div>
             <div class="col-xs-7 column">
                 <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
@@ -214,7 +214,7 @@
         <div class="row clearfix">
             <div class="col-xs-1 column"></div>
             <div class="col-xs-2 column">
-                <img src="/imgs/pencil.png" class="img-avatar img-rounded"/>
+                <img src="/assets/images/avatar.jpeg" class="img-avatar img-rounded"/>
             </div>
             <div class="col-xs-7 column">
                 <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
@@ -244,7 +244,7 @@
         <div class="row clearfix">
             <div class="col-xs-1 column"></div>
             <div class="col-xs-2 column">
-                <img src="/imgs/pencil.png" class="img-avatar img-rounded"/>
+                <img src="/assets/images/avatar.jpeg" class="img-avatar img-rounded"/>
             </div>
             <div class="col-xs-7 column">
                 <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
@@ -280,7 +280,7 @@
         <div class="row clearfix">
             <div class="col-xs-1 column"></div>
             <div class="col-xs-2 column">
-                <img src="/imgs/eraser.png" class="img-avatar img-rounded"/>
+                <img src="/assets/images/avatar.jpeg" class="img-avatar img-rounded"/>
             </div>
             <div class="col-xs-7 column">
                 <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
@@ -317,7 +317,7 @@
         <div class="row clearfix">
             <div class="col-xs-1 column"></div>
             <div class="col-xs-2 column">
-                <img src="/imgs/eraser.png" class="img-avatar img-rounded"/>
+                <img src="/assets/images/avatar.jpeg" class="img-avatar img-rounded"/>
             </div>
             <div class="col-xs-7 column">
                 <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
@@ -347,7 +347,7 @@
         <div class="row clearfix">
             <div class="col-xs-1 column"></div>
             <div class="col-xs-2 column">
-                <img src="/imgs/eraser.png" class="img-avatar img-rounded"/>
+                <img src="/assets/images/avatar.jpeg" class="img-avatar img-rounded"/>
             </div>
             <div class="col-xs-7 column">
                 <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
