@@ -27,8 +27,10 @@
     <audio src="http://warpcgd.github.io/webchataudio/src/sound/sound.mp3" controls="controls" id="audioSrc5"></audio>
     <audio src="http://warpcgd.github.io/webchataudio/src/sound/sound.mp3" controls="controls" id="audioSrc6"></audio>
 
-    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {{--<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>--}}
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    {{--<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>--}}
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 
     <div class="container">
