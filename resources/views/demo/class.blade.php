@@ -17,6 +17,7 @@
         body {
             font-family: 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', sans-serif;
             color: #65696F;
+            background: transparent url('/assets/images/logo-background.png');
         }
 
         .class-row{
@@ -121,14 +122,14 @@
 
 
     <div class="container">
-        <div class="row clearfix" style="text-align: center; margin-top: 30px;">
-            <div class="col-xs-12 column imgs-class">
-                <img src="/imgs/01.jpg"/>
-            </div>
-            <div class="col-xs-12 column imgs-class">
-                <img src="/imgs/02.jpg"/>
-            </div>
-        </div>
+        {{--<div class="row clearfix" style="text-align: center; margin-top: 30px;">--}}
+            {{--<div class="col-xs-12 column imgs-class">--}}
+                {{--<img src="/imgs/01.jpg"/>--}}
+            {{--</div>--}}
+            {{--<div class="col-xs-12 column imgs-class">--}}
+                {{--<img src="/imgs/02.jpg"/>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
         <div class="row clearfix" style="margin-top: 30px;">
             <div class="col-xs-1 column"></div>
