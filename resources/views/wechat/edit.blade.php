@@ -25,7 +25,7 @@
                                 <p class="help-block"><strong style="color:red;">该页管理微信公众号底部菜单，目前只能建立两个访问链接。<br><br><br>一旦点【提交】，会立刻执行，5分钟内在微信公众号中生效，无法撤回。<br><br><br>请谨慎操作！</strong></p>
                             </div>
                             <div class="col-sm-4">
-                                <img src="../images/WechatUI.jpeg" style="width: 200px;">
+                                <img src="../assets/images/WechatUI.jpeg" style="width: 200px;">
                             </div>
                         </div>
 
