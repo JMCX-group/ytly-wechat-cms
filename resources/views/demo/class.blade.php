@@ -18,7 +18,7 @@
 
     <body>
     {{--防止微信之外的浏览器打开--}}
-    {{--<script type="text/javascript" src="/assets/js/disableAccessBeyondWeChat.js"></script>--}}
+    <script type="text/javascript" src="/assets/js/disableAccessBeyondWeChat.js"></script>
 
     <audio src="http://warpcgd.github.io/webchataudio/src/sound/sound.mp3" controls="controls" id="audioSrc1"></audio>
     <audio src="http://warpcgd.github.io/webchataudio/src/sound/sound.mp3" controls="controls" id="audioSrc2"></audio>
