@@ -12,8 +12,8 @@
         <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="/assets/css/wechat-audio.css" type="text/css" />
         <link rel="stylesheet" href="/assets/css/class-demo.css" type="text/css" />
+        <link rel="stylesheet" href="/assets/css/wechat-audio.css" type="text/css" />
     </head>
 
     <body>
