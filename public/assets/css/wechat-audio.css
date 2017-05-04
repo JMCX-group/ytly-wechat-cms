@@ -23,7 +23,7 @@
 }
 
 .icon_audio_bkg {
-    background: transparent url('/wechat/audio/images/audio_play_icon_bkg.png') no-repeat 0 0;
+    background: transparent url('/assets/images/audio_play_icon_bkg.png') no-repeat 0 0;
 
     width: 18px;
     height: 25px;
