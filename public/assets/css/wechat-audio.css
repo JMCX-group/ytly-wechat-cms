@@ -1,0 +1,57 @@
+/**
+ 微信样式的语音播放样式表
+ */
+
+
+/* audio_play_cell 用来控制播放条的背景颜色和高度 */
+.audio_play_cell {
+    background-color: #cff4ad;
+    line-height: 45px;
+}
+
+.icon_audio_playing {
+    background: transparent url('/assets/images/audio_play_icon_playing.png') no-repeat 0 0;
+    width: 18px;
+    height: 25px;
+    vertical-align: middle;
+    display: inline-block;
+    -webkit-background-size: 54px 25px;
+    background-size: 54px 25px;
+    -webkit-animation: audio_playing 1s infinite;
+    background-position: 0px center;
+    display: none;
+}
+
+.icon_audio_bkg {
+    background: transparent url('/wechat/audio/images/audio_play_icon_bkg.png') no-repeat 0 0;
+
+    width: 18px;
+    height: 25px;
+    vertical-align: middle;
+    display: inline-block;
+    -webkit-background-size: 54px 25px;
+    background-size: 54px 25px;
+    background-position: -36px center;
+}
+
+audio {
+    display: none;
+}
+
+@-webkit-keyframes audio_playing {
+    30% {
+        background-position: 0px center;
+    }
+    31% {
+        background-position: -18px center;
+    }
+    61% {
+        background-position: -18px center;
+    }
+    61.5% {
+        background-position: -36px center;
+    }
+    100% {
+        background-position: -36px center;
+    }
+}
