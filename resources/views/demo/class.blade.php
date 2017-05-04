@@ -18,7 +18,7 @@
 
 <body>
 {{--防止微信之外的浏览器打开--}}
-{{--<script type="text/javascript" src="/assets/js/disableAccessBeyondWeChat.js"></script>--}}
+<script type="text/javascript" src="/assets/js/disableAccessBeyondWeChat.js"></script>
 
 <audio src="http://warpcgd.github.io/webchataudio/src/sound/sound.mp3" controls="controls" id="audioSrc1"></audio>
 <audio src="http://warpcgd.github.io/webchataudio/src/sound/sound.mp3" controls="controls" id="audioSrc2"></audio>
@@ -283,7 +283,7 @@
         <div class="row clearfix">
             <div class="row clearfix">
                 <div class="col-xs-1 column"></div>
-                <div class="col-xs-9 column"><hr></div>
+                <div class="col-xs-10 column"><hr></div>
             </div>
             <div class="row clearfix">
                 <div class="col-xs-12 column" style="text-align: center;">
@@ -304,13 +304,13 @@
     <!-- why begin: 把这段插入到页面最下面就好 -->
     <div class="row clearfix">
         <div class="col-xs-1 column"></div>
-        <div class="col-xs-9 column">
+        <div class="col-xs-10 column">
             <div id="articleComment"></div>
         </div>
     </div>
     <div class="row clearfix">
         <div class="col-xs-1 column"></div>
-        <div class="col-xs-9 column">
+        <div class="col-xs-10 column">
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="评论" id="commentInput" aria-describedby="submitComment">
                 <span class="input-group-addon btn-default" id="submitComment">提交</span>
