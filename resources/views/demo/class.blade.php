@@ -325,5 +325,10 @@
     {{--仿微信语音样式和动效--}}
     <script type="text/javascript" src="/assets/js/wechat-audio.js"></script>
 
+    <script type="text/javascript">
+        $(function(){
+            InitAllAudioCell();
+        });
+    </script>
     </body>
 </html>
