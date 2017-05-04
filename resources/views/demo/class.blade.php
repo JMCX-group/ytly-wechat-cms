@@ -17,7 +17,7 @@
         body {
             font-family: 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', sans-serif;
             color: #65696F;
-            background: transparent url('/assets/images/logo-background.png');
+            background: transparent url('/assets/images/logo-small.png');
             overflow-x: hidden;
         }
 
