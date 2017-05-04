@@ -12,9 +12,36 @@
         <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="/assets/css/class-demo.css" type="text/css" />
+        {{--<link rel="stylesheet" href="/assets/css/class-demo.css" type="text/css" />--}}
         <link rel="stylesheet" href="/assets/css/wechat-audio.css" type="text/css" />
     </head>
+
+    <style type="text/css">
+        body {
+            font-family: 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+            color: #65696F;
+            background: transparent url('/assets/images/logo-small.png');
+            overflow-x: hidden;
+        }
+
+        .class-row{
+            padding: 20px 0;
+        }
+        .class-title{
+            font-size: 16px;
+        }
+        .imgs-class {
+            text-align: center;
+            padding: 10px;
+        }
+        .imgs-class img {
+            max-width: 360px;
+        }
+        .img-avatar{
+            width: 45px;
+            height: 45px;
+        }
+    </style>
 
     <body>
     {{--防止微信之外的浏览器打开--}}
