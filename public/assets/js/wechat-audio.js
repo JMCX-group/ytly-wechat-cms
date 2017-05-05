@@ -14,7 +14,17 @@ function InitAllAudioCell(playStart, playFinished, manuallyStopped) {
         var audio = $audio.get(0);
         $this.data("target_audio", $audio);
 
+        audio.src = $audio.attr("_src");
+        audio.muted = true;
+        audio.play();
+
+
         $this.on("click", function(){
+            if(audio.muted) {
+                audio.pause();
+                audio.currentTime = 0;
+                audio.muted = false;
+            }
             if(audio.paused){
                 audio.play();
             } else {
@@ -27,6 +37,9 @@ function InitAllAudioCell(playStart, playFinished, manuallyStopped) {
         function loopGetAudioLength() {
             var sec = parseFloat(audio.duration).toFixed(1);
             if(!isNaN(sec)) {
+                audio.pause();
+                audio.currentTime = 0;
+                audio.muted = false;
                 $this.find(".audio_seconds").text(sec+"s");
             } else {
                 setTimeout(function() {
