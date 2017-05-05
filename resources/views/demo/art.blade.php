@@ -16,15 +16,6 @@
 <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc6"></audio>
 
 <div class="container">
-    {{--<div class="row clearfix" style="text-align: center; margin-top: 30px;">--}}
-    {{--<div class="col-xs-12 column imgs-class">--}}
-    {{--<img src="/imgs/01.jpg"/>--}}
-    {{--</div>--}}
-    {{--<div class="col-xs-12 column imgs-class">--}}
-    {{--<img src="/imgs/02.jpg"/>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-
     <div class="row clearfix" style="margin-top: 30px;">
         <div class="col-xs-1 column"></div>
         <div class="col-xs-11 column">
@@ -39,7 +30,7 @@
 
     <div class="row clearfix">
         <div class="col-xs-12 column imgs-class">
-            <img src="/imgs/03.jpg"/>
+            <img src="/assets/images/class-public/03.jpg"/>
         </div>
     </div>
     <div class="row clearfix class-row">
@@ -64,7 +55,7 @@
     </div>
     <div class="row clearfix">
         <div class="col-xs-12 column imgs-class">
-            <img src="/imgs/pencil.png" width="180px"  class="img-rounded" />
+            <img src="/assets/images/class-content/art/pencil.png" width="180px"  class="img-rounded" />
         </div>
     </div>
     <div class="row clearfix">
@@ -167,7 +158,7 @@
     </div>
     <div class="row clearfix">
         <div class="col-xs-12 column imgs-class">
-            <img src="/imgs/eraser.png" width="180px"  class="img-rounded" />
+            <img src="/assets/images/class-content/art/eraser.png" width="180px"  class="img-rounded" />
         </div>
     </div>
     <div class="row clearfix">
