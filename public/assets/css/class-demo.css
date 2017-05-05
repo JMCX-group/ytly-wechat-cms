@@ -2,6 +2,10 @@
  艺同六艺的课程demo css
  */
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', sans-serif;
     color: #65696F;

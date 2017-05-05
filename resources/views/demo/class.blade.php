@@ -9,16 +9,31 @@
     <link rel="stylesheet" href="/assets/css/zyComment.css" type="text/css" />
     <!-- why end: 引入评论插件的css，在bootstrap的css之前引入 -->
 
-    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" >
+    {{--<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css" >--}}
 
-    <link rel="stylesheet" href="/assets/css/wechat-audio.css" type="text/css" />
-    <link rel="stylesheet" href="/assets/css/class-demo.css" type="text/css" />
+    <link rel="stylesheet" href="/assets/css/wechat-audio.css"/>
+    <link rel="stylesheet" href="/assets/css/class-demo.css"/>
+
+
+    {{--防止微信之外的浏览器打开--}}
+    {{--<script type="text/javascript" src="/assets/js/disableAccessBeyondWeChat.js"></script>--}}
+
+    {{--<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>--}}
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    {{--<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>--}}
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <!-- why begin: 评论插件代码 -->
+    <script type="text/javascript" src="/assets/js/zyComment.js"></script>
+    <script type="text/javascript" src="/assets/js/comment.js"></script>
+    <!-- why end: 评论插件代码 -->
+
+    {{--仿微信语音样式和动效--}}
+    <script type="text/javascript" src="/assets/js/wechat-audio.js"></script>
 </head>
 
 <body>
-{{--防止微信之外的浏览器打开--}}
-{{--<script type="text/javascript" src="/assets/js/disableAccessBeyondWeChat.js"></script>--}}
 
 <audio src="http://warpcgd.github.io/webchataudio/src/sound/sound.mp3" controls="controls" id="audioSrc1"></audio>
 <audio src="http://warpcgd.github.io/webchataudio/src/sound/sound.mp3" controls="controls" id="audioSrc2"></audio>
@@ -26,12 +41,6 @@
 <audio src="http://warpcgd.github.io/webchataudio/src/sound/sound.mp3" controls="controls" id="audioSrc4"></audio>
 <audio src="http://warpcgd.github.io/webchataudio/src/sound/sound.mp3" controls="controls" id="audioSrc5"></audio>
 <audio src="http://warpcgd.github.io/webchataudio/src/sound/sound.mp3" controls="controls" id="audioSrc6"></audio>
-
-{{--<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>--}}
-<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-{{--<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>--}}
-<script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
 
 <div class="container">
     {{--<div class="row clearfix" style="text-align: center; margin-top: 30px;">--}}
@@ -319,14 +328,5 @@
     </div>
     <!-- why end: 把这段插入到页面最下面就好 -->
 </div>
-
-
-<!-- why begin: 评论插件代码 -->
-<script type="text/javascript" src="/assets/js/zyComment.js"></script>
-<script type="text/javascript" src="/assets/js/comment.js"></script>
-<!-- why end: 评论插件代码 -->
-
-{{--仿微信语音样式和动效--}}
-<script type="text/javascript" src="/assets/js/wechat-audio.js"></script>
 </body>
 </html>
