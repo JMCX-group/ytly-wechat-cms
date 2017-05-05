@@ -2,6 +2,10 @@
  * Created by lyx on 2017/5/4.
  */
 
+$(function(){
+    InitAllAudioCell();
+});
+
 // why begin: 这个函数是初始化播放工具的，参数里那些可以不传，但是参数位置不能错
 function InitAllAudioCell(playStart, playFinished, manuallyStopped) {
     $("div.audio_play_cell").each(function () {

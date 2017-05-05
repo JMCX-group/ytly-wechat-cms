@@ -12,8 +12,8 @@
     <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="/assets/css/class-demo.css" type="text/css" />
     <link rel="stylesheet" href="/assets/css/wechat-audio.css" type="text/css" />
+    <link rel="stylesheet" href="/assets/css/class-demo.css" type="text/css" />
 </head>
 
 <body>
@@ -328,11 +328,5 @@
 
 {{--仿微信语音样式和动效--}}
 <script type="text/javascript" src="/assets/js/wechat-audio.js"></script>
-
-<script type="text/javascript">
-    $(function(){
-        InitAllAudioCell();
-    });
-</script>
 </body>
 </html>
