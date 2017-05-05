@@ -14,7 +14,7 @@ function InitAllAudioCell(playStart, playFinished, manuallyStopped) {
         var audio = $audio.get(0);
         $this.data("target_audio", $audio);
 
-        audio.src = $audio.attr("_src");
+        // audio.src = $audio.attr("_src");
         audio.muted = true;
         audio.play();
 
