@@ -38,6 +38,6 @@ $("#articleComment").zyComment({
             return;
         }
         console.log($("#commentItems").children().length);
-        $("#articleComment").zyComment("addNewComment",{"id": 0, "name":"昵称", "content":commentText, "time": new Date().fmt("yyyy-MM-dd")});
+        $("#articleComment").zyComment("addNewComment",{"id": 0, "name":"艺同六艺", "content":commentText, "time": new Date().fmt("yyyy-MM-dd")});
     }
 });

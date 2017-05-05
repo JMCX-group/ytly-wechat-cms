@@ -70,7 +70,7 @@
     <div class="row clearfix">
         <div class="col-xs-1 column"></div>
         <div class="col-xs-2 column">
-            <img src="/assets/images/avatar.jpeg" class="img-avatar img-rounded"/>
+            <img src="/assets/images/audio-avatar/avatar-academic.png" class="img-avatar img-rounded"/>
         </div>
         <div class="col-xs-7 column">
             <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
@@ -107,7 +107,7 @@
     <div class="row clearfix">
         <div class="col-xs-1 column"></div>
         <div class="col-xs-2 column">
-            <img src="/assets/images/avatar.jpeg" class="img-avatar img-rounded"/>
+            <img src="/assets/images/audio-avatar/avatar-academic.png" class="img-avatar img-rounded"/>
         </div>
         <div class="col-xs-7 column">
             <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
@@ -137,7 +137,7 @@
     <div class="row clearfix">
         <div class="col-xs-1 column"></div>
         <div class="col-xs-2 column">
-            <img src="/assets/images/avatar.jpeg" class="img-avatar img-rounded"/>
+            <img src="/assets/images/audio-avatar/avatar-academic.png" class="img-avatar img-rounded"/>
         </div>
         <div class="col-xs-7 column">
             <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
@@ -173,7 +173,7 @@
     <div class="row clearfix">
         <div class="col-xs-1 column"></div>
         <div class="col-xs-2 column">
-            <img src="/assets/images/avatar.jpeg" class="img-avatar img-rounded"/>
+            <img src="/assets/images/audio-avatar/avatar-academic.png" class="img-avatar img-rounded"/>
         </div>
         <div class="col-xs-7 column">
             <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
@@ -210,7 +210,7 @@
     <div class="row clearfix">
         <div class="col-xs-1 column"></div>
         <div class="col-xs-2 column">
-            <img src="/assets/images/avatar.jpeg" class="img-avatar img-rounded"/>
+            <img src="/assets/images/audio-avatar/avatar-academic.png" class="img-avatar img-rounded"/>
         </div>
         <div class="col-xs-7 column">
             <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
@@ -240,7 +240,7 @@
     <div class="row clearfix">
         <div class="col-xs-1 column"></div>
         <div class="col-xs-2 column">
-            <img src="/assets/images/avatar.jpeg" class="img-avatar img-rounded"/>
+            <img src="/assets/images/audio-avatar/avatar-academic.png" class="img-avatar img-rounded"/>
         </div>
         <div class="col-xs-7 column">
             <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
@@ -257,48 +257,5 @@
         </div>
     </div>
 
-</div>
-
-
-<div class="container" style="margin-top: 50px;">
-    <div>
-        <div class="row clearfix">
-            <div class="row clearfix">
-                <div class="col-xs-1 column"></div>
-                <div class="col-xs-10 column"><hr></div>
-            </div>
-            <div class="row clearfix">
-                <div class="col-xs-12 column" style="text-align: center;">
-                    <p class="text-danger"><strong>关注我们:</strong></p>
-                </div>
-            </div>
-            <div class="col-xs-12 column imgs-class" >
-                <img src="/Wechat.jpg" class="img-rounded" width="188px;"/>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-
-{{--评论区域：--}}
-<div class="container" style="margin: 80px 0 150px 0;">
-    <!-- why begin: 把这段插入到页面最下面就好 -->
-    <div class="row clearfix">
-        <div class="col-xs-1 column"></div>
-        <div class="col-xs-10 column">
-            <div id="articleComment"></div>
-        </div>
-    </div>
-    <div class="row clearfix">
-        <div class="col-xs-1 column"></div>
-        <div class="col-xs-10 column">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="评论" id="commentInput" aria-describedby="submitComment">
-                <span class="input-group-addon btn-default" id="submitComment">提交</span>
-            </div>
-        </div>
-    </div>
-    <!-- why end: 把这段插入到页面最下面就好 -->
 </div>
 @stop

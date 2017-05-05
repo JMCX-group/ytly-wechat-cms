@@ -9,9 +9,13 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
-Route::get('class', function () {
-    return view('demo.class');
+Route::group(['prefix' => 'class'], function() {
+    Route::get('art', function () {
+        return view('demo.art');
+    });
+    Route::get('academic', function () {
+        return view('demo.academic');
+    });
 });
 
 Route::get('wx', 'WxAuthController@index');

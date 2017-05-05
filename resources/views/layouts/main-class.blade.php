@@ -44,6 +44,8 @@
 <body>
     @yield("content")
 
+    @include('layouts.wechat-qrcode')
+    @include('layouts.comment')
 <script type="text/javascript" src="/assets/js/comment.js"></script>
 </body>
 </html>
