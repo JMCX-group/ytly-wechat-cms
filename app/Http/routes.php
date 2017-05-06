@@ -13,9 +13,7 @@ Route::group(['prefix' => 'class'], function() {
     Route::get('art', function () {
         return view('demo.art');
     });
-    Route::get('academic', function () {
-        return view('demo.academic');
-    });
+    Route::get('academic', 'ClassController@academic');
 });
 
 Route::get('wx', 'WxAuthController@index');
