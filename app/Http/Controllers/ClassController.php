@@ -13,13 +13,17 @@ class ClassController extends Controller
     {
         $user = session('wechat.oauth_user'); // 拿到授权用户资料
 
-        /**
-         * 获取用户信息：
-         */
-        $user_info = [
-            'user_name' => $user->nickname,
-            'user_avatar' => $user->avatar
-        ];
+        if (isset($user)) {
+            /**
+             * 获取用户信息：
+             */
+            $user_info = [
+                'user_name' => $user->nickname,
+                'user_avatar' => $user->avatar
+            ];
+        } else {
+            $user_info = null;
+        }
 
         return $user_info;
     }
