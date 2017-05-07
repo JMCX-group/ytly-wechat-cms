@@ -42,6 +42,8 @@ $("#articleComment").zyComment({
             return;
         }
 
+        alert($("#comment-name-val").val());
+
         console.log($("#commentItems").children().length);
 
         if (commentName !== null || commentName !== undefined || commentName !== '') {
