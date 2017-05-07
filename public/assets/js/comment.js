@@ -42,16 +42,12 @@ $("#articleComment").zyComment({
             return;
         }
 
-        alert($("#comment-name-val").val());
-
         console.log($("#commentItems").children().length);
 
-        if (commentName !== null || commentName !== undefined || commentName !== '') {
+        if (commentName === null || commentName === undefined || commentName === '') {
             commentName = '游客';
             commentAvatar = '/assets/images/foot.png';
         }
-
-        alert(commentName + commentAvatar);
 
         $("#articleComment").zyComment("addNewComment", {
             "id": 0,
