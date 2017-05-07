@@ -19,7 +19,7 @@ Route::group(['prefix' => 'class', 'middleware' => ['wechat.oauth:snsapi_userinf
 });
 
 /**
- * CMS地址
+ * 响应微信服务器
  */
 Route::get('wx', 'WxAuthController@index');
 

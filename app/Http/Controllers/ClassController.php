@@ -49,7 +49,25 @@ class ClassController extends Controller
     {
         $user_info = $this->getUserInfo();
 
+        $audioBaseUrl = '/audios/academic/';
+        $audioSuffix = '.MP3';
         $imgBaseUrl = '/assets/images/class-content/academic/';
+
+        $audioData = array(
+            $audioBaseUrl . 'hundredth' . $audioSuffix,
+            $audioBaseUrl . 'tenths' . $audioSuffix,
+            $audioBaseUrl . 'decimal-point' . $audioSuffix,
+            $audioBaseUrl . 'ones' . $audioSuffix,
+            $audioBaseUrl . 'tens' . $audioSuffix,
+
+            $audioBaseUrl . 'hundreds' . $audioSuffix,
+            $audioBaseUrl . 'thousands' . $audioSuffix,
+            $audioBaseUrl . 'tens-of-thousands' . $audioSuffix,
+            $audioBaseUrl . 'hundreds-of-thousands' . $audioSuffix,
+            $audioBaseUrl . 'millions' . $audioSuffix,
+
+            $audioBaseUrl . 'place-value' . $audioSuffix
+        );
 
         $data = [
             [
@@ -123,6 +141,6 @@ class ClassController extends Controller
             ]
         ];
 
-        return view('demo.academic', compact('user_info', 'data'));
+        return view('demo.academic', compact('user_info', 'data', 'audioData'));
     }
 }

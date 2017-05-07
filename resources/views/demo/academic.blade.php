@@ -10,7 +10,7 @@
 @section("content")
 
     @foreach($data as $key=>$datum)
-        <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="{{'audioSrc' . ($key + 1)}}"></audio>
+        <audio src="{{$datum}}" controls="controls" id="{{'audioSrc' . ($key + 1)}}"></audio>
     @endforeach
 
     <div class="container">

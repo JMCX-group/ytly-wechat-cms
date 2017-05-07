@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Appointment;
-use App\Doctor;
 use App\Http\Controllers\Controller;
-use App\Patient;
 
 class IndexController extends Controller
 {    
