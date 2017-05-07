@@ -12,8 +12,8 @@
     <!-- why begin: 把这段插入到页面最下面就好 -->
     @if(isset($user_info))
     <div hidden class="comment-name">
-        <input type="hidden" id="comment-name-val" value="{{$user_info->user_name}}">
-        <input type="hidden" id="comment-avatar-val" value="{{$user_info->user_avatar}}">
+        <input type="hidden" id="comment-name-val" value="{{$user_info['user_name']}}">
+        <input type="hidden" id="comment-avatar-val" value="{{$user_info['user_avatar']}}">
     </div>
     @endif
     <div class="row clearfix">
