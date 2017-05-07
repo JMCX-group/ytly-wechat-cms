@@ -49,6 +49,8 @@ $("#articleComment").zyComment({
             commentAvatar = '/assets/images/foot.png';
         }
 
+        alert(commentName + commentAvatar);
+
         $("#articleComment").zyComment("addNewComment", {
             "id": 0,
             "avatar": commentAvatar,
