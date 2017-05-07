@@ -24,7 +24,7 @@ Route::group(['prefix' => 'class'], function() {
 /**
  * 课程Demo2
  */
-Route::group(['prefix' => 'class', 'middleware' => ['wechat.oauth:snsapi_userinfo']], function() {
+Route::group(['prefix' => 'c', 'middleware' => ['wechat.oauth:snsapi_userinfo']], function() {
 //Route::group(['prefix' => 'class'], function() {
     Route::get('art', function () {
         return view('demo.art');

@@ -31,7 +31,7 @@ class ClassController extends Controller
      */
     public function academic()
     {
-//        $user_info = $this->getUserInfo();
+        $user_info = $this->getUserInfo();
 
         $imgBaseUrl = '/assets/images/class-content/academic/';
 
