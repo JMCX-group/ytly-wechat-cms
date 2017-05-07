@@ -13,22 +13,8 @@
 /**
  * 课程Demo
  */
-//Route::group(['prefix' => 'class', 'middleware' => ['wechat.oauth:snsapi_userinfo']], function() {
-Route::group(['prefix' => 'class'], function() {
-    Route::get('art', function () {
-        return view('demo.art');
-    });
-    Route::get('academic', 'ClassController@academic');
-});
-
-/**
- * 课程Demo2
- */
-Route::group(['prefix' => 'c', 'middleware' => ['wechat.oauth:snsapi_userinfo']], function() {
-//Route::group(['prefix' => 'class'], function() {
-    Route::get('art', function () {
-        return view('demo.art');
-    });
+Route::group(['prefix' => 'class', 'middleware' => ['wechat.oauth:snsapi_userinfo']], function() {
+    Route::get('art', 'ClassController@art');
     Route::get('academic', 'ClassController@academic');
 });
 

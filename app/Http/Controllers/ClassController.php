@@ -29,7 +29,19 @@ class ClassController extends Controller
     }
 
     /**
+     * 第一次demo
      *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function art()
+    {
+        $user_info = $this->getUserInfo();
+
+        return view('demo.art', compact('user_info'));
+    }
+
+    /**
+     * 第二次demo
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
