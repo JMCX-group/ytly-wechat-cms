@@ -9,7 +9,7 @@
 @extends("layouts.main-class")
 @section("content")
 
-    @foreach($data as $key=>$datum)
+    @foreach($audioData as $key=>$datum)
         <audio src="{{$datum}}" controls="controls" id="{{'audioSrc' . ($key + 1)}}"></audio>
     @endforeach
 
