@@ -18,7 +18,7 @@ class ClassController extends Controller
          */
         $user_info = [
             'user_name' => $user->nickname,
-            'user_headimg' => $user->avatar
+            'user_avatar' => $user->avatar
         ];
 
         return $user_info;

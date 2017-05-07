@@ -9,6 +9,11 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
+/**
+ * 课程Demo
+ */
+//Route::group(['prefix' => 'class', 'middleware' => ['wechat.oauth:snsapi_userinfo']], function() {
 Route::group(['prefix' => 'class'], function() {
     Route::get('art', function () {
         return view('demo.art');
@@ -16,8 +21,25 @@ Route::group(['prefix' => 'class'], function() {
     Route::get('academic', 'ClassController@academic');
 });
 
+/**
+ * 课程Demo2
+ */
+Route::group(['prefix' => 'class', 'middleware' => ['wechat.oauth:snsapi_userinfo']], function() {
+//Route::group(['prefix' => 'class'], function() {
+    Route::get('art', function () {
+        return view('demo.art');
+    });
+    Route::get('academic', 'ClassController@academic');
+});
+
+/**
+ * CMS地址
+ */
 Route::get('wx', 'WxAuthController@index');
 
+/**
+ * 学分查询页面
+ */
 Route::group(['middleware' => ['wechat.oauth:snsapi_userinfo']], function () {
     Route::get('my-score', 'ScoreController@index');
 });
