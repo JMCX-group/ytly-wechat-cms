@@ -143,4 +143,17 @@ class ClassController extends Controller
 
         return view('demo.academic', compact('user_info', 'data', 'audioData'));
     }
+
+    /**
+     * 第三个Demo
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function egyptian()
+    {
+//        $imgBaseUrl = '/assets/images/class-content/academic/';
+        $user_info = $this->getUserInfo();
+
+        return view('demo.egyptian', compact('user_info'));
+    }
 }

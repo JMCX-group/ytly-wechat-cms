@@ -13,9 +13,11 @@
 /**
  * 课程Demo
  */
+//Route::group(['prefix' => 'class'], function() {
 Route::group(['prefix' => 'class', 'middleware' => ['wechat.oauth:snsapi_userinfo']], function() {
     Route::get('art', 'ClassController@art');
     Route::get('academic', 'ClassController@academic');
+    Route::get('egyptian', 'ClassController@egyptian');
 });
 
 /**
