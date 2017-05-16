@@ -21,6 +21,14 @@ Route::group(['prefix' => 'class', 'middleware' => ['wechat.oauth:snsapi_userinf
 });
 
 /**
+ * Music
+ */
+//Route::group(['prefix' => 'music'], function() {
+Route::group(['prefix' => 'music', 'middleware' => ['wechat.oauth:snsapi_userinfo']], function() {
+    Route::get('candy', 'MusicController@candy');
+});
+
+/**
  * 响应微信服务器
  */
 Route::get('wx', 'WxAuthController@index');
