@@ -9,13 +9,13 @@
 @extends("layouts.main-music")
 @section("content")
     <div class="container">
-        <div class="row clearfix" style="margin-top: 45px;">
+        <div class="row clearfix" style="margin-top: 40px;">
             <div class="col-xs-12 column imgs-class">
                 <img style="width: 300px;" src="/assets/images/music-bg/candy-fairy-dance.png"/>
             </div>
         </div>
 
-        <div class="row clearfix" style="margin-top: 25px;">
+        <div class="row clearfix" style="margin-top: 20px;">
             <div class="col-xs-1 column"></div>
             <div class="col-xs-10 column">
                 <hr style="border:1px #929292 solid;" />
@@ -25,7 +25,7 @@
         <div class="row clearfix">
             <div class="col-xs-1 column"></div>
             <div class="col-xs-10 column">
-                <marquee style="height: 300px" scrollamount="3" direction="up">
+                <marquee style="height: 270px" scrollamount="3" direction="up">
                     <p style="margin-top: 5px; text-align: center;">
                         <strong>《糖果仙子之舞》[俄]柴可夫斯基 （1840 -1893）</strong>
                     </p>
