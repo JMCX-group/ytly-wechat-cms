@@ -49,13 +49,6 @@
             <div class="col-xs-1 column"></div>
         </div>
 
-        <div class="row clearfix">
-            <div class="col-xs-1 column"></div>
-            <div class="col-xs-10 column">
-                <hr style="border:1px #929292 solid;" />
-            </div>
-        </div>
-
         <div id="player1" class="aplayer"></div>
     </div>
 @stop
