@@ -13,7 +13,7 @@
     <audio src="/audios/egyptian/hieroglyphs.MP3" controls="controls" id="audioSrc1"></audio>
 
     <audio src="/audios/egyptian/part1-1.MP3" controls="controls" id="audioSrc2"></audio>
-    <audio src="/audios/egyptian/part1-1.MP3" controls="controls" id="audioSrc3"></audio>
+    <audio src="/audios/egyptian/part1-2.MP3" controls="controls" id="audioSrc3"></audio>
     <audio src="/audios/egyptian/part1-3.MP3" controls="controls" id="audioSrc4"></audio>
     <audio src="/audios/egyptian/part1-4.MP3" controls="controls" id="audioSrc5"></audio>
     <audio src="/audios/egyptian/part1-5.MP3" controls="controls" id="audioSrc6"></audio>
