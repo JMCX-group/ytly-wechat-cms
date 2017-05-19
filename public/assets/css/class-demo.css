@@ -19,6 +19,13 @@ body {
 .class-title{
     font-size: 16px;
 }
+.class-title-color{
+    color: black;
+}
+.class-font-body{
+    font-size: 14px;
+    color: black;
+}
 .imgs-class {
     text-align: center;
     padding: 10px;

@@ -29,6 +29,15 @@ Route::group(['prefix' => 'music', 'middleware' => ['wechat.oauth:snsapi_userinf
     Route::get('0512', 'MusicController@symphonyOrchestra');
 });
 
+
+/**
+ * English
+ */
+//Route::group(['prefix' => 'english'], function() {
+Route::group(['prefix' => 'english', 'middleware' => ['wechat.oauth:snsapi_userinfo']], function() {
+    Route::get('art', 'EnglishController@art');
+});
+
 /**
  * 响应微信服务器
  */
