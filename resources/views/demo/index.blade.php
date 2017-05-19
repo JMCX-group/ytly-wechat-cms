@@ -17,9 +17,16 @@
                     <p>Wes :</p>
                 </div>
             </div>
-            <button type="button" class="btn btn-success" style="width: 300px;" href="http://wx.yitongliuyi.com/class/art">Art</button>
-            <button type="button" class="btn btn-success" style="width: 300px; margin-top: 15px;" href="http://wx.yitongliuyi.com/class/academic">Academic</button>
-            <button type="button" class="btn btn-success" style="width: 300px; margin-top: 15px;" href="http://wx.yitongliuyi.com/class/egyptian">Egyptian</button>
+            <a href="http://wx.yitongliuyi.com/class/art">
+                <button type="button" class="btn btn-success" style="width: 300px;">Art</button>
+            </a>
+            <a href="http://wx.yitongliuyi.com/class/academic">
+                <button type="button" class="btn btn-success" style="width: 300px; margin-top: 15px;">Academic</button>
+            </a>
+            <a href="http://wx.yitongliuyi.com/class/egyptian">
+                <button type="button" class="btn btn-success" style="width: 300px; margin-top: 15px;">Egyptian</button>
+            </a>
+
 
             <div class="row clearfix class-row" style="margin-top: 15px;">
                 <div class="col-xs-2 column"></div>
@@ -27,8 +34,13 @@
                     <p>LuYing :</p>
                 </div>
             </div>
-            <button type="button" class="btn btn-success" style="width: 300px;" href="http://wx.yitongliuyi.com/music/candy">Candy</button>
-            <button type="button" class="btn btn-success" style="width: 300px; margin-top: 15px;" href="http://wx.yitongliuyi.com/music/0512">0512</button>
+            <a href="http://wx.yitongliuyi.com/music/candy">
+                <button type="button" class="btn btn-success" style="width: 300px;">Candy</button>
+            </a>
+            <a href="http://wx.yitongliuyi.com/music/0512">
+                <button type="button" class="btn btn-success" style="width: 300px; margin-top: 15px;">0512</button>
+            </a>
+
 
             <div class="row clearfix class-row" style="margin-top: 15px;">
                 <div class="col-xs-2 column"></div>
@@ -36,7 +48,9 @@
                     <p>CiCi :</p>
                 </div>
             </div>
-            <button type="button" class="btn btn-success" style="width: 300px;" href="http://wx.yitongliuyi.com/english/art">English-art</button>
+            <a href="http://wx.yitongliuyi.com/english/art">
+                <button type="button" class="btn btn-success" style="width: 300px;">English-art</button>
+            </a>
         </div>
     </div>
 
