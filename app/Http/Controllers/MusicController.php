@@ -331,4 +331,16 @@ class MusicController extends Controller
             'part2Data6', 'part2Data7', 'part2Data8', 'part2Data9', 'part3Data'
         ));
     }
+
+    /**
+     * Fel's demo
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function fel()
+    {
+        $user_info = $this->getUserInfo();
+
+        return view('musics.fel', compact('user_info'));
+    }
 }

@@ -30,8 +30,8 @@ Route::group(['prefix' => 'class', 'middleware' => ['wechat.oauth:snsapi_userinf
 Route::group(['prefix' => 'music', 'middleware' => ['wechat.oauth:snsapi_userinfo']], function() {
     Route::get('candy', 'MusicController@candy');
     Route::get('0512', 'MusicController@symphonyOrchestra');
+    Route::get('fel', 'MusicController@fel');
 });
-
 
 /**
  * English

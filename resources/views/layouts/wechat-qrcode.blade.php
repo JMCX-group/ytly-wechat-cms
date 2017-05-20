@@ -13,14 +13,21 @@
             <div class="row clearfix">
                 <div class="col-xs-1 column"></div>
                 <div class="col-xs-10 column"><hr></div>
+                <div class="col-xs-1 column"></div>
             </div>
             <div class="row clearfix">
-                <div class="col-xs-12 column" style="text-align: center;">
+                <div class="col-xs-1 column"></div>
+                <div class="col-xs-10 column" style="text-align: center;">
                     <p class="text-danger"><strong>关注我们:</strong></p>
                 </div>
+                <div class="col-xs-1 column"></div>
             </div>
-            <div class="col-xs-12 column imgs-class" >
-                <img src="/Wechat.jpg" class="img-rounded" width="188px;"/>
+            <div class="row clearfix">
+                <div class="col-xs-1 column"></div>
+                <div class="col-xs-10 column imgs-class" >
+                    <img src="/Wechat.jpg" class="img-rounded" width="188px;"/>
+                </div>
+                <div class="col-xs-1 column"></div>
             </div>
         </div>
     </div>
