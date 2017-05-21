@@ -10,57 +10,59 @@
 @section("content")
 
 
-    <audio src="/audios/0512/english/故事+鲁颖+0519.mp3" controls="controls" id="audioSrc1"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc2"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc3"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc4"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc5"></audio>
+    <audio src="/audios/0512/english/开场白-鲁颖-0519.mp3" controls="controls" id="audioSrc1"></audio>
+    <audio src="/audios/0512/english/海顿《惊愕》选段+陈美彤+2017.5.19.mp3" controls="controls" id="audioSrc2"></audio>
 
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc6"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc7"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc8"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc9"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc10"></audio>
+    <audio src="/audios/0512/english/交响乐+鲁颖-0519.mp3" controls="controls" id="audioSrc3"></audio>
+    <audio src="/audios/0512/russian/交响乐+齐璘+0519.mp3" controls="controls" id="audioSrc4"></audio>
+    <audio src="/audios/0512/japanese/交响乐+白玲+0519.mp3" controls="controls" id="audioSrc5"></audio>
+    <audio src="/audios/0512/korean/交响乐+陈美彤+0519.mp3" controls="controls" id="audioSrc6"></audio>
 
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc11"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc12"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc13"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc14"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc15"></audio>
+    <audio src="/audios/0512/english/交响乐团+鲁颖+0519.mp3" controls="controls" id="audioSrc7"></audio>
+    <audio src="/audios/0512/russian/交响乐团+齐璘+0519.mp3" controls="controls" id="audioSrc8"></audio>
+    <audio src="/audios/0512/japanese/交响乐团+白玲+0519.mp3" controls="controls" id="audioSrc9"></audio>
+    <audio src="/audios/0512/korean/交响乐团+陈美彤+0519.mp3" controls="controls" id="audioSrc10"></audio>
 
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc16"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc17"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc18"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc19"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc20"></audio>
+    <audio src="/audios/0512/english/弦乐组+鲁颖+0519.mp3" controls="controls" id="audioSrc11"></audio>
+    <audio src="/audios/0512/russian/弦乐组+齐璘+0519.mp3" controls="controls" id="audioSrc12"></audio>
+    <audio src="/audios/0512/japanese/弦乐组+白玲+0519.mp3" controls="controls" id="audioSrc13"></audio>
+    <audio src="/audios/0512/korean/弦乐组+陈美彤+0519.mp3" controls="controls" id="audioSrc14"></audio>
 
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc21"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc22"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc23"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc24"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc25"></audio>
+    <audio src="/audios/0512/english/木管组+鲁颖+0519.mp3" controls="controls" id="audioSrc15"></audio>
+    <audio src="/audios/0512/russian/木管组+齐璘+0519.mp3" controls="controls" id="audioSrc16"></audio>
+    <audio src="/audios/0512/japanese/木管组+白玲+0519.mp3" controls="controls" id="audioSrc17"></audio>
+    <audio src="/audios/0512/korean/木管组+陈美彤+0519.mp3" controls="controls" id="audioSrc18"></audio>
 
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc26"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc27"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc28"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc29"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc30"></audio>
+    <audio src="/audios/0512/english/铜管组+鲁颖+0519.mp3" controls="controls" id="audioSrc19"></audio>
+    <audio src="/audios/0512/russian/铜管组+齐璘+0519.mp3" controls="controls" id="audioSrc20"></audio>
+    <audio src="/audios/0512/japanese/铜管组+白玲+0519.mp3" controls="controls" id="audioSrc21"></audio>
+    <audio src="/audios/0512/korean/铜管组+陈美彤+0519.mp3" controls="controls" id="audioSrc22"></audio>
 
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc31"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc32"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc33"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc34"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc35"></audio>
+    <audio src="/audios/0512/english/打击乐+鲁颖+0519.mp3" controls="controls" id="audioSrc23"></audio>
+    <audio src="/audios/0512/russian/打击乐组+齐璘+0519.mp3" controls="controls" id="audioSrc24"></audio>
+    <audio src="/audios/0512/japanese/打击乐+白玲+0519.mp3" controls="controls" id="audioSrc25"></audio>
+    <audio src="/audios/0512/korean/打击乐组+陈美彤+0519.mp3" controls="controls" id="audioSrc26"></audio>
 
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc36"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc37"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc38"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc39"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc40"></audio>
+    <audio src="/audios/0512/english/指挥+鲁颖+0519.mp3" controls="controls" id="audioSrc27"></audio>
+    <audio src="/audios/0512/russian/指挥+齐璘+0519.mp3" controls="controls" id="audioSrc28"></audio>
+    <audio src="/audios/0512/japanese/指挥+白玲+0519.mp3" controls="controls" id="audioSrc29"></audio>
+    <audio src="/audios/0512/korean/指挥+陈美彤+0519.mp3" controls="controls" id="audioSrc30"></audio>
 
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc41"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc42"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc43"></audio>
+    <audio src="/audios/0512/english/音乐+鲁颖+0519.mp3" controls="controls" id="audioSrc31"></audio>
+    <audio src="/audios/0512/russian/音乐+齐璘+0519.mp3" controls="controls" id="audioSrc32"></audio>
+    <audio src="/audios/0512/japanese/音乐+白玲+0519.mp3" controls="controls" id="audioSrc33"></audio>
+    <audio src="/audios/0512/korean/音乐+陈美彤+0519.mp3" controls="controls" id="audioSrc34"></audio>
+
+    <audio src="/audios/0512/english/音乐会+鲁颖+0519.mp3" controls="controls" id="audioSrc35"></audio>
+    <audio src="/audios/0512/russian/音乐会+齐璘+0519.mp3" controls="controls" id="audioSrc36"></audio>
+    <audio src="/audios/0512/japanese/音乐会+白玲+0519.mp3" controls="controls" id="audioSrc37"></audio>
+    <audio src="/audios/0512/korean/音乐会+陈美彤+0519.mp3" controls="controls" id="audioSrc38"></audio>
+
+    <audio src="/audios/0512/english/你平常喜欢听音乐吗？+鲁颖+0519.mp3" controls="controls" id="audioSrc39"></audio>
+    <audio src="/audios/0512/english/是+鲁颖+0519.mp3" controls="controls" id="audioSrc40"></audio>
+    <audio src="/audios/0512/english/我知道+鲁颖+0519.mp3" controls="controls" id="audioSrc41"></audio>
+    <audio src="/audios/0512/english/哇+鲁颖+0519.mp3" controls="controls" id="audioSrc42"></audio>
+    <audio src="/audios/0512/english/是由+鲁颖+0519.mp3" controls="controls" id="audioSrc43"></audio>
 
 
     <div class="container">
