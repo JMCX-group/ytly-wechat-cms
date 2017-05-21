@@ -10,7 +10,7 @@
 @section("content")
 
 
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc1"></audio>
+    <audio src="/audios/0512/english/故事+鲁颖+0519.mp3" controls="controls" id="audioSrc1"></audio>
     <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc2"></audio>
     <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc3"></audio>
     <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc4"></audio>
