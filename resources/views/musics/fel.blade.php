@@ -8,12 +8,17 @@
 ?>
 @extends("layouts.main-class")
 @section("content")
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc1"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc2"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc3"></audio>
-    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc4"></audio>
+    <audio src="/audios/fel/part-1.mp3" controls="controls" id="audioSrc1"></audio>
+    <audio src="/audios/fel/part-2.mp3" controls="controls" id="audioSrc2"></audio>
+
+    <audio src="/audios/fel/Jessie-Ware.A-Dream-Is-a-Wish-Your-Heart-Makes.mp3" controls="controls" id="audioSrc3"></audio>
+    <audio src="/audios/fel/Lily-James.A-Dream-Is-A-Wish-Your-Heart-Makes.mp3" controls="controls" id="audioSrc4"></audio>
+
     <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc5"></audio>
     <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc6"></audio>
+    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc7"></audio>
+    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc8"></audio>
+    <audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc9"></audio>
 
     <div class="container">
         <div class="row clearfix" style="margin-top: 30px;">
@@ -61,6 +66,27 @@
                 <p><strong class="text-danger" style="color: #dd3bd0">·</strong> 没有请陪练，一周一节课的练习孩子进步太慢怎么办？</p>
             </div>
         </div>
+
+        <div class="row clearfix" style="margin-top: 15px;">
+            <div class="col-xs-1 column"></div>
+            <div class="col-xs-3 column">
+                <img src="/assets/images/class-content/fel/fu.png" class="img-avatar img-rounded" style="width: 75px; height: 75px;"/>
+            </div>
+            <div class="col-xs-7 column" style="top: 25px;">
+                <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
+                <div class="row clearfix img-rounded audio_play_cell" data-target="{{'#audioSrc1'}}">
+                    <div class="col-xs-1 column">
+                        <span class="icon_audio_bkg"></span>
+                        <span class="icon_audio_playing"></span>
+                    </div>
+                    <div class="col-xs-8 column text-left ">
+                        <span class="audio_seconds"></span>
+                    </div>
+                </div>
+                <!-- why end: 这一段是播放器的 -->
+            </div>
+        </div>
+
         <div class="row clearfix">
             <div class="col-xs-1 column"></div>
             <div class="col-xs-8 column" style="top:50px;">
@@ -80,6 +106,27 @@
                 </p>
             </div>
         </div>
+
+        <div class="row clearfix" style="margin-top: 15px;">
+            <div class="col-xs-1 column"></div>
+            <div class="col-xs-3 column">
+                <img src="/assets/images/class-content/fel/fu.png" class="img-avatar img-rounded" style="width: 75px; height: 75px;"/>
+            </div>
+            <div class="col-xs-7 column" style="top: 25px;">
+                <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
+                <div class="row clearfix img-rounded audio_play_cell" data-target="{{'#audioSrc2'}}">
+                    <div class="col-xs-1 column">
+                        <span class="icon_audio_bkg"></span>
+                        <span class="icon_audio_playing"></span>
+                    </div>
+                    <div class="col-xs-8 column text-left ">
+                        <span class="audio_seconds"></span>
+                    </div>
+                </div>
+                <!-- why end: 这一段是播放器的 -->
+            </div>
+        </div>
+
         <div class="row clearfix" style="margin-top: 15px; text-align: center;">
             <div class="col-xs-12 column">
                 <p style="color: yellow; font-size: 20px; text-shadow: 2px 2px 0 orange;">{ A dream is a wish your heart makes }</p>
@@ -101,14 +148,47 @@
                 </p>
             </div>
         </div>
+
         <div class="row clearfix" style="margin-top: 15px;">
+            <div class="col-xs-1 column"></div>
+            <div class="col-xs-10 column">
+                <p>Jessie Ware：</p>
+            </div>
+        </div>
+        <div class="row clearfix">
             <div class="col-xs-1 column"></div>
             <div class="col-xs-2 column">
                 <img src="/assets/images/audio-avatar/avatar-fel.png" class="img-avatar img-rounded"/>
             </div>
             <div class="col-xs-7 column">
                 <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
-                <div class="row clearfix img-rounded audio_play_cell" data-target="{{'#audioSrc1'}}">
+                <div class="row clearfix img-rounded audio_play_cell" data-target="{{'#audioSrc3'}}">
+                    <div class="col-xs-1 column">
+                        <span class="icon_audio_bkg"></span>
+                        <span class="icon_audio_playing"></span>
+                    </div>
+                    <div class="col-xs-8 column text-left ">
+                        <span class="audio_seconds"></span>
+                    </div>
+                </div>
+                <!-- why end: 这一段是播放器的 -->
+            </div>
+        </div>
+
+        <div class="row clearfix" style="margin-top: 15px;">
+            <div class="col-xs-1 column"></div>
+            <div class="col-xs-10 column">
+                <p>Lily James：</p>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-xs-1 column"></div>
+            <div class="col-xs-2 column">
+                <img src="/assets/images/audio-avatar/avatar-fel.png" class="img-avatar img-rounded"/>
+            </div>
+            <div class="col-xs-7 column">
+                <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
+                <div class="row clearfix img-rounded audio_play_cell" data-target="{{'#audioSrc4'}}">
                     <div class="col-xs-1 column">
                         <span class="icon_audio_bkg"></span>
                         <span class="icon_audio_playing"></span>
@@ -273,7 +353,7 @@
             </div>
             <div class="col-xs-7 column" style="top: 25px;">
                 <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
-                <div class="row clearfix img-rounded audio_play_cell" data-target="{{'#audioSrc2'}}">
+                <div class="row clearfix img-rounded audio_play_cell" data-target="{{'#audioSrc5'}}">
                     <div class="col-xs-1 column">
                         <span class="icon_audio_bkg"></span>
                         <span class="icon_audio_playing"></span>
@@ -308,7 +388,7 @@
             </div>
             <div class="col-xs-7 column" style="top: 25px;">
                 <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
-                <div class="row clearfix img-rounded audio_play_cell" data-target="{{'#audioSrc3'}}">
+                <div class="row clearfix img-rounded audio_play_cell" data-target="{{'#audioSrc6'}}">
                     <div class="col-xs-1 column">
                         <span class="icon_audio_bkg"></span>
                         <span class="icon_audio_playing"></span>
@@ -336,7 +416,7 @@
             </div>
             <div class="col-xs-7 column" style="top: 25px;">
                 <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
-                <div class="row clearfix img-rounded audio_play_cell" data-target="{{'#audioSrc4'}}">
+                <div class="row clearfix img-rounded audio_play_cell" data-target="{{'#audioSrc7'}}">
                     <div class="col-xs-1 column">
                         <span class="icon_audio_bkg"></span>
                         <span class="icon_audio_playing"></span>
@@ -364,7 +444,7 @@
             </div>
             <div class="col-xs-7 column" style="top: 25px;">
                 <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
-                <div class="row clearfix img-rounded audio_play_cell" data-target="{{'#audioSrc5'}}">
+                <div class="row clearfix img-rounded audio_play_cell" data-target="{{'#audioSrc8'}}">
                     <div class="col-xs-1 column">
                         <span class="icon_audio_bkg"></span>
                         <span class="icon_audio_playing"></span>
@@ -392,7 +472,7 @@
             </div>
             <div class="col-xs-7 column" style="top: 25px;">
                 <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
-                <div class="row clearfix img-rounded audio_play_cell" data-target="{{'#audioSrc6'}}">
+                <div class="row clearfix img-rounded audio_play_cell" data-target="{{'#audioSrc9'}}">
                     <div class="col-xs-1 column">
                         <span class="icon_audio_bkg"></span>
                         <span class="icon_audio_playing"></span>
