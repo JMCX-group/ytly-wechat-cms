@@ -107,26 +107,6 @@
             </div>
         </div>
 
-        <div class="row clearfix" style="margin-top: 15px;">
-            <div class="col-xs-1 column"></div>
-            <div class="col-xs-3 column">
-                <img src="/assets/images/class-content/fel/fu.png" class="img-avatar img-rounded" style="width: 75px; height: 75px;"/>
-            </div>
-            <div class="col-xs-7 column" style="top: 25px;">
-                <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
-                <div class="row clearfix img-rounded audio_play_cell" data-target="{{'#audioSrc2'}}">
-                    <div class="col-xs-1 column">
-                        <span class="icon_audio_bkg"></span>
-                        <span class="icon_audio_playing"></span>
-                    </div>
-                    <div class="col-xs-8 column text-left ">
-                        <span class="audio_seconds"></span>
-                    </div>
-                </div>
-                <!-- why end: 这一段是播放器的 -->
-            </div>
-        </div>
-
         <div class="row clearfix" style="margin-top: 15px; text-align: center;">
             <div class="col-xs-12 column">
                 <p style="color: yellow; font-size: 20px; text-shadow: 2px 2px 0 orange;">{ A dream is a wish your heart makes }</p>
@@ -146,6 +126,26 @@
                         相信你也一定希望自己的孩子能够拥有这样的品格吧，现在就让我们来听一下电影中的原声重现吧。
                     </span>
                 </p>
+            </div>
+        </div>
+
+        <div class="row clearfix" style="margin-top: 15px;">
+            <div class="col-xs-1 column"></div>
+            <div class="col-xs-3 column">
+                <img src="/assets/images/class-content/fel/fu.png" class="img-avatar img-rounded" style="width: 75px; height: 75px;"/>
+            </div>
+            <div class="col-xs-7 column" style="top: 25px;">
+                <!-- why begin: 这一段是播放器的class什么的不用管，主要是那个data-target，里面是 #+要播放的audio标签的id -->
+                <div class="row clearfix img-rounded audio_play_cell" data-target="{{'#audioSrc2'}}">
+                    <div class="col-xs-1 column">
+                        <span class="icon_audio_bkg"></span>
+                        <span class="icon_audio_playing"></span>
+                    </div>
+                    <div class="col-xs-8 column text-left ">
+                        <span class="audio_seconds"></span>
+                    </div>
+                </div>
+                <!-- why end: 这一段是播放器的 -->
             </div>
         </div>
 
