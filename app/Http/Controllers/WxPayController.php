@@ -24,8 +24,8 @@ class WxPayController extends Controller
             $body = '报名定金';
             $detail = '报名定金';
             $tradeNo = date('YmdHis') . substr($openId, strlen($openId) - 4);
-//            $totalFee = '48000';
-            $totalFee = '1';
+            $totalFee = '48000';
+//            $totalFee = '1';
 
             /**
              * 订单入库
