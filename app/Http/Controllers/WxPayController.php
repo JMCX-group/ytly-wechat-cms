@@ -27,7 +27,7 @@ class WxPayController extends Controller
             $openId = $notify->openid;
             $productId = $notify->product_id;
             if($productId == '20170525'){
-                $prepayId = EasyWeChat::newNativeOrder('', $openId, $productId);
+                $prepayId = EasyWeChat::newNativeOrder('201705252105', $openId, $productId);
                 Log::info('payNotifyUrl-order', ['context' => $prepayId]);
             }
 
