@@ -17,6 +17,7 @@ class WxOrder extends Model
         'type',
         'time_start',
         'time_expire',
+        'ret_native_notify',
         'ret_notify',
         'status'
     ];
