@@ -104,3 +104,14 @@ Route::group(['namespace' => 'Business', 'middleware' => ['auth','Entrust']], fu
      */
     Route::resource('credit', 'CreditController');
 });
+
+/**
+ * WeChat Notify Url
+ */
+Route::group(['prefix' => 'pay'], function () {
+    Route::get('notify_url', 'WxPayController@notifyUrl');
+    Route::post('notify_url', 'WxPayController@notifyUrl');
+
+    Route::get('get_sign', 'WxPayController@getSign');
+    Route::get('get_qrcode', 'WxPayController@getQrCode');
+});

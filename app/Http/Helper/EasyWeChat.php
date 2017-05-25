@@ -9,6 +9,7 @@
 namespace App\Http\Helper;
 
 use EasyWeChat\Foundation\Application;
+use EasyWeChat\Payment\Order;
 use Illuminate\Support\Facades\Log;
 
 /**
@@ -19,10 +20,16 @@ use Illuminate\Support\Facades\Log;
  */
 class EasyWeChat
 {
+    /**
+     * 获取基础参数
+     *
+     * @return array
+     */
     public static function getOptions()
     {
         return [
             'debug' => true,
+
             'app_id' => env('WECHAT_APPID'), // AppID
             'secret' => env('WECHAT_SECRET'), // AppSecret
             'token' => env('WECHAT_TOKEN') // Token
@@ -33,6 +40,37 @@ class EasyWeChat
 //        'file'  => '/tmp/easywechat.log', // XXX: 绝对路径！！！！
 //    ],
             //...
+        ];
+    }
+
+    /**
+     * 获取微信支付参数
+     *
+     * @return array
+     */
+    public static function getPayOptions()
+    {
+        return [
+            'debug' => true,
+
+            'app_id' => env('WECHAT_APPID'), // AppID
+            'secret' => env('WECHAT_SECRET'), // AppSecret
+            'token' => env('WECHAT_TOKEN'), // Token
+
+            /**
+             * payment
+             */
+            'payment' => [
+                'merchant_id' => env('WECHAT_MCH_ID'),
+                'key' => env('WECHAT_API_KEY'),
+                'cert_path' => env('WECHAT_CERT_PATH'),
+                'key_path' => env('WECHAT_KEY_PATH'),
+                'notify_url' => env('WECHAT_NOTIFY_URL'), // 你也可以在下单时单独设置来想覆盖它
+                // 'device_info'     => '013467007045764',
+                // 'sub_app_id'      => '',
+                // 'sub_merchant_id' => '',
+                // ...
+            ],
         ];
     }
 
@@ -82,5 +120,31 @@ class EasyWeChat
         $usersArr = json_decode($usersStr, true);
 
         return $usersArr;
+    }
+
+    /**
+     * 新建订单
+     */
+    public static function newOrder()
+    {
+        $app = new Application(self::getPayOptions());
+        $payment = $app->payment;
+
+        $attributes = [
+            'trade_type' => 'JSAPI', // JSAPI，NATIVE，APP...
+            'body' => 'iPad mini 16G 白色',
+            'detail' => 'iPad mini 16G 白色',
+            'out_trade_no' => '1217752501201407033233368018',
+            'total_fee' => 5388, // 单位：分
+//            'notify_url' => 'http://xxx.com/order-notify', // 支付结果通知网址，如果不设置则会使用配置里的默认地址
+            'openid' => '当前用户的 openid', // trade_type=JSAPI，此参数必传，用户在商户appid下的唯一标识，
+            // ...
+        ];
+
+        $order = new Order($attributes);
+        $result = $payment->prepare($order);
+        if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS') {
+            $prepayId = $result->prepay_id;
+        }
     }
 }
