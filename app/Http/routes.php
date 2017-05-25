@@ -113,8 +113,6 @@ $api->version('v1', function ($api) {
     $api->group(['namespace' => 'App\Http\Controllers'], function ($api) {
         $api->group(['prefix' => 'pay'], function ($api) {
             $api->post('pay_notify_url', 'WxPayController@payNotifyUrl');
-
-            $api->get('notify_url', 'WxPayController@notifyUrl');
             $api->post('notify_url', 'WxPayController@notifyUrl');
         });
     });

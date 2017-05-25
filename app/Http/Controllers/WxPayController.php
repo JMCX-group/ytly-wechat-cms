@@ -38,7 +38,7 @@ class WxPayController extends Controller
                 'detail' => $detail,
                 'type' => '',
                 'time_start' => date('Y-m-d H:i:s'),
-                'ret_notify' => json_encode($notify),
+                'ret_native_notify' => json_encode($notify),
                 'status' => 'start' //start:开始; end:结束
             ];
             WxOrder::create($newOrder);
@@ -56,9 +56,9 @@ class WxPayController extends Controller
     {
         $app = new Application(EasyWeChat::getPayOptions());
         $response = $app->payment->handleNotify(function ($notify, $successful) {
-            Log::info('notifyUrl', ['context' => json_encode($notify), 'status' => $successful]);
+            Log::info('notifyUrl', ['notify' => json_encode($notify), 'status' => $successful]);
 
-            $wxOrder = WxOrder::where('out_trade_no', $notify->out_trade_no);
+            $wxOrder = WxOrder::where('out_trade_no', $notify->out_trade_no)->first();
             if (!$wxOrder) { // 如果订单不存在
                 return 'Order not exist.'; // 告诉微信，我已经处理完了，订单没找到，别再通知我了
             }
@@ -71,6 +71,7 @@ class WxPayController extends Controller
             if ($successful) {
                 // 不是已经支付状态则修改为已经支付状态
                 $wxOrder->time_expire = time(); // 更新支付时间为当前时间
+                $wxOrder->ret_notify = json_encode($notify);
                 $wxOrder->status = 'paid';
             } else { // 用户支付失败
                 $wxOrder->status = 'paid_fail';
