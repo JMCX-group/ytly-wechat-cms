@@ -21,16 +21,13 @@ class WxPayController extends Controller
          * "status":false}
          */
         $app = new Application(EasyWeChat::getPayOptions());
-        $response = $app->payment->handleScanNotify(function ($notify) {
+        $response = $app->payment->handleScanNotify(function ($productId, $openId, $notify) {
             Log::info('payNotifyUrl', ['context' => json_encode($notify)]);
 
-            $openId = $notify->openid;
-            $productId = $notify->product_id;
-//            if($productId == '20170525'){
             $prepayId = EasyWeChat::newNativeOrder('201705252105', $openId, $productId);
                 Log::info('payNotifyUrl-order', ['context' => $prepayId]);
 
-                return true;
+                return $prepayId;
 //            } else {
 //                return false;
 //            }
