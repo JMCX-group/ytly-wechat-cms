@@ -14,6 +14,7 @@ class WxPayController extends Controller
      */
     public function payNotifyUrl()
     {
+        Log::info('test', ['context' => time()]);
         $wxData = (array)simplexml_load_string(file_get_contents('php://input'), 'SimpleXMLElement', LIBXML_NOCDATA);
         Log::info('wechat-notify', ['context' => json_encode($wxData)]);
         if ($wxData['return_code'] == 'SUCCESS' && $wxData['result_code'] == 'SUCCESS') {
