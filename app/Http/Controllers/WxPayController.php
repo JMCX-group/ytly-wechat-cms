@@ -14,18 +14,17 @@ class WxPayController extends Controller
      */
     public function payNotifyUrl()
     {
-        Log::info('test', ['context' => time()]);
         $wxData = (array)simplexml_load_string(file_get_contents('php://input'), 'SimpleXMLElement', LIBXML_NOCDATA);
         Log::info('wechat-notify', ['context' => json_encode($wxData)]);
-        if ($wxData['return_code'] == 'SUCCESS' && $wxData['result_code'] == 'SUCCESS') {
+//        if ($wxData['return_code'] == 'SUCCESS' && $wxData['result_code'] == 'SUCCESS') {
 //            echo 'SUCCESS';
-        } else {
+//        } else {
 //            echo 'FAIL';
-        }
+//        }
 
-//        $app = new Application(EasyWeChat::getPayOptions());
-//        $response = $app->payment->handleNotify(function ($notify, $successful) {
-//            Log::info('wechat-notify-easy', ['context' => json_encode($notify), 'status' => $successful]);
+        $app = new Application(EasyWeChat::getPayOptions());
+        $response = $app->payment->handleNotify(function ($notify, $successful) {
+            Log::info('wechat-notify-easy', ['context' => json_encode($notify), 'status' => $successful]);
 
 //            // 使用通知里的 "微信支付订单号" 或者 "商户订单号" 去自己的数据库找到订单
 //            $order = 查询订单($notify->out_trade_no);
@@ -47,7 +46,7 @@ class WxPayController extends Controller
 //            }
 //            $order->save(); // 保存订单
 //            return true; // 返回处理完成
-//        });
+        });
 //
 //        return $response;
     }
