@@ -21,7 +21,7 @@ class WxPayController extends Controller
          * "status":false}
          */
         $app = new Application(EasyWeChat::getPayOptions());
-        $response = $app->payment->handleNotify(function ($notify, $successful) {
+        $response = $app->payment->handleScanNotify(function ($notify, $successful) {
             Log::info('payNotifyUrl', ['context' => json_encode($notify), 'status' => $successful]);
 
             $openId = $notify->openid;
@@ -30,24 +30,6 @@ class WxPayController extends Controller
                 $prepayId = EasyWeChat::newNativeOrder('201705252105', $openId, $productId);
                 Log::info('payNotifyUrl-order', ['context' => $prepayId]);
 
-                /**
-                 * 参数组:
-                 */
-                $response['return_code'] = 'SUCCESS';
-                $response['appid'] = env('WECHAT_APPID'); // AppID
-                $response['mch_id'] = env('WECHAT_MCH_ID');
-                $response['nonce_str'] = $notify->nonce_str;
-                $response['prepay_id'] = $prepayId;
-                $response['result_code'] = 'SUCCESS';
-//                $data['sign'] = $this->wxMd5Sign($data);
-//                $dataXml = $this->wxArrayToXml($data);
-//
-//                $this->SetData("appid", $result["appid"]);
-//                $this->SetData("mch_id", $result["mch_id"]);
-//                $this->SetData("nonce_str", WxPayApi::getNonceStr());
-//                $this->SetData("prepay_id", $result["prepay_id"]);
-//                $this->SetData("result_code", "SUCCESS");
-//                $this->SetData("err_code_des", "OK");
                 return true;
             } else {
                 return false;
