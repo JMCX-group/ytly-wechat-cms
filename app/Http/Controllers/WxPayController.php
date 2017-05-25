@@ -21,8 +21,8 @@ class WxPayController extends Controller
          * "status":false}
          */
         $app = new Application(EasyWeChat::getPayOptions());
-        $response = $app->payment->handleScanNotify(function ($notify, $successful) {
-            Log::info('payNotifyUrl', ['context' => json_encode($notify), 'status' => $successful]);
+        $response = $app->payment->handleScanNotify(function ($notify) {
+            Log::info('payNotifyUrl', ['context' => json_encode($notify)]);
 
             $openId = $notify->openid;
             $productId = $notify->product_id;
