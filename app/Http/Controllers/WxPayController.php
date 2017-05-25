@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Helper\EasyWeChat;
+use App\WxOrder;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Support\Facades\Log;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
@@ -11,28 +12,39 @@ class WxPayController extends Controller
 {
     /**
      * 微信扫码支付回調函數
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function payNotifyUrl()
     {
-        /**
-         *  {"context":"{\"appid\":\"wxb6601e3420e7a2de\",\"openid\":\"oHxwawt65VMvCr6uG1Rx9zpfPcPg\",
- * \"mch_id\":\"1471053502\",\"is_subscribe\":\"Y\",\"nonce_str\":\"B73KzKl5DCcfQXQP\",
- * \"product_id\":\"20170525\",\"sign\":\"7CD249BC8FC8330963181E386E5830C2\"}",
-         * "status":false}
-         */
         $app = new Application(EasyWeChat::getPayOptions());
         $response = $app->payment->handleScanNotify(function ($productId, $openId, $notify) {
-            Log::info('payNotifyUrl', ['context' => json_encode($notify)]);
+//            Log::info('payNotifyUrl', ['notify' => json_encode($notify)]);
 
-            $prepayId = EasyWeChat::newNativeOrder('201705252105', $openId, $productId);
-                Log::info('payNotifyUrl-order', ['context' => $prepayId]);
+            $body = '报名定金';
+            $detail = '报名定金';
+            $tradeNo = '201705252105';
+            $totalFee = '48000';
 
-                return $prepayId;
-//            } else {
-//                return false;
-//            }
+            /**
+             * 订单入库
+             */
+            $newOrder = [
+                'open_id' => $openId,
+                'out_trade_no' => $tradeNo,
+                'total_fee' => $totalFee,
+                'body' => $body,
+                'detail' => $detail,
+                'type' => '',
+                'time_start' => date('Y-m-d H:i:s'),
+                'ret_notify' => json_encode($notify),
+                'status' => 'start' //start:开始; end:结束
+            ];
+            WxOrder::create($newOrder);
+
+            return EasyWeChat::newNativeOrder($body, $detail, $tradeNo, $totalFee, $openId, $productId);
         });
-        Log::info('response', ['context' => $response]);
+//        Log::info('payNotifyUrl', ['response' => $response]);
         return $response;
     }
 

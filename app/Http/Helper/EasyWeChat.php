@@ -151,35 +151,34 @@ class EasyWeChat
     /**
      * 新建扫码订单
      *
+     * @param $body
+     * @param $detail
      * @param $tradeNo
+     * @param $totalFee
      * @param $openId
      * @param $productId
      * @return bool|mixed
      */
-    public static function newNativeOrder($tradeNo, $openId, $productId)
+    public static function newNativeOrder($body, $detail, $tradeNo, $totalFee, $openId, $productId)
     {
         $app = new Application(self::getPayOptions());
         $payment = $app->payment;
 
         $attributes = [
             'trade_type' => 'NATIVE',
-            'body' => '报名定金',
-            'detail' => '报名定金',
+            'body' => $body,
+            'detail' => $detail,
             'out_trade_no' => $tradeNo,
-            'total_fee' => 48000, // 单位：分
-//            'notify_url' => 'http://xxx.com/order-notify', // 支付结果通知网址，如果不设置则会使用配置里的默认地址
+            'total_fee' => $totalFee, // 单位：分
             'openid' => $openId, // trade_type=JSAPI，此参数必传，用户在商户appid下的唯一标识，
-            'product_id' => $productId, // trade_type=JSAPI，此参数必传，用户在商户appid下的唯一标识，
-            // ...
+            'product_id' => $productId
         ];
 
         $order = new Order($attributes);
-        Log::info('newNativeOrder-order', ['context' => json_encode($order)]);
+//        Log::info('newNativeOrder', ['order' => json_encode($order)]);
         $result = $payment->prepare($order);
         if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS') {
-            $prepayId = $result->prepay_id;
-
-            return $prepayId;
+            return $result->prepay_id;
         } else {
             return false;
         }
