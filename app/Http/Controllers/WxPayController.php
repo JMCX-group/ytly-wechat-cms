@@ -70,7 +70,7 @@ class WxPayController extends Controller
             // 用户是否支付成功
             if ($successful) {
                 // 不是已经支付状态则修改为已经支付状态
-                $wxOrder->time_expire = time(); // 更新支付时间为当前时间
+                $wxOrder->time_expire = date('Y-m-d H:i:s'); // 更新支付时间为当前时间
                 $wxOrder->ret_notify = json_encode($notify);
                 $wxOrder->status = 'paid';
             } else { // 用户支付失败
