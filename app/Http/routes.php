@@ -109,6 +109,9 @@ Route::group(['namespace' => 'Business', 'middleware' => ['auth','Entrust']], fu
  * WeChat Notify Url
  */
 Route::group(['prefix' => 'pay'], function () {
+    Route::get('pay_notify_url', 'WxPayController@payNotifyUrl');
+    Route::post('pay_notify_url', 'WxPayController@payNotifyUrl');
+
     Route::get('notify_url', 'WxPayController@notifyUrl');
     Route::post('notify_url', 'WxPayController@notifyUrl');
 
