@@ -147,4 +147,40 @@ class EasyWeChat
             $prepayId = $result->prepay_id;
         }
     }
+
+    /**
+     * 新建扫码订单
+     *
+     * @param $tradeNo
+     * @param $openId
+     * @param $productId
+     * @return bool|mixed
+     */
+    public static function newNativeOrder($tradeNo, $openId, $productId)
+    {
+        $app = new Application(self::getPayOptions());
+        $payment = $app->payment;
+
+        $attributes = [
+            'trade_type' => 'NATIVE',
+            'body' => '报名定金',
+            'detail' => '报名定金',
+            'out_trade_no' => $tradeNo,
+            'total_fee' => 48000, // 单位：分
+//            'notify_url' => 'http://xxx.com/order-notify', // 支付结果通知网址，如果不设置则会使用配置里的默认地址
+            'openid' => $openId, // trade_type=JSAPI，此参数必传，用户在商户appid下的唯一标识，
+            'product_id' => $productId, // trade_type=JSAPI，此参数必传，用户在商户appid下的唯一标识，
+            // ...
+        ];
+
+        $order = new Order($attributes);
+        $result = $payment->prepare($order);
+        if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS') {
+            $prepayId = $result->prepay_id;
+
+            return $prepayId;
+        } else {
+            return false;
+        }
+    }
 }
