@@ -33,18 +33,24 @@ class WxPayController extends Controller
                 /**
                  * 参数组:
                  */
-                $data = array(
-                    'return_code' => 'SUCCESS',
-                    'appid' => env('WECHAT_APPID'), // AppID
-                    'mch_id' => env('WECHAT_MCH_ID'),
-                    'nonce_str' => $notify->nonce_str,
-                    'prepay_id' => $prepayId,
-                    'result_code' => 'SUCCESS',
-                );
-                $data['sign'] = $this->wxMd5Sign($data);
-                $dataXml = $this->wxArrayToXml($data);
-
-                echo $dataXml; // 返回处理完成
+                $response['return_code'] = 'SUCCESS';
+                $response['appid'] = env('WECHAT_APPID'); // AppID
+                $response['mch_id'] = env('WECHAT_MCH_ID');
+                $response['nonce_str'] = $notify->nonce_str;
+                $response['prepay_id'] = $prepayId;
+                $response['result_code'] = 'SUCCESS';
+//                $data['sign'] = $this->wxMd5Sign($data);
+//                $dataXml = $this->wxArrayToXml($data);
+//
+//                $this->SetData("appid", $result["appid"]);
+//                $this->SetData("mch_id", $result["mch_id"]);
+//                $this->SetData("nonce_str", WxPayApi::getNonceStr());
+//                $this->SetData("prepay_id", $result["prepay_id"]);
+//                $this->SetData("result_code", "SUCCESS");
+//                $this->SetData("err_code_des", "OK");
+                return true;
+            } else {
+                return false;
             }
         });
 
