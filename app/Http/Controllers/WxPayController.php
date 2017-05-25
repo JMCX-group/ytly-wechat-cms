@@ -43,12 +43,11 @@ class WxPayController extends Controller
                 );
                 $data['sign'] = $this->wxMd5Sign($data);
                 $dataXml = $this->wxArrayToXml($data);
+
+                echo $dataXml; // 返回处理完成
             }
-
-
-            return $dataXml; // 返回处理完成
         });
-//
+
         return $response;
     }
 
