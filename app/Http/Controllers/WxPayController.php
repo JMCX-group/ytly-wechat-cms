@@ -60,11 +60,11 @@ class WxPayController extends Controller
         Log::info('test', ['context' => time()]);
         $wxData = (array)simplexml_load_string(file_get_contents('php://input'), 'SimpleXMLElement', LIBXML_NOCDATA);
         Log::info('wechat-notify', ['context' => json_encode($wxData)]);
-        if ($wxData['return_code'] == 'SUCCESS' && $wxData['result_code'] == 'SUCCESS') {
-            echo 'SUCCESS';
-        } else {
-            echo 'FAIL';
-        }
+//        if ($wxData['return_code'] == 'SUCCESS' && $wxData['result_code'] == 'SUCCESS') {
+//            echo 'SUCCESS';
+//        } else {
+//            echo 'FAIL';
+//        }
 
         $app = new Application(EasyWeChat::getPayOptions());
         $response = $app->payment->handleNotify(function ($notify, $successful) {
