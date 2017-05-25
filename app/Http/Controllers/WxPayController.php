@@ -21,10 +21,10 @@ class WxPayController extends Controller
         $response = $app->payment->handleScanNotify(function ($productId, $openId, $notify) {
 //            Log::info('payNotifyUrl', ['notify' => json_encode($notify)]);
 
-            $body = '报名定金';
-            $detail = '报名定金';
+            $body = '课程费用';
+            $detail = '课程费用';
             $tradeNo = date('YmdHis') . substr($openId, strlen($openId) - 4);
-            $totalFee = '48000';
+            $totalFee = '32800';
 //            $totalFee = '1';
 
             /**
