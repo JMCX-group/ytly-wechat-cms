@@ -53,7 +53,7 @@ class WxPayController extends Controller
                 return false;
             }
         });
-
+        Log::info('response', ['context' => $response]);
         return $response;
     }
 
