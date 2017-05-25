@@ -165,6 +165,8 @@ return [
         Overtrue\LaravelWechat\ServiceProvider::class,
 
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
+
+        Dingo\Api\Provider\LaravelServiceProvider::class,
     ],
 
     /*

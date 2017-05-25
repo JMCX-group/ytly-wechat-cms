@@ -108,12 +108,21 @@ Route::group(['namespace' => 'Business', 'middleware' => ['auth','Entrust']], fu
 /**
  * WeChat Notify Url
  */
+$api = app('Dingo\Api\Routing\Router');
+$api->version('v1', function ($api) {
+    $api->group(['namespace' => 'App\Api\Controllers'], function ($api) {
+        $api->group(['prefix' => 'pay'], function ($api) {
+            $api->post('pay_notify_url', 'WxPayController@payNotifyUrl');
+
+            $api->get('notify_url', 'WxPayController@notifyUrl');
+            $api->post('notify_url', 'WxPayController@notifyUrl');
+
+            $api->post('order_query', 'PayController@wxPayOrderQuery');
+        });
+    });
+});
+
 Route::group(['prefix' => 'pay'], function () {
-    Route::post('pay_notify_url', 'WxPayController@payNotifyUrl');
-
-    Route::get('notify_url', 'WxPayController@notifyUrl');
-    Route::post('notify_url', 'WxPayController@notifyUrl');
-
     Route::get('get_sign', 'WxPayController@getSign');
     Route::get('get_qrcode', 'WxPayController@getQrCode');
 });
