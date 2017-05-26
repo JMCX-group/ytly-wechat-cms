@@ -46,15 +46,15 @@
                     @if(isset($user_info))
                     <div class="form-group">
                         <div class="col-xs-1 column"></div>
-                        <div class="col-xs-3 column" style="text-align: right; padding-right: 15px;">
-                            <img src="{{$user_info['user_avatar']}}" class="img-avatar img-rounded"/>
+                        <div class="col-xs-3 column" style="text-align: right;">
+                            <img src="{{$user_info['user_avatar']}}" class="img-avatar img-rounded" style="margin-right: 15px;"/>
                         </div>
                         <div class="col-xs-7 column" style="margin-left: -15px; top:11px;">
                             <label for="nickname" class="control-label">{{$user_info['user_name']}}</label>
                         </div>
                         <div class="col-xs-1 column"></div>
                     </div>
-                    @endif
+                    {{--@endif--}}
                     <div class="form-group">
                         <div class="col-xs-1 column"></div>
                         <div class="col-xs-3 column" style="text-align: right; top: 8px;">
