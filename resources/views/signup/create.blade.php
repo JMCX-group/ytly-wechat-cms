@@ -46,7 +46,7 @@
                     @if(isset($user_info))
                     <div class="form-group">
                         <div class="col-xs-1 column"></div>
-                        <div class="col-xs-3 column" style="text-align: right; top: 8px;">
+                        <div class="col-xs-3 column" style="text-align: right;">
                             <img src="{{$user_info['user_avatar']}}" class="img-avatar img-rounded"/>
                         </div>
                         <div class="col-xs-7 column" style="margin-left: -15px;">
