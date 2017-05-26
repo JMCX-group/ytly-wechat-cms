@@ -108,7 +108,7 @@
                         <div class="col-xs-7 column" style="margin-left: -15px;">
                             <div class="radio">
                                 <label>
-                                    @if(isset($signUpInfo) && $signUpInfo['class-time']=='am')
+                                    @if(isset($signUpInfo) && $signUpInfo['class_time']=='am')
                                         <input type="radio" name="class-time" id="class-time1" value="am" checked>09:30 - 12:00
                                     @else
                                         <input type="radio" name="class-time" id="class-time1" value="am">09:30 - 12:00
@@ -117,7 +117,7 @@
                             </div>
                             <div class="radio">
                                 <label>
-                                    @if(isset($signUpInfo) && $signUpInfo['class-time']=='pm')
+                                    @if(isset($signUpInfo) && $signUpInfo['class_time']=='pm')
                                         <input type="radio" name="class-time" id="class-time2" value="pm" checked>14:00 - 16:00
                                     @else
                                         <input type="radio" name="class-time" id="class-time2" value="pm">14:00 - 16:00
