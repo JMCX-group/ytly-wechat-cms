@@ -9,7 +9,7 @@ class WxSignUp extends Model
     protected $table = "wx_sign_up";
 
     protected $fillable = [
-        'open_id',
+        'openid',
         'name',
         'phone',
         'age',
