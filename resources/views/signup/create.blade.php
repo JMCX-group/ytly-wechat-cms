@@ -64,7 +64,7 @@
                             @if(isset($signUpInfo))
                                 <input type="text" class="form-control" id="name" name="name" disabled="disabled" value="{{$signUpInfo['name']}}">
                             @else
-                                <input type="text" class="form-control" id="name" name="name" placeholder="您的姓名" value="">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="请填写您的真实姓名" value="">
                                 @include('layouts.message.tips',['field'=>'name'])
                             @endif
                         </div>
@@ -79,7 +79,7 @@
                             @if(isset($signUpInfo))
                                 <input type="text" class="form-control" id="phone" name="phone" disabled="disabled" value="{{$signUpInfo['phone']}}">
                             @else
-                                <input type="text" class="form-control" id="phone" name="phone" placeholder="您的手机号码" value="">
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="请填写您的手机号码" value="">
                                 @include('layouts.message.tips',['field'=>'phone'])
                             @endif
                         </div>
@@ -94,7 +94,7 @@
                             @if(isset($signUpInfo))
                                 <input type="text" class="form-control" id="age" name="age" disabled="disabled" value="{{$signUpInfo['age']}}">
                             @else
-                                <input type="text" class="form-control" id="age" name="age" placeholder="您孩子的年龄" value="">
+                                <input type="text" class="form-control" id="age" name="age" placeholder="请填写您孩子的年龄" value="">
                                 @include('layouts.message.tips',['field'=>'age'])
                             @endif
                         </div>
