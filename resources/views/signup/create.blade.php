@@ -61,8 +61,12 @@
                             <label for="name" class="control-label">姓名：</label>
                         </div>
                         <div class="col-xs-7 column" style="margin-left: -15px;">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="您的姓名" value="">
-                            @include('layouts.message.tips',['field'=>'name'])
+                            @if(isset($signUpInfo))
+                                <label for="name" class="control-label">{{$signUpInfo['name']}}</label>
+                                @elseif
+                                <input type="text" class="form-control" id="name" name="name" placeholder="您的姓名" value="">
+                                @include('layouts.message.tips',['field'=>'name'])
+                            @endif
                         </div>
                         <div class="col-xs-1 column"></div>
                     </div>
@@ -132,6 +136,7 @@
                     <div class="col-xs-10 column"><hr></div>
                     <div class="col-xs-1 column"></div>
                 </div>
+                @if(!isset($signUpInfo))
                 <div class="row clearfix">
                     <div class="col-xs-1 column"></div>
                     <div class="col-xs-10 column" style="text-align: center;">
@@ -146,6 +151,7 @@
                     </div>
                     <div class="col-xs-1 column"></div>
                 </div>
+                @endif
             </div>
         </div>
     </div>
