@@ -106,24 +106,29 @@
                             <label for="class-time" class="control-label">上课时间：</label>
                         </div>
                         <div class="col-xs-7 column" style="margin-left: -15px;">
-                            <div class="radio">
-                                <label>
-                                    @if(isset($signUpInfo) && $signUpInfo['class_time']=='am')
-                                        <input type="radio" name="class-time" id="class-time1" value="am" checked>09:30 - 12:00
-                                    @else
+                            @if(isset($signUpInfo) && $signUpInfo['class_time']=='pm')
+                                <div class="radio">
+                                    <label>
                                         <input type="radio" name="class-time" id="class-time1" value="am">09:30 - 12:00
-                                    @endif
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    @if(isset($signUpInfo) && $signUpInfo['class_time']=='pm')
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
                                         <input type="radio" name="class-time" id="class-time2" value="pm" checked>14:00 - 16:00
-                                    @else
+                                    </label>
+                                </div>
+                            @else
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="class-time" id="class-time1" value="am" checked>09:30 - 12:00
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
                                         <input type="radio" name="class-time" id="class-time2" value="pm">14:00 - 16:00
-                                    @endif
-                                </label>
-                            </div>
+                                    </label>
+                                </div>
+                            @endif
                         </div>
                         <div class="col-xs-1 column"></div>
                     </div>
@@ -152,7 +157,7 @@
                     <div class="col-xs-10 column"><hr></div>
                     <div class="col-xs-1 column"></div>
                 </div>
-                @if(!isset($signUpInfo))
+                @if(!(isset($signUpInfo) && $signUpInfo['status'] == 'no_pay'))
                 <div class="row clearfix">
                     <div class="col-xs-1 column"></div>
                     <div class="col-xs-10 column" style="text-align: center;">

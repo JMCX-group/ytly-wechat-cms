@@ -73,7 +73,8 @@ class SignUpController extends Controller
             'name' => $request['name'],
             'phone' => $request['phone'],
             'age' => $request['age'],
-            'class_time' => $request['class-time']
+            'class_time' => $request['class-time'],
+            'status' => 'no_pay'
         ];
 
         try {
