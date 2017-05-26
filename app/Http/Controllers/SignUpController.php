@@ -69,7 +69,7 @@ class SignUpController extends Controller
         $user_info = $this->getUserInfo();
 
         $data = [
-            'openid' => $user_info['user_openid'],
+            'open_id' => $user_info['user_openid'],
             'name' => $request['name'],
             'phone' => $request['phone'],
             'age' => $request['age'],
