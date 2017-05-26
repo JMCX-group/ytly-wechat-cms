@@ -30,7 +30,7 @@
                     <div class="col-xs-12 column">
                         <div style="text-align: center; font-size: 24px;">
                             <p style="color: #453e4d">
-                                <span>儿童创意手工书写体验课程</span>
+                                <span>儿童创意手工书体验课程</span>
                             </p>
                         </div>
                     </div>

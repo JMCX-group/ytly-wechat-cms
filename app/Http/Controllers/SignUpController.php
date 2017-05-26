@@ -18,7 +18,7 @@ class SignUpController extends Controller
     public function getUserInfo()
     {
         $user = session('wechat.oauth_user'); // 拿到授权用户资料
-
+dd($user);
         if (isset($user)) {
             /**
              * 获取用户信息：
