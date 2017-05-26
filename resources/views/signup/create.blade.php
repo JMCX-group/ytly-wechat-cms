@@ -46,10 +46,10 @@
                     @if(isset($user_info))
                     <div class="form-group">
                         <div class="col-xs-1 column"></div>
-                        <div class="col-xs-3 column" style="text-align: right;">
+                        <div class="col-xs-3 column" style="text-align: right; margin-right: 15px;">
                             <img src="{{$user_info['user_avatar']}}" class="img-avatar img-rounded"/>
                         </div>
-                        <div class="col-xs-7 column" style="margin-left: -15px;">
+                        <div class="col-xs-7 column" style="margin-left: -15px; top:15px;">
                             <label for="nickname" class="control-label">{{$user_info['user_name']}}</label>
                         </div>
                         <div class="col-xs-1 column"></div>
