@@ -50,7 +50,7 @@
                             <img src="{{$user_info['user_avatar']}}" class="img-avatar img-rounded"/>
                         </div>
                         <div class="col-xs-7 column" style="margin-left: -15px;">
-                            <input type="text" id="nickname" disabled="disabled" placeholder="微信昵称" value="{{$user_info['user_name']}}">
+                            <label for="nickname" class="control-label">{{$user_info['user_name']}}</label>
                         </div>
                         <div class="col-xs-1 column"></div>
                     </div>
