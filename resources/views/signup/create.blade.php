@@ -42,7 +42,7 @@
                     <div class="col-xs-1 column"></div>
                 </div>
 
-                <div class="box-body" style="margin-top: 45px;">
+                <div class="box-body" style="margin-top: 15px;">
                     @if(isset($user_info))
                     <div class="form-group">
                         <div class="col-xs-1 column"></div>
@@ -122,7 +122,7 @@
     </div>
 
 
-    <div class="container" style="margin: 50px 0;">
+    <div class="container" style="margin: 30px 0;">
         <div>
             <div class="row clearfix">
                 <div class="row clearfix">
