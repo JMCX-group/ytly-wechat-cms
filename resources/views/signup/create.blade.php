@@ -54,7 +54,7 @@
                         </div>
                         <div class="col-xs-1 column"></div>
                     </div>
-                    {{--@endif--}}
+                    @endif
                     <div class="form-group">
                         <div class="col-xs-1 column"></div>
                         <div class="col-xs-3 column" style="text-align: right; top: 8px;">
