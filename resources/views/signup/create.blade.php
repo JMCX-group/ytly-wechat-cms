@@ -173,6 +173,14 @@
                             </div>
                             <div class="col-xs-1 column"></div>
                         </div>
+                    @else
+                        <div class="row clearfix">
+                            <div class="col-xs-1 column"></div>
+                            <div class="col-xs-10 column" style="text-align: center;">
+                                <p class="text-success"><strong>已支付课程费用！</strong></p>
+                            </div>
+                            <div class="col-xs-1 column"></div>
+                        </div>
                     @endif
                 @endif
             </div>
