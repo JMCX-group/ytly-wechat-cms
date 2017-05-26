@@ -62,7 +62,7 @@
                         </div>
                         <div class="col-xs-7 column" style="margin-left: -15px;">
                             @if(isset($signUpInfo))
-                                <label for="name" class="control-label">{{$signUpInfo['name']}}</label>
+                                <label for="name" class="control-label" style="top: 8px;">{{$signUpInfo['name']}}</label>
                             @else
                                 <input type="text" class="form-control" id="name" name="name" placeholder="您的姓名" value="">
                                 @include('layouts.message.tips',['field'=>'name'])
