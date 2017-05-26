@@ -109,6 +109,7 @@
                     </div>
                 </div>
 
+                @if(!isset($signUpInfo))
                 <div class="box-footer">
                     <div class="col-xs-1 column"></div>
                     <div class="col-xs-10 column">
@@ -116,6 +117,7 @@
                     </div>
                     <div class="col-xs-1 column"></div>
                 </div>
+                @endif
 
             </form>
         </div>
