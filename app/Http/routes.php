@@ -122,3 +122,8 @@ Route::group(['prefix' => 'pay'], function () {
     Route::get('get_sign', 'WxPayController@getSign');
     Route::get('get_qrcode', 'WxPayController@getQrCode');
 });
+
+//Route::group(['prefix' => 'info'], function() {
+Route::group(['prefix' => 'info', 'middleware' => ['wechat.oauth:snsapi_userinfo']], function() {
+    Route::resource('sign-up', 'SignUpController');
+});
