@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Helper\EasyWeChat;
 use App\WxOrder;
+use App\WxSignUp;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Support\Facades\Log;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
@@ -73,6 +74,15 @@ class WxPayController extends Controller
                 $wxOrder->time_expire = date('Y-m-d H:i:s'); // 更新支付时间为当前时间
                 $wxOrder->ret_notify = json_encode($notify);
                 $wxOrder->status = 'paid';
+
+                /**
+                 * 更新报名信息
+                 */
+                $signUpInfo = WxSignUp::where('openid', $wxOrder->open_id)->first();
+                if ($signUpInfo) {
+                    $signUpInfo->status = 'paid';
+                    $signUpInfo->save();
+                }
             } else { // 用户支付失败
                 $wxOrder->status = 'paid_fail';
             }

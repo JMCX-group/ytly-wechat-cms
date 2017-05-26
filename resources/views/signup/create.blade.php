@@ -157,7 +157,7 @@
                     <div class="col-xs-10 column"><hr></div>
                     <div class="col-xs-1 column"></div>
                 </div>
-                @if(!(isset($signUpInfo) && $signUpInfo['status'] == 'no_pay'))
+                @if(!(isset($signUpInfo) && $signUpInfo['status'] == 'paid'))
                 <div class="row clearfix">
                     <div class="col-xs-1 column"></div>
                     <div class="col-xs-10 column" style="text-align: center;">
