@@ -76,8 +76,12 @@
                             <label for="phone" class="control-label">联系方式：</label>
                         </div>
                         <div class="col-xs-7 column" style="margin-left: -15px;">
-                            <input type="text" class="form-control" id="phone" name="phone" placeholder="您的手机号码" value="">
-                            @include('layouts.message.tips',['field'=>'phone'])
+                            @if(isset($signUpInfo))
+                                <input type="text" class="form-control" id="phone" name="phone" disabled="disabled" value="{{$signUpInfo['phone']}}">
+                            @else
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="您的手机号码" value="">
+                                @include('layouts.message.tips',['field'=>'phone'])
+                            @endif
                         </div>
                         <div class="col-xs-1 column"></div>
                     </div>
@@ -87,8 +91,12 @@
                             <label for="age" class="control-label">孩子年龄：</label>
                         </div>
                         <div class="col-xs-7 column" style="margin-left: -15px;">
-                            <input type="text" class="form-control" id="phone" name="age" placeholder="您孩子的年龄" value="">
-                            @include('layouts.message.tips',['field'=>'age'])
+                            @if(isset($signUpInfo))
+                                <input type="text" class="form-control" id="age" name="age" disabled="disabled" value="{{$signUpInfo['age']}}">
+                            @else
+                                <input type="text" class="form-control" id="age" name="age" placeholder="您孩子的年龄" value="">
+                                @include('layouts.message.tips',['field'=>'age'])
+                            @endif
                         </div>
                         <div class="col-xs-1 column"></div>
                     </div>
@@ -100,12 +108,20 @@
                         <div class="col-xs-7 column" style="margin-left: -15px;">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="class-time" id="class-time1" value="am" checked>09:30 - 12:00
+                                    @if(isset($signUpInfo) && $signUpInfo['class-time']=='am')
+                                        <input type="radio" name="class-time" id="class-time1" value="am" checked>09:30 - 12:00
+                                    @else
+                                        <input type="radio" name="class-time" id="class-time1" value="am">09:30 - 12:00
+                                    @endif
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="class-time" id="class-time2" value="pm">14:00 - 16:00
+                                    @if(isset($signUpInfo) && $signUpInfo['class-time']=='pm')
+                                        <input type="radio" name="class-time" id="class-time2" value="pm" checked>14:00 - 16:00
+                                    @else
+                                        <input type="radio" name="class-time" id="class-time2" value="pm">14:00 - 16:00
+                                    @endif
                                 </label>
                             </div>
                         </div>
