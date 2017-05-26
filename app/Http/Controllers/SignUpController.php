@@ -18,13 +18,13 @@ class SignUpController extends Controller
     public function getUserInfo()
     {
         $user = session('wechat.oauth_user'); // 拿到授权用户资料
-dd($user);
+
         if (isset($user)) {
             /**
              * 获取用户信息：
              */
             $user_info = [
-                'user_openid' => $user->openid,
+                'user_openid' => $user->id,
                 'user_name' => $user->nickname,
                 'user_avatar' => $user->avatar
             ];
@@ -79,7 +79,7 @@ dd($user);
         try {
             WxSignUp::create($data);
 
-            return view('signup.create');
+            return redirect()->route('info.sign-up.index')->withSuccess('');
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(array('error' => $e->getMessage()))->withInput();
         }
