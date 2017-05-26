@@ -157,21 +157,23 @@
                     <div class="col-xs-10 column"><hr></div>
                     <div class="col-xs-1 column"></div>
                 </div>
-                @if(!isset($signUpInfo) || !(isset($signUpInfo) && $signUpInfo['status'] == 'paid'))
-                <div class="row clearfix">
-                    <div class="col-xs-1 column"></div>
-                    <div class="col-xs-10 column" style="text-align: center;">
-                        <p class="text-danger"><strong>扫码支付课程费用:</strong></p>
-                    </div>
-                    <div class="col-xs-1 column"></div>
-                </div>
-                <div class="row clearfix">
-                    <div class="col-xs-1 column"></div>
-                    <div class="col-xs-10 column imgs-class" >
-                        <img src="/qrcode/20170525-328.png" class="img-rounded" width="188px;"/>
-                    </div>
-                    <div class="col-xs-1 column"></div>
-                </div>
+                @if(isset($signUpInfo))
+                    @if($signUpInfo['status'] != 'paid')
+                        <div class="row clearfix">
+                            <div class="col-xs-1 column"></div>
+                            <div class="col-xs-10 column" style="text-align: center;">
+                                <p class="text-danger"><strong>扫码支付课程费用:</strong></p>
+                            </div>
+                            <div class="col-xs-1 column"></div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-xs-1 column"></div>
+                            <div class="col-xs-10 column imgs-class" >
+                                <img src="/qrcode/20170525-328.png" class="img-rounded" width="188px;"/>
+                            </div>
+                            <div class="col-xs-1 column"></div>
+                        </div>
+                    @endif
                 @endif
             </div>
         </div>
