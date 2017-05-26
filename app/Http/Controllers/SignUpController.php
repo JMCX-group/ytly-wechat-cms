@@ -42,7 +42,10 @@ class SignUpController extends Controller
      */
     public function index()
     {
-        return view('signup.create');
+        $user_info = $this->getUserInfo();
+        $signUpInfo = WxSignUp::where('openid', user_info['user_openid'])->first();
+
+        return view('signup.create', compact('signUpInfo', 'user_info'));
     }
 
     /**
@@ -76,7 +79,7 @@ class SignUpController extends Controller
         try {
             WxSignUp::create($data);
 
-            return redirect()->route('sign-up.edit')->withSuccess();
+            return view('signup.create');
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(array('error' => $e->getMessage()))->withInput();
         }

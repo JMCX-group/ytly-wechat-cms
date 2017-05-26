@@ -43,18 +43,6 @@
                 </div>
 
                 <div class="box-body" style="margin-top: 45px;">
-                    @if(isset($user_info))
-                    <div class="form-group">
-                        <div class="col-xs-1 column"></div>
-                        <div class="col-xs-3 column" style="text-align: right; top: 8px;">
-                            <img src="{{$user_info['user_avatar']}}" class="img-avatar img-rounded"/>
-                        </div>
-                        <div class="col-xs-7 column" style="margin-left: -15px;">
-                            <input type="text" id="nickname" disabled="disabled" placeholder="微信昵称" value="{{$user_info['user_name']}}">
-                        </div>
-                        <div class="col-xs-1 column"></div>
-                    </div>
-                    @endif
                     <div class="form-group">
                         <div class="col-xs-1 column"></div>
                         <div class="col-xs-3 column" style="text-align: right; top: 8px;">
