@@ -43,7 +43,7 @@ class SignUpController extends Controller
     public function index()
     {
         $user_info = $this->getUserInfo();
-        $signUpInfo = WxSignUp::where('openid', user_info['user_openid'])->first();
+        $signUpInfo = WxSignUp::where('openid', $user_info['user_openid'])->first();
 
         return view('signup.create', compact('signUpInfo', 'user_info'));
     }
