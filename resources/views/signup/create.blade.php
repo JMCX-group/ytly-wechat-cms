@@ -114,7 +114,7 @@
                                 </div>
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="class-time" id="class-time2" value="pm" checked>14:00 - 16:00
+                                        <input type="radio" name="class-time" id="class-time2" value="pm" checked>14:00 - 16:30
                                     </label>
                                 </div>
                             @else
@@ -125,7 +125,7 @@
                                 </div>
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="class-time" id="class-time2" value="pm">14:00 - 16:00
+                                        <input type="radio" name="class-time" id="class-time2" value="pm">14:00 - 16:30
                                     </label>
                                 </div>
                             @endif
