@@ -8,15 +8,15 @@
 ?>
 @extends("layouts.main-class")
 @section("content")
-<audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc1"></audio>
-<audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc2"></audio>
-<audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc3"></audio>
-<audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc4"></audio>
-<audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc5"></audio>
-<audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc6"></audio>
-<audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc7"></audio>
-<audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc8"></audio>
-<audio src="http://www.helloweba.com/demo/html5audio/music.mp3" controls="controls" id="audioSrc9"></audio>
+<audio src="/audios/english-art/开场白-cici-0523.mp3" controls="controls" id="audioSrc1"></audio>
+<audio src="/audios/english-art/铅笔君中文+cici+0523.mp3" controls="controls" id="audioSrc2"></audio>
+<audio src="/audios/english-art/铅笔君英文+cici+0523.mp3" controls="controls" id="audioSrc3"></audio>
+<audio src="/audios/english-art/橡皮君中文+cici+0523.mp3" controls="controls" id="audioSrc4"></audio>
+<audio src="/audios/english-art/橡皮君英文+cici+0523.mp3" controls="controls" id="audioSrc5"></audio>
+<audio src="/audios/english-art/纸君中文+cici+0523.mp3" controls="controls" id="audioSrc6"></audio>
+<audio src="/audios/english-art/纸君英文+cici+0523.mp3" controls="controls" id="audioSrc7"></audio>
+<audio src="/audios/english-art/总结-cici-0523.mp3" controls="controls" id="audioSrc8"></audio>
+<audio src="/audios/english-art/画外音-cici-0523.mp3" controls="controls" id="audioSrc9"></audio>
 
 <div class="container">
     <div class="row clearfix">
@@ -145,10 +145,10 @@
     <div class="row clearfix class-row">
         <div class="col-xs-1 column"></div>
         <div class="col-xs-11 column class-title class-font-body">
-            <p>1, Hello, I'm Mr. Pencil. I think I'm the most important onein the process of painting.</p>
+            <p>1, Hello, I'm Mr. Pencil. I think I'm the most important one in the process of painting.</p>
             <p>2, Two words: Department of Basic, Advanced department.</p>
-            <p>3, Two words: Sketch/Colouring: Theret are two courses during the Basic Painting Course: "Sketch"and"Colouring"</p>
-            <p>4, one words: Expression: There are all sorts of expression in painting.</p>
+            <p>3, Two words: Sketch/Colouring: There are two courses during the Basic Painting Course: "Sketch"and"Colouring".</p>
+            <p>4, one word: Expression: There are all sort of expression in painting.</p>
         </div>
     </div>
 
@@ -215,11 +215,11 @@
     <div class="row clearfix class-row">
         <div class="col-xs-1 column"></div>
         <div class="col-xs-11 column class-title class-font-body">
-            <p>1, Hello, I'm Mr. Pencil. I think I'm the most important onein the process of painting.</p>
+            <p>1, Hello, I'm Mr. Eraser. I think <strong>I AM</strong> the most important one in the process of painting.</p>
             <p>2, Rhetorical question: Why do I say so?</p>
             <p>3, Example: What if your vision is wrong, Mr.Pencil?</p>
             <p>4, Affirmative: You certainly need my help you through slip-ups.</p>
-            <p>5, Example: Without me, you hardly paint a pretty picture of fututre.</p>
+            <p>5, Example: Without me, you hardly paint a pretty picture of future.</p>
         </div>
     </div>
 
@@ -286,7 +286,7 @@
     <div class="row clearfix class-row">
         <div class="col-xs-1 column"></div>
         <div class="col-xs-11 column class-title class-font-body">
-            <p>1, There are many kinds of paper, construction paper, toilet paper, but I AM GPBP! (Genereal-Painting-Basic-Paper)</p>
+            <p>1, There are many kinds of paper, painting paper, toilet paper, but I AM GPBP! (General-Painting-Basic-Paper).</p>
             <p>2, Without me, what were you guys going to do?!</p>
         </div>
     </div>
