@@ -53,6 +53,9 @@
             <a href="http://wx.yitongliuyi.com/music/0512">
                 <button type="button" class="btn btn-success" style="width: 300px; margin-top: 15px;">0512</button>
             </a>
+            <a href="http://wx.yitongliuyi.com/music/0523">
+                <button type="button" class="btn btn-success" style="width: 300px; margin-top: 15px;">0523</button>
+            </a>
 
 
             <div class="row clearfix class-row" style="margin-top: 15px;">
