@@ -14,5 +14,3 @@ var ap1 = new APlayer({
         pic: $('#player-pic').attr('value')
     }
 });
-
-alert(JSON.stringify(ap1))
