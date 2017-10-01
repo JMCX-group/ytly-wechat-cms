@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\MusicLibrary;
+use Illuminate\Http\Request;
+
 class MusicController extends Controller
 {
     /**
@@ -651,5 +654,33 @@ class MusicController extends Controller
         $user_info = $this->getUserInfo();
 
         return view('musics.fel', compact('user_info'));
+    }
+
+    /**
+     * Service for qr.
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function qr(Request $request)
+    {
+        $id = $request->get('id');
+        $data = MusicLibrary::where('unsigned_name', $id)->first();
+
+        $user_info = $this->getUserInfo();
+
+        $musicData = [
+            'title' => $data['m_title'],
+            'content' => explode("。", $data['m_content']) //使用句号分隔成数组
+        ];
+
+        $player = [
+            'title' => $data['p_title'],
+            'author' => $data['p_author'],
+            'url' => $data['p_url'], // '/audios/musics/candy-fairy-dance.mp3'
+            'pic' => $data['p_pic'] //'/assets/images/music/candy-fairy-dance.png'
+        ];
+
+        return view('musics.qr', compact('user_info', 'player', 'musicData', 'id'));
     }
 }

@@ -34,6 +34,10 @@ Route::group(['prefix' => 'music', 'middleware' => ['wechat.oauth:snsapi_userinf
     Route::get('fel', 'MusicController@fel');
 });
 
+Route::group(['prefix' => 'music'], function () {
+    Route::get('qr', 'MusicController@qr');
+});
+
 /**
  * English
  */
