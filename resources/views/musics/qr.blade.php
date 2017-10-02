@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row clearfix" style="margin-top: 40px;">
             <div class="col-xs-12 column imgs-class">
-                <img style="width: 300px;" src="/assets/images/music-bg/candy-fairy-dance.png"/>
+                <img style="width: 300px;" src="{{$player['pic']}}"/>
             </div>
         </div>
 
