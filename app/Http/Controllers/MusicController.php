@@ -678,7 +678,7 @@ class MusicController extends Controller
             'title' => $data['p_title'],
             'author' => $data['p_author'],
             'url' => $data['p_url'], // '/audios/musics/candy-fairy-dance.mp3'
-            'pic' => '/assets/images/music/' . $data['p_title']. '.png' //'/assets/images/music/candy-fairy-dance.png'
+            'pic' => '/assets/images/music/' . $data['m_title']. '.png' //'/assets/images/music/candy-fairy-dance.png'
         ];
 
         return view('musics.qr', compact('user_info', 'player', 'musicData', 'id'));
