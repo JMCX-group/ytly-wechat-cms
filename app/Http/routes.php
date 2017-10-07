@@ -108,6 +108,11 @@ Route::group(['namespace' => 'Business', 'middleware' => ['auth','Entrust']], fu
      * 学分管理
      */
     Route::resource('credit', 'CreditController');
+
+    /**
+     * 音乐库管理
+     */
+    Route::resource('library', 'LibraryController');
 });
 
 /**

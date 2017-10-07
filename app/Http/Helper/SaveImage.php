@@ -13,6 +13,74 @@ use Intervention\Image\Facades\Image;
 class SaveImage
 {
     /**
+     * 保存音乐背景图片
+     *
+     * @param $file
+     * @param $unsignedName
+     * @return string
+     */
+    public static function musicBg($file, $unsignedName)
+    {
+        return self::saveImgAndMakeThumb(
+            $file,
+            \Config::get('constants.MUSIC_BG_PATH'),
+            $unsignedName,
+            'save-music-bg'
+        );
+    }
+
+    /**
+     * 保存播放器背景图片
+     *
+     * @param $file
+     * @param $unsignedName
+     * @return string
+     */
+    public static function playerBg($file, $unsignedName)
+    {
+        return self::saveImgAndMakeThumb(
+            $file,
+            \Config::get('constants.MUSIC_PLAYER_PATH'),
+            $unsignedName,
+            'save-player-bg'
+        );
+    }
+
+    /**
+     * 保存图片并生成压缩图。
+     *
+     * @param $file
+     * @param $destinationPath
+     * @param $unsignedName
+     * @param $logName
+     * @return string
+     */
+    public static function saveImgAndMakeThumb($file, $destinationPath, $unsignedName, $logName)
+    {
+        //文件是否上传成功
+        if ($file->isValid()) {    //判断文件是否上传成功
+            $domain = \Config::get('constants.DOMAIN');
+
+            $suffix = '.png';
+            $filename = $unsignedName . $suffix;
+
+            $fullPath = $destinationPath . $filename;
+            $newPath = str_replace($suffix, '_thumb' . $suffix, $fullPath);
+
+            try {
+                $file->move($destinationPath, $filename);
+                Image::make($fullPath)->encode('png', 30)->save($newPath);
+            } catch (\Exception $e) {
+                Log::info($logName, ['context' => $e->getMessage()]);
+            }
+
+            return $domain . $newPath;
+        } else {
+            return '';
+        }
+    }
+
+    /**
      * 存储头像文件并压缩成150*150
      *
      * @param $filename

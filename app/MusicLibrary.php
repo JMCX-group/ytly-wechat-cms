@@ -12,6 +12,7 @@ class MusicLibrary extends Model
         'unsigned_name',
         'm_title',
         'm_content',
+        'm_pic',
         'p_title',
         'p_author',
         'p_url',

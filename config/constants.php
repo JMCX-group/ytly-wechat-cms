@@ -7,7 +7,8 @@
  */
 
 return [
-    'DOMAIN' => 'http://cms.medi-link.cn/',
-    'BANNER_PATH' => 'uploads/banner/',
-    'ARTICLE_PATH' => 'uploads/article/',
+    'DOMAIN' => 'http://wx.yitongliuyi.com/',
+    'MUSIC_BG_PATH' => 'assets/images/music-bg/',
+    'MUSIC_PLAYER_PATH' => 'assets/images/music/',
+    'MUSIC_PATH' => 'audios/musics/',
 ];
