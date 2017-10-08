@@ -7,7 +7,6 @@ use App\MusicLibrary;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
@@ -142,7 +141,11 @@ class LibraryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $music = MusicLibrary::find($id);
+        $page_title = "编辑音乐";
+        $page_level = $this->page_level;
+
+        return view('librarys.edit', compact('music', 'page_title', 'page_level'));
     }
 
     /**
@@ -154,7 +157,50 @@ class LibraryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $music = MusicLibrary::find($id);
+        $musicBgImgUrl = '';
+        $playerBgImgUrl = '';
+
+        // 保存各种背景图
+        $musicBgFile = $request->file('upload_music_b_img');
+        if ($musicBgFile != null) {
+            $musicBgImgUrl = SaveImage::musicBg($musicBgFile, $music->unsigned_name);
+        }
+        $playerBgFile = $request->file('upload_player_b_img');
+        if ($playerBgFile != null) {
+            $playerBgImgUrl = SaveImage::playerBg($playerBgFile, $music->unsigned_name);
+        }
+
+        // 保存音乐文件
+        if($request->hasFile('upload_music')) {
+            $musicFile = $request->file('upload_music');
+            if ($musicFile->isValid()) { //判断文件是否上传成功
+                $destinationPath = \Config::get('constants.MUSIC_PATH');
+                $filename = $music->unsigned_name . '.mp3';
+
+                try {
+                    $musicFile->move($destinationPath, $filename);
+                } catch (\Exception $e) {
+                    Log::info('upload-music', ['context' => $e->getMessage()]);
+                }
+            }
+        }
+
+        // Update Info
+        $music->m_title = $request['m_title'];
+        $music->m_content = $request['m_content'];
+        $music->m_pic = ($musicBgImgUrl != '') ? $musicBgImgUrl : $music->m_pic;
+        $music->p_title = $request['p_title'];
+        $music->p_author = $request['p_author'];
+        $music->p_pic = ($playerBgImgUrl != '') ? $playerBgImgUrl : $music->p_pic;
+
+        try {
+            $music->save();
+
+            return redirect()->route('library.index')->withSuccess('编辑歌曲成功');
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(array('error' => $e->getMessage()))->withInput();
+        }
     }
 
     /**
