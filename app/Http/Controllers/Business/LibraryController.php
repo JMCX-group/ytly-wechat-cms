@@ -77,20 +77,21 @@ class LibraryController extends Controller
         }
 
         // 保存音乐文件
-        $musicFile = $request->file('upload_music');
-        if ($musicFile->isValid()) { //判断文件是否上传成功
-            $destinationPath = \Config::get('constants.MUSIC_PATH');
-            $filename = $unsignedName . '.mp3';
+        $musicFileUrl = '';
+        if($request->hasFile('upload_music')) {
+            $musicFile = $request->file('upload_music');
+//            if ($musicFile->isValid()) { //判断文件是否上传成功
+                $destinationPath = \Config::get('constants.MUSIC_PATH');
+                $filename = $unsignedName . '.mp3';
 
-            try {
-                $musicFile->move($destinationPath, $filename);
-            } catch (\Exception $e) {
-                Log::info('upload-music', ['context' => $e->getMessage()]);
-            }
+                try {
+                    $musicFile->move($destinationPath, $filename);
+                } catch (\Exception $e) {
+                    Log::info('upload-music', ['context' => $e->getMessage()]);
+                }
 
-            $musicFileUrl = '/' . $destinationPath . $filename;
-        } else {
-            $musicFileUrl = '';
+                $musicFileUrl = '/' . $destinationPath . $filename;
+//            }
         }
 
         // 生成二维码
