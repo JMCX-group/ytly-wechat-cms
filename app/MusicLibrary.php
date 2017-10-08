@@ -16,6 +16,7 @@ class MusicLibrary extends Model
         'p_title',
         'p_author',
         'p_url',
-        'p_pic'
+        'p_pic',
+        'qr_code_pic'
     ];
 }

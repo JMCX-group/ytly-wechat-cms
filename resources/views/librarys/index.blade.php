@@ -41,9 +41,10 @@
                             <th>描述</th>
                             <th>音乐名称</th>
                             <th>音乐作者</th>
-                            <th>音乐</th>
+                            {{--<th>音乐</th>--}}
                             <th>音乐背景图</th>
                             <th>音乐播放器图</th>
+                            <th>二维码</th>
                             <th>管理操作</th>
                         </tr>
                         @forelse($library as $music)
@@ -53,13 +54,14 @@
                                 <td style="max-width: 420px">{{$music->m_content}}</td>
                                 <td>{{$music->p_title}}</td>
                                 <td>{{$music->p_author}}</td>
-                                <td style="max-width: 100px">
-                                    <audio controls style="max-width: 100px">
-                                        <source src="{{'http://wx.yitongliuyi.com' . $music->p_url}}" type="audio/mpeg">
-                                    </audio>
-                                </td>
+                                {{--<td style="max-width: 100px">--}}
+                                    {{--<audio controls style="max-width: 100px">--}}
+                                        {{--<source src="{{'http://wx.yitongliuyi.com' . $music->p_url}}" type="audio/mpeg">--}}
+                                    {{--</audio>--}}
+                                {{--</td>--}}
                                 <td><img src="{{'http://wx.yitongliuyi.com/' . $music->m_pic}}" style="width: 90px;"></td>
                                 <td><img src="{{'http://wx.yitongliuyi.com/' . $music->p_pic}}" style="width: 90px;"></td>
+                                <td><img src="{{'http://wx.yitongliuyi.com/' . $music->qr_code_pic}}" style="width: 90px;"></td>
                                 <td>
                                     <a class="btn btn-info" href="{{URL::to('library/'.$music->id.'/edit')}}">
                                         编辑

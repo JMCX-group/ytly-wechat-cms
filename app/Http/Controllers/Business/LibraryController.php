@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Log;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class LibraryController extends Controller
 {
@@ -92,6 +93,11 @@ class LibraryController extends Controller
             $musicFileUrl = '';
         }
 
+        // 生成二维码
+        $domain = \Config::get('constants.DOMAIN');
+        $qrData = $domain . 'music/qr?id=' . $unsignedName;
+        QrCode::format('png')->size(500)->generate($qrData, 'qrcode/' . $unsignedName . '.png');
+
         /**
          * 生成数据
          */
@@ -103,7 +109,8 @@ class LibraryController extends Controller
             'p_title' => $request['p_title'],
             'p_author' => $request['p_author'],
             'p_url' => $musicFileUrl,
-            'p_pic' => $playerBgImgUrl
+            'p_pic' => $playerBgImgUrl,
+            'qr_code_pic' => 'qrcode/' . $unsignedName . '.png'
         ];
 
         try {
