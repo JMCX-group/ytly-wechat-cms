@@ -668,18 +668,19 @@ class MusicController extends Controller
         $data = MusicLibrary::where('unsigned_name', $id)->first();
 
         $user_info = $this->getUserInfo();
+        $domain = \Config::get('constants.DOMAIN');
 
         $musicData = [
             'title' => $data['m_title'],
             'content' => explode("。", chop($data['m_content'], "。")), //使用句号分隔成数组
-            'pic' => $data['m_pic'], //'/assets/images/music-bg/candy-fairy-dance.png'
+            'pic' => $domain . $data['m_pic'], //'/assets/images/music-bg/candy-fairy-dance.png'
         ];
 
         $player = [
             'title' => $data['p_title'],
             'author' => $data['p_author'],
             'url' => $data['p_url'], // '/audios/musics/candy-fairy-dance.mp3'
-            'pic' => $data['p_pic'] //'/assets/images/music/candy-fairy-dance.png'
+            'pic' => $domain . $data['p_pic'] //'/assets/images/music/candy-fairy-dance.png'
         ];
 
         return view('musics.qr', compact('user_info', 'player', 'musicData', 'id'));
