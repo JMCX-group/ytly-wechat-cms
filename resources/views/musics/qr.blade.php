@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row clearfix" style="margin-top: 40px;">
             <div class="col-xs-12 column imgs-class">
-                <img style="max-width: 300px; max-height: 200px;" src="{{$player['pic']}}"/>
+                <img style="max-width: 300px; max-height: 200px;" src="{{$musicData['pic']}}"/>
             </div>
         </div>
 

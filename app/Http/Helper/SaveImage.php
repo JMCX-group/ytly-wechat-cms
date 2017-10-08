@@ -59,7 +59,8 @@ class SaveImage
     {
         //文件是否上传成功
         if ($file->isValid()) {    //判断文件是否上传成功
-            $domain = \Config::get('constants.DOMAIN');
+//            $domain = \Config::get('constants.DOMAIN');
+            $domain = '';
 
             $suffix = '.png';
             $filename = $unsignedName . $suffix;
