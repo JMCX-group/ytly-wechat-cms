@@ -96,7 +96,7 @@ class LibraryController extends Controller
         // 生成二维码
         $domain = \Config::get('constants.DOMAIN');
         $qrData = $domain . 'music/qr?id=' . $unsignedName;
-        QrCode::format('png')->size(500)->generate($qrData, 'qrcode/' . $unsignedName . '.png');
+        QrCode::format('png')->size(500)->margin(25)->generate($qrData, 'qrcode/' . $unsignedName . '.png');
 
         /**
          * 生成数据
