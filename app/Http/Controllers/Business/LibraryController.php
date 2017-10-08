@@ -6,7 +6,6 @@ use App\Http\Helper\SaveImage;
 use App\MusicLibrary;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-
 use App\Http\Controllers\Controller;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
@@ -22,7 +21,6 @@ class LibraryController extends Controller
     public function index()
     {
         $library = MusicLibrary::paginate(20);
-//        dd($credits);
         $page_title = "音乐列表";
         $page_level = $this->page_level;
 
