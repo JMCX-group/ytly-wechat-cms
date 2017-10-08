@@ -80,7 +80,7 @@ class LibraryController extends Controller
         $musicFileUrl = '';
         if($request->hasFile('upload_music')) {
             $musicFile = $request->file('upload_music');
-//            if ($musicFile->isValid()) { //判断文件是否上传成功
+            if ($musicFile->isValid()) { //判断文件是否上传成功
                 $destinationPath = \Config::get('constants.MUSIC_PATH');
                 $filename = $unsignedName . '.mp3';
 
@@ -91,7 +91,7 @@ class LibraryController extends Controller
                 }
 
                 $musicFileUrl = '/' . $destinationPath . $filename;
-//            }
+            }
         }
 
         // 生成二维码
