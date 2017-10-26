@@ -115,6 +115,19 @@ Route::group(['namespace' => 'Business', 'middleware' => ['auth','Entrust']], fu
     Route::resource('library', 'LibraryController');
 });
 
+
+
+/**
+ * File Download
+ */
+Route::group(['prefix' => 'download'], function () {
+    Route::get('index', 'DownLoadFileController@index');
+    Route::post('list', 'DownLoadFileController@getDownList');
+    Route::get('file/{id}', 'DownLoadFileController@downloadFile');
+});
+
+
+
 /**
  * WeChat Notify Url
  */
