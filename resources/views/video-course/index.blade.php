@@ -47,7 +47,7 @@
                             <tr>
                                 <td>{{$video->id}}</td>
                                 <td>{{$video->unsigned_name}}</td>
-                                <td>{{$video->series_id}}</td>
+                                <td>{{$video->series_name}}</td>
                                 <td>{{$video->num}}</td>
                                 <td>{{$video->desc}}</td>
                                 <td>

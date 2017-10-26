@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Business;
 use App\VideoLibrary;
 use App\VideoSeries;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class VideoCourseController extends Controller
@@ -21,6 +19,16 @@ class VideoCourseController extends Controller
     public function index()
     {
         $videos = VideoLibrary::paginate(50);
+        $series = VideoSeries::all();
+
+        foreach ($series as $item) {
+            foreach ($videos as &$video) {
+                if ($video['series_id'] == $item['id']) {
+                    $video['series_name'] = $item['name'];
+                }
+            }
+        }
+
         $page_title = "视频列表";
         $page_level = $this->page_level;
 
