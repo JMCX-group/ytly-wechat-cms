@@ -11,4 +11,5 @@ return [
     'MUSIC_BG_PATH' => 'assets/images/music-bg/',
     'MUSIC_PLAYER_PATH' => 'assets/images/music/',
     'MUSIC_PATH' => 'audios/musics/',
+    'VIDEO_PATH' => 'videos/',
 ];

@@ -113,6 +113,15 @@ Route::group(['namespace' => 'Business', 'middleware' => ['auth','Entrust']], fu
      * 音乐库管理
      */
     Route::resource('library', 'LibraryController');
+
+    /**
+     * 付费视频课程管理
+     */
+    Route::resource('video-course', 'VideoCourseController');
+    /**
+     * 付费视频课程系列管理
+     */
+    Route::resource('video-series', 'VideoSeriesController');
 });
 
 
