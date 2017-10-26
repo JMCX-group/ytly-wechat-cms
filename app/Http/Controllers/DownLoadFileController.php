@@ -25,12 +25,12 @@ class DownLoadFileController extends Controller
         $id = substr($str, 0, strlen($str) - 11);
         $phone = substr($str, strlen($id));
 
-        $uid = People::where('phone', $phone)->get();
+        $uid = People::where('phone', $phone)->first();
         if ($uid == null) {
             return view('errors.nouser');
         }
 
-        $data = BuyList::where('id', $id)->where('uid', $uid[0]->id)->where('status', 1)->first();
+        $data = BuyList::where('file_id', $id)->where('uid', $uid->id)->first();
         if ($data == null) {
             return view('errors.download');
         }
