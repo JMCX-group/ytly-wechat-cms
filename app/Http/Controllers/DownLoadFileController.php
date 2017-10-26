@@ -36,11 +36,20 @@ class DownLoadFileController extends Controller
         }
 
         $fileName = MusicLibrary::find($id);
-        $downloadUrl = $this->download_send_headers('audios/musics/' . $fileName->unsigned_name . '.mp3');
-        $data->status = 0;
-        $data->save();
+        $fileName = $fileName->unsigned_name.'.mp3';
+        $filePath = 'audios/musics/' . $fileName;
 
-        return view('download.file', compact('downloadUrl'));
+        if(file_exists($filePath)) {
+            $this->download_send_headers($fileName);
+            readfile($filePath);
+
+            $data->status = 0;
+            $data->save();
+
+            return view('download.index');
+        } else {
+            return view('errors.no-file');
+        }
     }
 
     /**
@@ -64,6 +73,21 @@ class DownLoadFileController extends Controller
         // disposition / encoding on response body
         header("Content-Disposition: attachment;filename={$filename}");
         header("Content-Transfer-Encoding: binary");
+
+//        if(file_exists($filename)) {
+//            header('Content-Description: File Transfer');
+//            header('Content-Type: application/octet-stream');
+//            header('Content-Disposition: attachment; filename='.basename($filename));
+//            header('Content-Transfer-Encoding: binary');
+//            header('Expires: 0');
+//            header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+//            header('Pragma: public');
+//            header('Content-Length: ' .filesize($filename));
+//            ob_clean();
+//            flush();
+//            readfile($filename);
+//            exit;
+//        }
     }
 
     /**
