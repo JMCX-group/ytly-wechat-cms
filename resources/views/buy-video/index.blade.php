@@ -65,7 +65,6 @@
                                 <input type="text" class="form-control" id="phone" name="phone" value="{{$user_info['phone']}}">
                             @else
                                 <input type="text" class="form-control" id="phone" name="phone" placeholder="请务必填写您的手机号码" value="">
-                                @include('layouts.message.tips',['field'=>'name'])
                             @endif
                             @include('layouts.message.tips',['field'=>'phone'])
                         </div>

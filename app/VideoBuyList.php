@@ -12,6 +12,7 @@ class VideoBuyList extends Model
         'open_id',
         'series_id',
         'type',
+        'status',
         'start_time',
         'end_time'
     ];

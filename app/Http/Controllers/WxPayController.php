@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Helper\EasyWeChat;
+use App\VideoBuyList;
 use App\WxOrder;
 use App\WxSignUp;
 use EasyWeChat\Foundation\Application;
@@ -82,6 +83,49 @@ class WxPayController extends Controller
                 if ($signUpInfo) {
                     $signUpInfo->status = 'paid';
                     $signUpInfo->save();
+                }
+            } else { // 用户支付失败
+                $wxOrder->status = 'paid_fail';
+            }
+            $wxOrder->save(); // 保存订单
+            return true; // 返回处理完成
+        });
+
+        return $response;
+    }
+
+    /**
+     * 购买视频的微信支付回調函數
+     */
+    public function videoBuyNotifyUrl()
+    {
+        $app = new Application(EasyWeChat::getPayOptions());
+        $response = $app->payment->handleNotify(function ($notify, $successful) {
+            Log::info('notifyUrl', ['notify' => json_encode($notify), 'status' => $successful]);
+
+            $wxOrder = WxOrder::where('out_trade_no', $notify->out_trade_no)->first();
+            if (!$wxOrder) { // 如果订单不存在
+                return 'Order not exist.'; // 告诉微信，我已经处理完了，订单没找到，别再通知我了
+            }
+
+            if ($wxOrder->time_expire) { // 假设订单字段“支付时间”不为空代表已经支付
+                return true; // 已经支付成功了就不再更新了
+            }
+
+            // 用户是否支付成功
+            if ($successful) {
+                // 不是已经支付状态则修改为已经支付状态
+                $wxOrder->time_expire = date('Y-m-d H:i:s'); // 更新支付时间为当前时间
+                $wxOrder->ret_notify = json_encode($notify);
+                $wxOrder->status = 'paid';
+
+                /**
+                 * 更新购买信息
+                 */
+                $info = VideoBuyList::where('openid', $wxOrder->open_id)->first();
+                if ($info) {
+                    $info->status = 'paid';
+                    $info->save();
                 }
             } else { // 用户支付失败
                 $wxOrder->status = 'paid_fail';

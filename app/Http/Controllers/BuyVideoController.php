@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\People;
+use App\VideoBuyList;
 use App\VideoSeries;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use EasyWeChat\Payment\Order;
 
 class BuyVideoController extends Controller
 {
@@ -73,24 +72,51 @@ class BuyVideoController extends Controller
     public function store(Request $request)
     {
         $user_info = $this->getUserInfo();
+        $phone = $request['phone'];
 
-        dd($request);
+        /**
+         * 保存购买者的手机号
+         */
+        $user = People::where('open_id', $user_info['user_openid'])->first();
+        if($user->phone == '' || $user->phone == null){
+            $user->phone = $phone;
+            $user->save();
+        }
+
         $data = [
             'openid' => $user_info['user_openid'],
-            'name' => $request['name'],
-            'phone' => $request['phone'],
-            'age' => $request['age'],
-            'class_time' => $request['class-time'],
+            'series_id' => $request['name'],
+            'type' => $request['price'],
             'status' => 'no_pay'
         ];
 
         try {
-            WxSignUp::create($data);
+            VideoBuyList::create($data);
 
-            return redirect()->route('info.sign-up.index')->withSuccess('');
+            $this->createOrder($data);
+
+            return redirect()->route('info.buy-video.index')->withSuccess('');
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(array('error' => $e->getMessage()))->withInput();
         }
+    }
+
+    public function createOrder($data)
+    {
+        $attributes = [
+            'trade_type' => 'JSAPI', // JSAPI，NATIVE，APP...
+            'body' => 'series:' . $data['series_id'] . '|type:' .$data['type'],
+            'detail' => '视频课程',
+            'out_trade_no' => date('YmdHis') . substr($data['openid'], strlen($data['openid']) - 4),
+            'total_fee' => $data['type'] == 'half' ? 12900 : 19900, // 单位：分
+            'notify_url' => 'http://xxx.com/order-notify', // 支付结果通知网址，如果不设置则会使用配置里的默认地址
+            'openid' => $data['openid'], // trade_type=JSAPI，此参数必传，用户在商户appid下的唯一标识，
+            // ...
+        ];
+
+        $order = new Order($attributes);
+
+        return $order;
     }
 
     /**
