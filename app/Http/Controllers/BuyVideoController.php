@@ -124,6 +124,7 @@ class BuyVideoController extends Controller
         ];
 
         $order = new Order($attributes);
+        dd($order);
         $result = $payment->prepare($order);
         dd($result);
         if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS') {
