@@ -95,6 +95,7 @@ class BuyVideoController extends Controller
         try {
             VideoBuyList::create($data);
 
+            dd($data);
             $ret = $this->createOrder($data);
             $config = $ret['config'];
             $order = $ret['order'];
