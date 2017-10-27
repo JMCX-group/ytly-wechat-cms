@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Helper\EasyWeChat;
 use App\People;
 use App\VideoBuyList;
 use App\VideoSeries;
+use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
 use EasyWeChat\Payment\Order;
 
@@ -84,8 +86,8 @@ class BuyVideoController extends Controller
         }
 
         $data = [
-            'openid' => $user_info['user_openid'],
-            'series_id' => $request['name'],
+            'open_id' => $user_info['user_openid'],
+            'series_id' => $request['series'],
             'type' => $request['price'],
             'status' => 'no_pay'
         ];
@@ -93,7 +95,13 @@ class BuyVideoController extends Controller
         try {
             VideoBuyList::create($data);
 
-            $this->createOrder($data);
+            $app = new Application(EasyWeChat::getPayOptions());
+            $payment = $app->payment;
+            $order = $this->createOrder($data);
+            $result = $payment->prepare($order);
+            if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS'){
+                $prepayId = $result->prepay_id;
+            }
 
             return redirect()->route('info.buy-video.index')->withSuccess('');
         } catch (\Exception $e) {
@@ -109,7 +117,7 @@ class BuyVideoController extends Controller
             'detail' => '视频课程',
             'out_trade_no' => date('YmdHis') . substr($data['openid'], strlen($data['openid']) - 4),
             'total_fee' => $data['type'] == 'half' ? 12900 : 19900, // 单位：分
-            'notify_url' => 'http://xxx.com/order-notify', // 支付结果通知网址，如果不设置则会使用配置里的默认地址
+            'notify_url' => 'http://wx.yitongliuyi.com/api/pay/video_buy_notify_url', // 支付结果通知网址，如果不设置则会使用配置里的默认地址
             'openid' => $data['openid'], // trade_type=JSAPI，此参数必传，用户在商户appid下的唯一标识，
             // ...
         ];
