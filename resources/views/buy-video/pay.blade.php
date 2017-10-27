@@ -10,9 +10,9 @@
 @extends('layouts.main-info')
 
 @section('content')
+    <p>{{$config}}</p>
     <div class="div-centered">
-        <p>{{$config}}</p>
-        <button onclick="callPay()" style="width:210px; height:50px;font-size:16px;" type="button">立即支付</button>
+        <button class='btn-success' onclick="callPay()" style="width:210px; height:50px;font-size:16px;" type="button">立即支付</button>
     </div>
 @stop
 

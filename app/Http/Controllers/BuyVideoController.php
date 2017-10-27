@@ -99,8 +99,6 @@ class BuyVideoController extends Controller
             $config = json_encode($config);
 
             return view('buy-video.pay', compact('config'));
-            return response()->json($config);
-
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(array('error' => $e->getMessage()))->withInput();
         }
