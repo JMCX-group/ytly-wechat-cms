@@ -125,6 +125,7 @@ class BuyVideoController extends Controller
 
         $order = new Order($attributes);
         $result = $payment->prepare($order);
+        dd($result);
         if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS') {
             $prepayId = $result->prepay_id;
             $config = $payment->configForJSSDKPayment($prepayId);
