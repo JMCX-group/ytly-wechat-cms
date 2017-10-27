@@ -161,4 +161,6 @@ Route::group(['prefix' => 'pay'], function () {
 //Route::group(['prefix' => 'info'], function() {
 Route::group(['prefix' => 'info', 'middleware' => ['wechat.oauth:snsapi_userinfo']], function() {
     Route::resource('sign-up', 'SignUpController');
+
+    Route::resource('buy-video', 'BuyVideoController');
 });
