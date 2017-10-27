@@ -20,28 +20,27 @@
 @section('script')
     <script type="text/javascript">
         //调用微信JS api 支付
-        function jsApiCall()
-        {
+        function jsApiCall() {
             WeixinJSBridge.invoke(
                 'getBrandWCPayRequest',
-                {{$config}},
-                function(res){
+                    {{$config}},
+                function (res) {
                     WeixinJSBridge.log(res.err_msg);
-                    alert(res.err_code+res.err_desc+res.err_msg);
+                    alert(res.err_code + res.err_desc + res.err_msg);
                 }
             );
         }
 
-        function callpay()
-        {
-            if (typeof WeixinJSBridge == "undefined"){
-                if( document.addEventListener ){
+        function callpay() {
+            alert('test');
+            if (typeof WeixinJSBridge == "undefined") {
+                if (document.addEventListener) {
                     document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
-                }else if (document.attachEvent){
+                } else if (document.attachEvent) {
                     document.attachEvent('WeixinJSBridgeReady', jsApiCall);
                     document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
                 }
-            }else{
+            } else {
                 jsApiCall();
             }
         }
