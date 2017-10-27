@@ -12,7 +12,6 @@
 
 @section('content')
     <div>
-        {{$ret}}
     </div>
     <button onclick="callpay()" style="width:210px; height:50px;font-size:16px;" type="button">立即支付</button>
 @stop
