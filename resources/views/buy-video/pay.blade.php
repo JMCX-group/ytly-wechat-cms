@@ -10,8 +10,42 @@
 @extends('layouts.main-info')
 
 @section('content')
-    <div class="div-centered">
-        <button class='btn-success' onclick="callPay()" style="width:210px; height:50px;font-size:16px;" type="button">立即支付</button>
+    <div class="row">
+        <div class="box box-info">
+            <div class="row clearfix" style="text-align: center;">
+                <div class="col-xs-12 column imgs-class">
+                    <div style="text-align: center; font-size: 20px;">
+                        <p style="color: #65696f">
+                            <span>艺同六艺菁英教育</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row clearfix" style="text-align: center;">
+                <div class="col-xs-12 column">
+                    <div style="text-align: center; font-size: 24px;">
+                        <p style="color: #453e4d">
+                            <span>视频教学课程</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row clearfix">
+                <div class="col-xs-1 column"></div>
+                <div class="col-xs-10 column"><hr></div>
+                <div class="col-xs-1 column"></div>
+            </div>
+
+            <div class="box-body" style="margin-top: 45px;">
+                <div class="col-xs-1 column"></div>
+                <div class="col-xs-10 column">
+                    <button class='btn btn-block btn-success' onclick="callPay()"  type="button">立即支付</button>
+                </div>
+                <div class="col-xs-1 column"></div>
+            </div>
+        </div>
     </div>
 @stop
 
@@ -23,7 +57,7 @@
         function jsApiCall() {
             WeixinJSBridge.invoke('getBrandWCPayRequest',<?php echo $config; ?>, function (res) {
                     WeixinJSBridge.log(res.err_msg);
-                    alert(res.err_code + res.err_desc + res.err_msg);
+                    // alert(res.err_code + res.err_desc + res.err_msg);
                 }
             );
         }
