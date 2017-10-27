@@ -10,7 +10,6 @@
 @extends('layouts.main-info')
 
 @section('content')
-    <p>{{$config}}</p>
     <div class="div-centered">
         <button class='btn-success' onclick="callPay()" style="width:210px; height:50px;font-size:16px;" type="button">立即支付</button>
     </div>
@@ -29,7 +28,7 @@
         }
 
         function callPay() {
-            alert('test');
+            alert(<?php echo $config; ?>);
             if (typeof WeixinJSBridge == "undefined") {
                 if (document.addEventListener) {
                     document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
