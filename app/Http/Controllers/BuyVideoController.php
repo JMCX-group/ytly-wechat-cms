@@ -95,7 +95,6 @@ class BuyVideoController extends Controller
         try {
             VideoBuyList::create($data);
 
-            dd($data);
             $ret = $this->createOrder($data);
             $config = $ret['config'];
             $order = $ret['order'];
@@ -110,34 +109,38 @@ class BuyVideoController extends Controller
 
     public function createOrder($data)
     {
-        $app = new Application(EasyWeChat::getPayOptions());
-        $payment = $app->payment;
+        try {
+            $app = new Application(EasyWeChat::getPayOptions());
+            $payment = $app->payment;
 
-        $attributes = [
-            'trade_type' => 'JSAPI', // JSAPI，NATIVE，APP...
-            'body' => 'series:' . $data['series_id'] . '|type:' . $data['type'],
-            'detail' => '视频课程',
-            'out_trade_no' => date('YmdHis') . substr($data['openid'], strlen($data['openid']) - 4),
-            'total_fee' => $data['type'] == 'half' ? 12900 : 19900, // 单位：分
-            'notify_url' => 'http://wx.yitongliuyi.com/api/pay/video_buy_notify_url', // 支付结果通知网址，如果不设置则会使用配置里的默认地址
-            'openid' => $data['openid'], // trade_type=JSAPI，此参数必传，用户在商户appid下的唯一标识，
-            // ...
-        ];
-
-        $order = new Order($attributes);
-        dd($order);
-        $result = $payment->prepare($order);
-        dd($result);
-        if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS') {
-            $prepayId = $result->prepay_id;
-            $config = $payment->configForJSSDKPayment($prepayId);
-
-            return [
-                'config' => $config,
-                'order' => $order
+            $attributes = [
+                'trade_type' => 'JSAPI', // JSAPI，NATIVE，APP...
+                'body' => 'series:' . $data['series_id'] . '|type:' . $data['type'],
+                'detail' => '视频课程',
+                'out_trade_no' => date('YmdHis') . substr($data['openid'], strlen($data['openid']) - 4),
+                'total_fee' => $data['type'] == 'half' ? 12900 : 19900, // 单位：分
+                'notify_url' => 'http://wx.yitongliuyi.com/api/pay/video_buy_notify_url', // 支付结果通知网址，如果不设置则会使用配置里的默认地址
+                'openid' => $data['openid'], // trade_type=JSAPI，此参数必传，用户在商户appid下的唯一标识，
+                // ...
             ];
-        } else {
-            return false;
+
+            $order = new Order($attributes);
+            dd($order);
+            $result = $payment->prepare($order);
+            dd($result);
+            if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS') {
+                $prepayId = $result->prepay_id;
+                $config = $payment->configForJSSDKPayment($prepayId);
+
+                return [
+                    'config' => $config,
+                    'order' => $order
+                ];
+            } else {
+                return false;
+            }
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(array('error' => $e->getMessage()))->withInput();
         }
     }
 
