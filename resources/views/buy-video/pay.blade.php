@@ -6,17 +6,46 @@
  * Time: 16:11
  */
 
-use EasyWeChat\Payment\Order;
+?>
 
-$attributes = [
-    'trade_type'       => 'JSAPI', // JSAPI，NATIVE，APP...
-    'body'             => 'iPad mini 16G 白色',
-    'detail'           => 'iPad mini 16G 白色',
-    'out_trade_no'     => '1217752501201407033233368018',
-    'total_fee'        => 5388, // 单位：分
-    'notify_url'       => 'http://xxx.com/order-notify', // 支付结果通知网址，如果不设置则会使用配置里的默认地址
-    'openid'           => '当前用户的 openid', // trade_type=JSAPI，此参数必传，用户在商户appid下的唯一标识，
-    // ...
-];
+@extends('layouts.main-info')
 
-$order = new Order($attributes);
+@section('content')
+    <div>
+        {{$order}}
+        {{$config}}
+    </div>
+    <button style="width:210px; height:50px; border-radius: 15px;background-color:#FE6714; border:0px #FE6714 solid; cursor: pointer;  color:white;  font-size:16px;" type="button" onclick="callpay()" >立即支付</button>
+@stop
+
+
+@section('script')
+    <script type="text/javascript">
+        //调用微信JS api 支付
+        function jsApiCall()
+        {
+            WeixinJSBridge.invoke(
+                'getBrandWCPayRequest',
+                {{$config}},
+                function(res){
+                    WeixinJSBridge.log(res.err_msg);
+                    alert(res.err_code+res.err_desc+res.err_msg);
+                }
+            );
+        }
+
+        function callpay()
+        {
+            if (typeof WeixinJSBridge == "undefined"){
+                if( document.addEventListener ){
+                    document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+                }else if (document.attachEvent){
+                    document.attachEvent('WeixinJSBridgeReady', jsApiCall);
+                    document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+                }
+            }else{
+                jsApiCall();
+            }
+        }
+    </script>
+@stop

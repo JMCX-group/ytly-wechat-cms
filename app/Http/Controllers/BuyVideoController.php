@@ -95,15 +95,11 @@ class BuyVideoController extends Controller
         try {
             VideoBuyList::create($data);
 
-            $app = new Application(EasyWeChat::getPayOptions());
-            $payment = $app->payment;
-            $order = $this->createOrder($data);
-            $result = $payment->prepare($order);
-            if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS'){
-                $prepayId = $result->prepay_id;
-            }
+            $ret = $this->createOrder($data);
+            $config = $ret['config'];
+            $order = $ret['order'];
 
-            return redirect()->route('info.buy-video.index')->withSuccess('');
+            return view('buy-video.pay', compact('config', 'order'));
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(array('error' => $e->getMessage()))->withInput();
         }
@@ -111,9 +107,12 @@ class BuyVideoController extends Controller
 
     public function createOrder($data)
     {
+        $app = new Application(EasyWeChat::getPayOptions());
+        $payment = $app->payment;
+
         $attributes = [
             'trade_type' => 'JSAPI', // JSAPI，NATIVE，APP...
-            'body' => 'series:' . $data['series_id'] . '|type:' .$data['type'],
+            'body' => 'series:' . $data['series_id'] . '|type:' . $data['type'],
             'detail' => '视频课程',
             'out_trade_no' => date('YmdHis') . substr($data['openid'], strlen($data['openid']) - 4),
             'total_fee' => $data['type'] == 'half' ? 12900 : 19900, // 单位：分
@@ -123,8 +122,18 @@ class BuyVideoController extends Controller
         ];
 
         $order = new Order($attributes);
+        $result = $payment->prepare($order);
+        if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS') {
+            $prepayId = $result->prepay_id;
+            $config = $payment->configForJSSDKPayment($prepayId);
 
-        return $order;
+            return [
+                'config' => $config,
+                'order' => $order
+            ];
+        } else {
+            return false;
+        }
     }
 
     /**
