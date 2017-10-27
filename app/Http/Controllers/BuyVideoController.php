@@ -130,6 +130,7 @@ class BuyVideoController extends Controller
         if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS') {
             $prepayId = $result->prepay_id;
             $config = $payment->configForJSSDKPayment($prepayId);
+            $config['timeStamp'] = $config['timestamp'];
 
             return $config;
         } else {
