@@ -21,10 +21,7 @@
     <script type="text/javascript">
         //调用微信JS api 支付
         function jsApiCall() {
-            WeixinJSBridge.invoke(
-                'getBrandWCPayRequest',
-                    {{$config}},
-                function (res) {
+            WeixinJSBridge.invoke('getBrandWCPayRequest',<?php echo $config; ?>, function (res) {
                     WeixinJSBridge.log(res.err_msg);
                     alert(res.err_code + res.err_desc + res.err_msg);
                 }
