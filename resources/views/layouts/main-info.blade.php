@@ -34,8 +34,10 @@
     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     {{--<script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>--}}
 
+    @yield("style")
 </head>
 <body>
     @yield("content")
+    @yield("script")
 </body>
 </html>
