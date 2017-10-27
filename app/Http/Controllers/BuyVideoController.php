@@ -97,12 +97,21 @@ class BuyVideoController extends Controller
 
             $config = $this->createOrder($data);
 
+
+            return view('buy-video.pay', compact('$config'));
             return response()->json($config);
+
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(array('error' => $e->getMessage()))->withInput();
         }
     }
 
+    /**
+     * 创建订单
+     *
+     * @param $data
+     * @return array|bool|string|void
+     */
     public function createOrder($data)
     {
         try {
@@ -119,7 +128,6 @@ class BuyVideoController extends Controller
                 'notify_url' => 'http://wx.yitongliuyi.com/api/pay/video_buy_notify_url', // 支付结果通知网址，如果不设置则会使用配置里的默认地址
                 'openid' => $openid // trade_type=JSAPI，此参数必传，用户在商户appid下的唯一标识，
             ];
-//            dd($attributes);
 
             $order = new Order($attributes);
             $result = $payment->prepare($order);
