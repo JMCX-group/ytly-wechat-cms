@@ -80,10 +80,29 @@
                             @foreach($series as $item)
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="series" id="series1" value="{{$item['id']}}">{{$item['name']}}
+                                        <input type="radio" name="series" style="margin-bottom: 15px;" value="{{$item['id']}}">{{$item['name']}}
                                     </label>
                                 </div>
                             @endforeach
+                        </div>
+                        <div class="col-xs-1 column"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-1 column"></div>
+                        <div class="col-xs-3 column" style="text-align: right; top: 8px;">
+                            <label for="price" class="control-label">课程费用：</label>
+                        </div>
+                        <div class="col-xs-7 column" style="margin-left: -15px;">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="price" style="margin-bottom: 15px;" value="half">半年费用：129元
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="price" style="margin-bottom: 15px;" value="all">全年费用：199元
+                                </label>
+                            </div>
                         </div>
                         <div class="col-xs-1 column"></div>
                     </div>
