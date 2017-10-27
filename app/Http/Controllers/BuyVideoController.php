@@ -116,9 +116,9 @@ class BuyVideoController extends Controller
                 'out_trade_no' => date('YmdHis') . substr($data['openid'], strlen($data['openid']) - 4),
                 'total_fee' => $data['type'] == 'half' ? 12900 : 19900, // 单位：分
                 'notify_url' => 'http://wx.yitongliuyi.com/api/pay/video_buy_notify_url', // 支付结果通知网址，如果不设置则会使用配置里的默认地址
-                'openid' => $data['open_id'], // trade_type=JSAPI，此参数必传，用户在商户appid下的唯一标识，
-                // ...
+                'openid' => $data['open_id'] // trade_type=JSAPI，此参数必传，用户在商户appid下的唯一标识，
             ];
+            dd($attributes);
 
             $order = new Order($attributes);
             $result = $payment->prepare($order);
