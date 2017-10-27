@@ -96,6 +96,7 @@ class BuyVideoController extends Controller
             VideoBuyList::create($data);
 
             $config = $this->createOrder($data);
+            $config = json_encode($config);
 
             return view('buy-video.pay', compact('config'));
             return response()->json($config);
