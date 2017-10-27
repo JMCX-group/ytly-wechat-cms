@@ -95,10 +95,9 @@ class BuyVideoController extends Controller
         try {
             VideoBuyList::create($data);
 
-            $ret = $this->createOrder($data);
+            $config = $this->createOrder($data);
 
-
-            return view('buy-video.pay', compact('ret'));
+            return view('buy-video.pay', compact('config'));
             return response()->json($config);
 
         } catch (\Exception $e) {
@@ -133,11 +132,7 @@ class BuyVideoController extends Controller
             $prepayId = $result->prepay_id;
             $config = $payment->configForJSSDKPayment($prepayId);
 
-            $js = $app->js;
-            return [
-                'config' => $config,
-                'js' => $js
-            ];
+            return $config;
         } else {
             return false;
         }
