@@ -117,11 +117,14 @@ Route::group(['namespace' => 'Business', 'middleware' => ['auth','Entrust']], fu
     /**
      * 付费视频课程管理
      */
+    // 视频仓库
     Route::resource('video-course', 'VideoCourseController');
-    /**
-     * 付费视频课程系列管理
-     */
+    // 系列管理
     Route::resource('video-series', 'VideoSeriesController');
+    // 购买列表
+    Route::resource('video-buy-list', 'VideoBuyListController');
+    // 学习进度
+    Route::resource('video-download-list', 'VideoDownloadListController');
 });
 
 

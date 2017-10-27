@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BuyList extends Model
+class VideoDownloadList extends Model
 {
-    protected $table = "buy_list";
+    protected $table = "video_download_list";
 
     protected $fillable = [
         'uid',

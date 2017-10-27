@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\BuyList;
+use App\VideoDownloadList;
 use App\MusicLibrary;
 use App\People;
 use Illuminate\Http\Request;
@@ -30,7 +30,7 @@ class DownLoadFileController extends Controller
             return view('errors.nouser');
         }
 
-        $data = BuyList::where('file_id', $id)->where('uid', $uid->id)->first();
+        $data = VideoDownloadList::where('file_id', $id)->where('uid', $uid->id)->first();
         if ($data == null) {
             return view('errors.download');
         }
@@ -92,7 +92,7 @@ class DownLoadFileController extends Controller
             'phone' => $request['phone'],
             'user_name' => $people->nickname
         ];
-        $buyList = BuyList::where('uid', $people->id)->get();
+        $buyList = VideoDownloadList::where('uid', $people->id)->get();
 
         $list = array();
         foreach ($buyList as $item) {
