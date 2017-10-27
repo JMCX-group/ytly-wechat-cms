@@ -154,14 +154,31 @@ $api->version('v1', function ($api) {
     });
 });
 
+
+
+/**
+ * 微信支付相关
+ * 该目录是授权目录
+ */
 Route::group(['prefix' => 'pay'], function () {
     Route::get('get_sign', 'WxPayController@getSign');
     Route::get('get_qrcode', 'WxPayController@getQrCode');
 });
 
-//Route::group(['prefix' => 'info'], function() {
+
+
+/**
+ * 购买产品
+ * 该目录是授权目录
+ */
 Route::group(['prefix' => 'info', 'middleware' => ['wechat.oauth:snsapi_userinfo']], function() {
+    /**
+     * 之前的支付课程
+     */
     Route::resource('sign-up', 'SignUpController');
 
+    /**
+     * 视频课程的购买支付
+     */
     Route::resource('buy-video', 'BuyVideoController');
 });
