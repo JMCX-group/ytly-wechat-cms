@@ -108,54 +108,15 @@
                     </div>
                 </div>
 
-                <div class="box-footer">
+                <div class="box-footer" style="margin-top: 45px;">
                     <div class="col-xs-1 column"></div>
                     <div class="col-xs-10 column">
-                        <button type="submit" class="btn btn-block btn-info">提 交 信 息</button>
+                        <button type="submit" class="btn btn-block btn-info">支付费用</button>
                     </div>
                     <div class="col-xs-1 column"></div>
                 </div>
 
             </form>
-        </div>
-    </div>
-
-
-    <div class="container" style="margin: 30px 0;">
-        <div>
-            <div class="row clearfix">
-                <div class="row clearfix">
-                    <div class="col-xs-1 column"></div>
-                    <div class="col-xs-10 column"><hr></div>
-                    <div class="col-xs-1 column"></div>
-                </div>
-                @if(isset($signUpInfo))
-                    @if($signUpInfo['status'] != 'paid')
-                        <div class="row clearfix">
-                            <div class="col-xs-1 column"></div>
-                            <div class="col-xs-10 column" style="text-align: center;">
-                                <p class="text-danger"><strong>扫码支付课程费用:</strong></p>
-                            </div>
-                            <div class="col-xs-1 column"></div>
-                        </div>
-                        <div class="row clearfix">
-                            <div class="col-xs-1 column"></div>
-                            <div class="col-xs-10 column imgs-class" >
-                                <img src="/qrcode/20170525-328.png" class="img-rounded" width="188px;"/>
-                            </div>
-                            <div class="col-xs-1 column"></div>
-                        </div>
-                    @else
-                        <div class="row clearfix">
-                            <div class="col-xs-1 column"></div>
-                            <div class="col-xs-10 column" style="text-align: center;">
-                                <p class="text-success"><strong>已支付课程费用！</strong></p>
-                            </div>
-                            <div class="col-xs-1 column"></div>
-                        </div>
-                    @endif
-                @endif
-            </div>
         </div>
     </div>
 @stop

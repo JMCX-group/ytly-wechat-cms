@@ -72,7 +72,25 @@ class BuyVideoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user_info = $this->getUserInfo();
+
+        dd($request);
+        $data = [
+            'openid' => $user_info['user_openid'],
+            'name' => $request['name'],
+            'phone' => $request['phone'],
+            'age' => $request['age'],
+            'class_time' => $request['class-time'],
+            'status' => 'no_pay'
+        ];
+
+        try {
+            WxSignUp::create($data);
+
+            return redirect()->route('info.sign-up.index')->withSuccess('');
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(array('error' => $e->getMessage()))->withInput();
+        }
     }
 
     /**
