@@ -99,6 +99,7 @@ class BuyVideoController extends Controller
             $config = $ret['config'];
             $order = $ret['order'];
 
+            dd($ret);
             return response()->json($config);
             return view('buy-video.pay', compact('config', 'order'));
         } catch (\Exception $e) {
