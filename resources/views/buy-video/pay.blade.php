@@ -28,7 +28,7 @@
         }
 
         function callPay() {
-            alert(<?php echo $config; ?>);
+            alert(JSON.stringify(<?php echo $config; ?>));
             if (typeof WeixinJSBridge == "undefined") {
                 if (document.addEventListener) {
                     document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
