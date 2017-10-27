@@ -95,13 +95,9 @@ class BuyVideoController extends Controller
         try {
             VideoBuyList::create($data);
 
-            $ret = $this->createOrder($data);
-            $config = $ret['config'];
-            $order = $ret['order'];
+            $config = $this->createOrder($data);
 
-            dd($ret);
             return response()->json($config);
-            return view('buy-video.pay', compact('config', 'order'));
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(array('error' => $e->getMessage()))->withInput();
         }
@@ -125,22 +121,18 @@ class BuyVideoController extends Controller
             ];
 
             $order = new Order($attributes);
-            dd($order);
             $result = $payment->prepare($order);
-            dd($result);
+
             if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS') {
                 $prepayId = $result->prepay_id;
                 $config = $payment->configForJSSDKPayment($prepayId);
 
-                return [
-                    'config' => $config,
-                    'order' => $order
-                ];
+                return $config;
             } else {
                 return false;
             }
         } catch (\Exception $e) {
-            return redirect()->back()->withErrors(array('error' => $e->getMessage()))->withInput();
+            return dd($e->getMessage());
         }
     }
 
