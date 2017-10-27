@@ -74,6 +74,8 @@ class BuyVideoController extends Controller
     public function store(Request $request)
     {
         $user_info = $this->getUserInfo();
+
+        dd($user_info);
         $phone = $request['phone'];
 
         /**
