@@ -82,11 +82,13 @@
                         <label for="price" class="control-label">课程费用：</label>
                     </div>
                     <div class="col-xs-7 column" style="margin-left: -15px; top: 8px;">
+                        <label for="price" class="control-label" style="color: red;"><b>
                         @if($data['type'] == 'half')
-                            <label for="price" class="control-label">129元</label>
+                            129元
                         @else
-                            <label for="price" class="control-label" style="color: red;"><b>199元</b></label>
+                            199元
                         @endif
+                            </b></label>
                     </div>
                     <div class="col-xs-1 column"></div>
                 </div>
