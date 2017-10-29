@@ -73,8 +73,9 @@ class BuyVideoController extends Controller
      */
     public function store(Request $request)
     {
-        $user_info = $this->getUserInfo();
         $phone = $request['phone'];
+        $user_info = $this->getUserInfo();
+        $user_info['phone'] = $phone;
 
         /**
          * 保存购买者的手机号
