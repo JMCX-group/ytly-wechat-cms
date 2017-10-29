@@ -58,7 +58,7 @@
                         <label for="phone" class="control-label">联系方式：</label>
                     </div>
                     <div class="col-xs-7 column" style="margin-left: -15px;">
-                        <label for="phone" class="control-label" style="vertical-align: middle!important;">{{$user_info['phone']}}</label>
+                        <label for="phone" class="control-label" style="top: 8px;">{{$user_info['phone']}}</label>
                     </div>
                     <div class="col-xs-1 column"></div>
                 </div>
@@ -70,7 +70,7 @@
                     <div class="col-xs-7 column" style="margin-left: -15px;">
                         @foreach($series as $item)
                             @if($item['id'] == $data['series_id'])
-                                <label for="series" class="control-label" style="vertical-align: middle!important;">{{$item['name']}}</label>
+                                <label for="series" class="control-label" style="top: 8px;">{{$item['name']}}</label>
                             @endif
                         @endforeach
                     </div>
@@ -83,9 +83,9 @@
                     </div>
                     <div class="col-xs-7 column" style="margin-left: -15px;">
                         @if($data['type'] == 'half')
-                            <label for="price" class="control-label" style="vertical-align: middle!important;">129元</label>
+                            <label for="price" class="control-label" style="top: 8px;">129元</label>
                         @else
-                            <label for="price" class="control-label" style="vertical-align: middle!important;color: red;"><b>199元</b></label>
+                            <label for="price" class="control-label" style="top: 8px;color: red;"><b>199元</b></label>
                         @endif
                     </div>
                     <div class="col-xs-1 column"></div>
