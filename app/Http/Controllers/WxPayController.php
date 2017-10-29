@@ -124,6 +124,8 @@ class WxPayController extends Controller
                  */
                 $info = VideoBuyList::where('openid', $wxOrder->open_id)->first();
                 if ($info) {
+                    $info->start_time = date('Y-m-d H:i:s');
+                    $info->end_time = ($info->type == 'all') ? date('Y-m-d H:i:s', strtotime("+1 year")) : date('Y-m-d H:i:s', strtotime("+6 month"));
                     $info->status = 'paid';
                     $info->save();
                 }

@@ -122,7 +122,8 @@ class BuyVideoController extends Controller
             'body' => 'series:' . $data['series_id'] . '|type:' . $data['type'],
             'detail' => '视频课程',
             'out_trade_no' => date('YmdHis') . substr($openid, strlen($openid) - 4),
-            'total_fee' => $data['type'] == 'half' ? 12900 : 19900, // 单位：分
+//            'total_fee' => $data['type'] == 'half' ? 12900 : 19900, // 单位：分
+            'total_fee' => 1, // 单位：分
             'notify_url' => 'http://wx.yitongliuyi.com/api/pay/video_buy_notify_url', // 支付结果通知网址，如果不设置则会使用配置里的默认地址
             'openid' => $openid // trade_type=JSAPI，此参数必传，用户在商户appid下的唯一标识，
         ];
