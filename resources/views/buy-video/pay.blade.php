@@ -70,8 +70,6 @@
                         @foreach($series as $item)
                             @if($item['id'] == $data['series_id'])
                                 <input type="text" class="form-control" id="series" name="series" disabled value="{{$item['name']}}">
-                            @else
-                                <input type="text" class="form-control" id="series" name="series" disabled value="{{$item['name']}}">
                             @endif
                         @endforeach
                     </div>
