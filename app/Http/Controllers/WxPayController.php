@@ -122,7 +122,7 @@ class WxPayController extends Controller
                 /**
                  * 更新购买信息
                  */
-                $info = VideoBuyList::where('openid', $wxOrder->open_id)->first();
+                $info = VideoBuyList::where('open_id', $wxOrder->open_id)->first();
                 if ($info) {
                     $info->start_time = date('Y-m-d H:i:s');
                     $info->end_time = ($info->type == 'all') ? date('Y-m-d H:i:s', strtotime("+1 year")) : date('Y-m-d H:i:s', strtotime("+6 month"));
@@ -132,6 +132,7 @@ class WxPayController extends Controller
             } else { // 用户支付失败
                 $wxOrder->status = 'paid_fail';
             }
+
             $wxOrder->save(); // 保存订单
             return true; // 返回处理完成
         });
