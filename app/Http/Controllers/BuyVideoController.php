@@ -6,6 +6,7 @@ use App\Http\Helper\EasyWeChat;
 use App\People;
 use App\VideoBuyList;
 use App\VideoSeries;
+use App\WxOrder;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
 use EasyWeChat\Payment\Order;
@@ -135,6 +136,22 @@ class BuyVideoController extends Controller
             $prepayId = $result->prepay_id;
             $config = $payment->configForJSSDKPayment($prepayId);
             $config['timeStamp'] = $config['timestamp'];
+
+            /**
+             * 订单入库
+             */
+            $newOrder = [
+                'open_id' => $openid,
+                'out_trade_no' => $attributes['out_trade_no'],
+                'total_fee' => $attributes['total_fee'],
+                'body' => $attributes['body'],
+                'detail' => $attributes['detail'],
+                'type' => $data['type'],
+                'time_start' => date('Y-m-d H:i:s'),
+                'ret_native_notify' => json_encode($config),
+                'status' => 'start' //start:开始; end:结束
+            ];
+            WxOrder::create($newOrder);
 
             return $config;
         } else {
