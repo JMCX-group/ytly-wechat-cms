@@ -57,7 +57,7 @@
                         <label for="phone" class="control-label">联系方式：</label>
                     </div>
                     <div class="col-xs-7 column" style="margin-left: -15px;">
-                        <input type="text" class="form-control" id="phone" name="phone" disabled value="{{$user_info['phone']}}">
+                        <label for="phone" class="control-label">{{$user_info['phone']}}</label>
                     </div>
                     <div class="col-xs-1 column"></div>
                 </div>
@@ -69,7 +69,7 @@
                     <div class="col-xs-7 column" style="margin-left: -15px;">
                         @foreach($series as $item)
                             @if($item['id'] == $data['series_id'])
-                                <input type="text" class="form-control" id="series" name="series" disabled value="{{$item['name']}}">
+                                <label for="series" class="control-label">{{$item['name']}}</label>
                             @endif
                         @endforeach
                     </div>
@@ -82,9 +82,9 @@
                     </div>
                     <div class="col-xs-7 column" style="margin-left: -15px;">
                         @if($data['type'] == 'half')
-                            <input type="text" class="form-control" id="price" name="price" disabled value="129元">
+                            <label for="price" class="control-label">129元</label>
                         @else
-                            <input type="text" class="form-control" id="price" name="price" disabled value="199元">
+                            <label for="price" class="control-label">199元</label>
                         @endif
                     </div>
                     <div class="col-xs-1 column"></div>
