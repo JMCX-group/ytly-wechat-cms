@@ -107,6 +107,12 @@
                     </div>
                 </div>
 
+                <div class="row clearfix">
+                    <div class="col-xs-1 column"></div>
+                    <div class="col-xs-10 column"><hr></div>
+                    <div class="col-xs-1 column"></div>
+                </div>
+
                 <div class="box-footer" style="margin-top: 45px;">
                     <div class="col-xs-1 column"></div>
                     <div class="col-xs-10 column">
