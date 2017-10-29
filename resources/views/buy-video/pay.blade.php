@@ -53,7 +53,7 @@
                 @endif
                 <div class="form-group">
                     <div class="col-xs-1 column"></div>
-                    <div class="col-xs-3 column" style="text-align: right; top: 8px;">
+                    <div class="col-xs-3 column" style="text-align: right; top: 30px;">
                         <label for="phone" class="control-label">联系方式：</label>
                     </div>
                     <div class="col-xs-7 column" style="margin-left: -15px;">
