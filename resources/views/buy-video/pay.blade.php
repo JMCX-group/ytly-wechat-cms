@@ -12,6 +12,7 @@
 @section('content')
     <div class="row">
         <div class="box box-info">
+            <form class="form-horizontal">
             <div class="row clearfix" style="text-align: center;">
                 <div class="col-xs-12 column imgs-class">
                     <div style="text-align: center; font-size: 20px;">
@@ -51,7 +52,7 @@
                         <div class="col-xs-1 column"></div>
                     </div>
                 @endif
-                <div class="form-group" style="top: 30px;">
+                <div class="form-group">
                     <div class="col-xs-1 column"></div>
                     <div class="col-xs-3 column" style="text-align: right; top: 8px;">
                         <label for="phone" class="control-label">联系方式：</label>
@@ -98,6 +99,8 @@
                 </div>
                 <div class="col-xs-1 column"></div>
             </div>
+
+            </form>
         </div>
     </div>
 @stop
