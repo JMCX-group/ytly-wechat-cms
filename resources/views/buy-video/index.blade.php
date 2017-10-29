@@ -110,7 +110,7 @@
                 <div class="box-footer" style="margin-top: 45px;">
                     <div class="col-xs-1 column"></div>
                     <div class="col-xs-10 column">
-                        <button type="submit" class="btn btn-block btn-info">支付费用</button>
+                        <button type="submit" class="btn btn-block btn-info">提交信息</button>
                     </div>
                     <div class="col-xs-1 column"></div>
                 </div>

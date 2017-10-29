@@ -38,7 +38,62 @@
                 <div class="col-xs-1 column"></div>
             </div>
 
-            <div class="box-body" style="margin-top: 45px;">
+            <div class="box-body" style="margin-top: 15px;">
+                @if(isset($user_info))
+                    <div class="form-group">
+                        <div class="col-xs-1 column"></div>
+                        <div class="col-xs-3 column" style="text-align: right;">
+                            <img src="{{$user_info['user_avatar']}}" class="img-avatar img-rounded" style="margin-right: 15px;"/>
+                        </div>
+                        <div class="col-xs-7 column" style="margin-left: -15px; top:11px;">
+                            <label for="nickname" class="control-label">{{$user_info['user_name']}}</label>
+                        </div>
+                        <div class="col-xs-1 column"></div>
+                    </div>
+                @endif
+                <div class="form-group">
+                    <div class="col-xs-1 column"></div>
+                    <div class="col-xs-3 column" style="text-align: right; top: 8px;">
+                        <label for="phone" class="control-label">联系方式：</label>
+                    </div>
+                    <div class="col-xs-7 column" style="margin-left: -15px;">
+                        <input type="text" class="form-control" id="phone" name="phone" disabled value="{{$user_info['phone']}}">
+                    </div>
+                    <div class="col-xs-1 column"></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-1 column"></div>
+                    <div class="col-xs-3 column" style="text-align: right; top: 8px;">
+                        <label for="series" class="control-label">课程系列：</label>
+                    </div>
+                    <div class="col-xs-7 column" style="margin-left: -15px;">
+                        @foreach($series as $item)
+                            @if($item['id'] == $data['series_id'])
+                                <input type="text" class="form-control" id="series" name="series" disabled value="{{$item['name']}}">
+                            @else
+                                <input type="text" class="form-control" id="series" name="series" disabled value="{{$item['name']}}">
+                            @endif
+                        @endforeach
+                    </div>
+                    <div class="col-xs-1 column"></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-1 column"></div>
+                    <div class="col-xs-3 column" style="text-align: right; top: 8px;">
+                        <label for="price" class="control-label">课程费用：</label>
+                    </div>
+                    <div class="col-xs-7 column" style="margin-left: -15px;">
+                        @if($data['type'] == 'half')
+                            <input type="text" class="form-control" id="price" name="price" disabled value="129元">
+                        @else
+                            <input type="text" class="form-control" id="price" name="price" disabled value="199元">
+                        @endif
+                    </div>
+                    <div class="col-xs-1 column"></div>
+                </div>
+            </div>
+
+            <div class="box-footer" style="margin-top: 45px;">
                 <div class="col-xs-1 column"></div>
                 <div class="col-xs-10 column">
                     <button class='btn btn-block btn-success' onclick="callPay()"  type="button">立即支付</button>

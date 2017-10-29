@@ -98,7 +98,9 @@ class BuyVideoController extends Controller
             $config = $this->createOrder($data);
             $config = json_encode($config);
 
-            return view('buy-video.pay', compact('config'));
+            $series = VideoSeries::where('status', '启用')->get();
+
+            return view('buy-video.pay', compact('config', 'data', 'user_info', 'series'));
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(array('error' => $e->getMessage()))->withInput();
         }
