@@ -132,7 +132,7 @@ Route::group(['namespace' => 'Business', 'middleware' => ['auth','Entrust']], fu
 /**
  * File Download
  */
-Route::group(['prefix' => 'download'], function () {
+Route::group(['prefix' => 'dl'], function () {
     Route::get('index', 'DownLoadFileController@index');
     Route::post('list', 'DownLoadFileController@getDownList');
     Route::get('file/{id}', 'DownLoadFileController@downloadFile');
