@@ -103,7 +103,12 @@
             <div class="box-footer" style="margin-top: 45px;">
                 <div class="col-xs-1 column"></div>
                 <div class="col-xs-10 column">
-                    <button class='btn btn-block btn-success' onclick="callPay()"  type="button">立即支付</button>
+                    <button class='btn btn-block btn-success' id="btn-pay" onclick="callPay()"  type="button">立即支付</button>
+                </div>
+                <div class="col-xs-1 column"></div>
+                <div class="col-xs-1 column"></div>
+                <div class="col-xs-10 column">
+                    <button class='btn btn-block btn-success' id="btn-return" onclick="returnInfoPage()"  type="button">返 回</button>
                 </div>
                 <div class="col-xs-1 column"></div>
             </div>
@@ -127,6 +132,8 @@
         }
 
         function callPay() {
+            $('#btn-pay').attr('disabled', 'disabled');
+
             if (typeof WeixinJSBridge == "undefined") {
                 if (document.addEventListener) {
                     document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
@@ -137,6 +144,12 @@
             } else {
                 jsApiCall();
             }
+
+            returnInfoPage();
+        }
+
+        function returnInfoPage() {
+            window.location.href = "http://wx.yitongliuyi.com/info/buy-video";
         }
     </script>
 @stop
