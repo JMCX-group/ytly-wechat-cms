@@ -136,7 +136,7 @@
         }
 
         function callPay() {
-            $('#btn-pay').attr('disabled', 'disabled');
+            $('#btn-pay').hide();
 
             if (typeof WeixinJSBridge == "undefined") {
                 if (document.addEventListener) {
@@ -148,8 +148,6 @@
             } else {
                 jsApiCall();
             }
-
-            returnInfoPage();
         }
 
         function returnInfoPage() {
