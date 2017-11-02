@@ -93,18 +93,19 @@ class BuyVideoController extends Controller
         // 确认用户是否已经购买
         $buyInfo = VideoBuyList::where('open_id', $user_info['user_openid'])->first();
 
+        $data = [
+            'open_id' => $user_info['user_openid'],
+            'series_id' => $request['series'],
+            'type' => $request['price'],
+            'status' => 'no_pay'
+        ];
+
         try {
             if ($buyInfo != null && $buyInfo != '') {
                 $buyInfo->series_id = $request['series'];
                 $buyInfo->type = $request['price'];
                 $buyInfo->save();
             } else {
-                $data = [
-                    'open_id' => $user_info['user_openid'],
-                    'series_id' => $request['series'],
-                    'type' => $request['price'],
-                    'status' => 'no_pay'
-                ];
                 VideoBuyList::create($data);
             }
 
