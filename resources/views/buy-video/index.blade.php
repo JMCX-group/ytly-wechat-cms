@@ -132,7 +132,7 @@
                             <button type="submit" class="btn btn-block btn-info">支付费用</button>
                         @elseif(isset($buyInfo['status']) &&  $buyInfo['status']=== 'paid')
                             <p>有效期：{{$buyInfo['start_time']}} - {{$buyInfo['end_time']}}</p>
-                            <p>下载地址：http://wx.yitongliuyi.com/dl/list</p>
+                            <p>下载地址：<strong>http://wx.yitongliuyi.com/dl</strong></p>
                             <p>请在PC电脑浏览器中打开~</p>
                         @else
                             <button type="submit" class="btn btn-block btn-info">提交信息</button>
