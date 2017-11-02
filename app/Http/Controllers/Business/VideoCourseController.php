@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Business;
 
+use App\VideoBuyList;
+use App\VideoDownloadList;
+use App\VideoLearnSchedule;
 use App\VideoLibrary;
 use App\VideoSeries;
 use Illuminate\Http\Request;
@@ -107,7 +110,26 @@ class VideoCourseController extends Controller
         ];
 
         try {
-            VideoLibrary::create($data);
+            $newVideo = VideoLibrary::create($data);
+
+            /**
+             * 给成员部署新课程：
+             */
+            $learnSchedule = VideoLearnSchedule::where('series_id', $data['series_id'])
+                ->where('num', $lastNum['num'])
+                ->where('status', '已完成') // 两种状态：已完成、已下载
+                ->get();
+            $peopleOpenIdList = $learnSchedule->lists('open_id');
+            $peoples = VideoBuyList::whereIn('open_id', $peopleOpenIdList)->get();
+            $videoDL = array();
+            foreach ($peoples as $people) {
+                array_push($videoDL, array(
+                    'uid' => $people->id,
+                    'file_id' => $newVideo['id'],
+                    'status' => 1
+                ));
+            }
+            VideoDownloadList::insert($videoDL);
 
             return redirect()->route('video-course.index')->withSuccess('上传视频成功');
         } catch (\Exception $e) {

@@ -34,7 +34,9 @@
                             <th>昵称</th>
                             <th>姓名</th>
                             <th>课程系列</th>
-                            <th>已完成课程序号</th>
+                            <th>已下载课程序号</th>
+                            <th>状态</th>
+                            <th>管理操作</th>
                         </tr>
                         @forelse($lists as $list)
                             <tr>
@@ -44,6 +46,19 @@
                                 <td>{{$list['name']}}</td>
                                 <td>{{$list['series_name']}}</td>
                                 <td>{{$list['num']}}</td>
+                                <td>{{$list['status']}}</td>
+                                <td>
+                                    {{--// 两种状态：已完成、已下载--}}
+                                    @if($list['status'] == '已下载')
+                                        <a class="btn btn-info" href="{{URL::to('video-series/'.$series->id)}}">
+                                            完成该课程
+                                        </a>
+                                    @else
+                                        <a class="btn btn-info" href="#">
+                                            还未下载
+                                        </a>
+                                    @endif
+                                </td>
                             </tr>
                         @empty
                             <tr>

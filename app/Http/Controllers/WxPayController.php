@@ -135,18 +135,19 @@ class WxPayController extends Controller
 
                 /**
                  * 部署可下载信息
+                 * 目前提供第一课时
                  */
                 $people = People::where('open_id', $info->open_id)->first();
-                $videos = VideoLibrary::where('series_id', $info->series_id)->get();
-                $videoDL = array();
-                foreach ($videos as $video) {
-                    array_push($videoDL, array(
-                        'uid' => $people->id,
-                        'file_id' => $video->id,
-                        'status' => 1
-                    ));
-                }
-                VideoDownloadList::insert($videoDL);
+                $videos = VideoLibrary::where('series_id', $info->series_id)->where('num', 1)->first();
+//                $videoDL = array();
+//                foreach ($videos as $video) {
+//                    array_push($videoDL, array(
+//                        'uid' => $people->id,
+//                        'file_id' => $video->id,
+//                        'status' => 1
+//                    ));
+//                }
+                VideoDownloadList::insert(array('uid' => $people->id, 'file_id' => $videos->id, 'status' => 1));
             } else { // 用户支付失败
                 $wxOrder->status = 'paid_fail';
             }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\VideoDownloadList;
 use App\MusicLibrary;
 use App\People;
+use App\VideoLearnSchedule;
+use App\VideoLibrary;
 use Illuminate\Http\Request;
 
 class DownLoadFileController extends Controller
@@ -35,9 +37,9 @@ class DownLoadFileController extends Controller
             return view('errors.download');
         }
 
-        $fileName = MusicLibrary::find($id);
-        $fileName = $fileName->unsigned_name.'.mp3';
-        $filePath = 'audios/musics/' . $fileName;
+        $fileName = VideoLibrary::find($id);
+        $fileName = $fileName->unsigned_name;
+        $filePath = $fileName->v_url;
 
         if(file_exists($filePath)) {
             $this->download_send_headers($fileName);
@@ -45,6 +47,16 @@ class DownLoadFileController extends Controller
 
             $data->status = 0;
             $data->save();
+
+            /**
+             * 部署学习信息
+             */
+            VideoLearnSchedule::insert(array(
+                'open_id' => $uid->open_id,
+                'series_id' => $fileName->series_id,
+                'num' => $fileName->num,
+                'status' => '已下载' // 两种状态：已完成、已下载
+            ));
 
             return view('download.index');
         } else {

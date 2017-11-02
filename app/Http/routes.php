@@ -125,6 +125,7 @@ Route::group(['namespace' => 'Business', 'middleware' => ['auth','Entrust']], fu
     Route::resource('video-buy-list', 'VideoBuyListController');
     // 学习进度
     Route::resource('video-download-list', 'VideoDownloadListController');
+    Route::get('video-download-list/completed/{id}', 'VideoDownloadListController@completed');
 });
 
 
