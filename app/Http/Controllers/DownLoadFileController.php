@@ -27,12 +27,12 @@ class DownLoadFileController extends Controller
         $id = substr($str, 0, strlen($str) - 11);
         $phone = substr($str, strlen($id));
 
-        $uid = People::where('phone', $phone)->first();
-        if ($uid == null) {
+        $people = People::where('phone', $phone)->first();
+        if ($people == null) {
             return view('errors.nouser');
         }
 
-        $data = VideoDownloadList::where('file_id', $id)->where('uid', $uid->id)->first();
+        $data = VideoDownloadList::where('file_id', $id)->where('uid', $people->id)->first();
         if ($data == null) {
             return view('errors.download');
         }
@@ -42,21 +42,21 @@ class DownLoadFileController extends Controller
         $filePath = $videoInfo->v_url;
 
         if(file_exists($filePath)) {
+            /**
+             * 部署学习信息
+             */
+            VideoLearnSchedule::insert(array(
+                'open_id' => $people->open_id,
+                'series_id' => $videoInfo->series_id,
+                'num' => $videoInfo->num,
+                'status' => '已下载' // 两种状态：已完成、已下载
+            ));
+
             $this->download_send_headers($fileName);
             readfile($filePath);
 
             $data->status = 0;
             $data->save();
-
-            /**
-             * 部署学习信息
-             */
-            VideoLearnSchedule::insert(array(
-                'open_id' => $uid->open_id,
-                'series_id' => $fileName->series_id,
-                'num' => $fileName->num,
-                'status' => '已下载' // 两种状态：已完成、已下载
-            ));
 
             return view('download.index');
         } else {

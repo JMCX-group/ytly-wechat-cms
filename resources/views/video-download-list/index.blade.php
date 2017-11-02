@@ -50,11 +50,11 @@
                                 <td>
                                     {{--// 两种状态：已完成、已下载--}}
                                     @if($list['status'] == '已下载')
-                                        <a class="btn btn-info" href="{{URL::to('video-series/'.$series->id)}}">
+                                        <a class="btn btn-info" onclick="ajaxCompleted({{$list['id']}})" id="complete_{{$list['id']}}" href="javascript:void(0)">
                                             完成该课程
                                         </a>
                                     @else
-                                        <a class="btn btn-info" href="#">
+                                        <a class="btn btn-info" disabled="disabled" href="#">
                                             还未下载
                                         </a>
                                     @endif
@@ -84,8 +84,28 @@
             var url = button.data('url');
             var modal = $(this);
 
-            modal.find('form').attr('action', url);
+            modal.find('form').attr('action', idurl);
         })
+
+        /**
+         * Ajax请求完成
+         * @param id
+         */
+        function ajaxCompleted(id) {
+            var url = 'video-download-list/completed/' + id;
+            $.ajax({
+                url: url,
+                type: 'GET', //POST
+                async: true, //或false,是否异步
+                timeout: 5000,    //超时时间
+                dataType: 'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                complete: function () {
+                    var $completeId = $('#complete_' + id);
+                    $completeId.attr('disabled', 'disabled');
+                    $completeId.text('还未下载');
+                }
+            })
+        }
     </script>
 @stop
 @section('style')
