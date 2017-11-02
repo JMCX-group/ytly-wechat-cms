@@ -101,16 +101,20 @@
             </div>
 
             <div class="box-footer" style="margin-top: 45px;">
-                <div class="col-xs-1 column"></div>
-                <div class="col-xs-10 column">
-                    <button class='btn btn-block btn-success' id="btn-pay" onclick="callPay()"  type="button">立即支付</button>
+                <div class="row">
+                    <div class="col-xs-1 column"></div>
+                    <div class="col-xs-10 column">
+                        <button class='btn btn-block btn-success' id="btn-pay" onclick="callPay()"  type="button">立即支付</button>
+                    </div>
+                    <div class="col-xs-1 column"></div>
                 </div>
-                <div class="col-xs-1 column"></div>
-                <div class="col-xs-1 column"></div>
-                <div class="col-xs-10 column">
-                    <button class='btn btn-block btn-success' id="btn-return" onclick="returnInfoPage()"  type="button">返 回</button>
+                <div class="row">
+                    <div class="col-xs-1 column"></div>
+                    <div class="col-xs-10 column">
+                        <button class='btn btn-block btn-success' id="btn-return" onclick="returnInfoPage()"  type="button">返 回</button>
+                    </div>
+                    <div class="col-xs-1 column"></div>
                 </div>
-                <div class="col-xs-1 column"></div>
             </div>
 
             </form>
