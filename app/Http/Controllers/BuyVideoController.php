@@ -85,20 +85,28 @@ class BuyVideoController extends Controller
          * 保存购买者的手机号
          */
         $user = People::where('open_id', $user_info['user_openid'])->first();
-        if($user->phone == '' || $user->phone == null){
+        if ($user->phone == '' || $user->phone == null) {
             $user->phone = $phone;
             $user->save();
         }
 
-        $data = [
-            'open_id' => $user_info['user_openid'],
-            'series_id' => $request['series'],
-            'type' => $request['price'],
-            'status' => 'no_pay'
-        ];
+        // 确认用户是否已经购买
+        $buyInfo = VideoBuyList::where('open_id', $user_info['user_openid'])->first();
 
         try {
-            VideoBuyList::create($data);
+            if ($buyInfo != null && $buyInfo != '') {
+                $buyInfo->series_id = $request['series'];
+                $buyInfo->type = $request['price'];
+                $buyInfo->save();
+            } else {
+                $data = [
+                    'open_id' => $user_info['user_openid'],
+                    'series_id' => $request['series'],
+                    'type' => $request['price'],
+                    'status' => 'no_pay'
+                ];
+                VideoBuyList::create($data);
+            }
 
             $config = $this->createOrder($data);
             $config = json_encode($config);
