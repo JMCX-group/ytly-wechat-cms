@@ -108,7 +108,7 @@
                     </div>
                     <div class="col-xs-1 column"></div>
                 </div>
-                <div class="row">
+                <div class="row" style="margin-top: 20px;">
                     <div class="col-xs-1 column"></div>
                     <div class="col-xs-10 column">
                         <button class='btn btn-block btn-success' id="btn-return" onclick="returnInfoPage()"  type="button">返 回</button>
