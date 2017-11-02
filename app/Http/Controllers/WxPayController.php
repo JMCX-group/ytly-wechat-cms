@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Helper\EasyWeChat;
+use App\People;
 use App\VideoBuyList;
+use App\VideoDownloadList;
+use App\VideoLibrary;
 use App\WxOrder;
 use App\WxSignUp;
 use EasyWeChat\Foundation\Application;
@@ -129,6 +132,21 @@ class WxPayController extends Controller
                     $info->status = 'paid';
                     $info->save();
                 }
+
+                /**
+                 * 部署可下载信息
+                 */
+                $people = People::where('open_id', $info->open_id)->first();
+                $videos = VideoLibrary::where('series_id', $info->series_id)->get();
+                $videoDL = array();
+                foreach ($videos as $video) {
+                    array_push($videoDL, array(
+                        'uid' => $people->id,
+                        'file_id' => $video->id,
+                        'status' => 1
+                    ));
+                }
+                VideoDownloadList::insert($videoDL);
             } else { // 用户支付失败
                 $wxOrder->status = 'paid_fail';
             }

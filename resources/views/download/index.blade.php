@@ -41,7 +41,7 @@
                 <div class="jumbotron">
                     <h4 class="text-center" style="margin-bottom: 40px">请输入您的手机号，获取可以下载的文件列表</h4>
 
-                    <form class="form-horizontal" action="{{URL::to('download/list')}}" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="{{URL::to('dl/list')}}" method="post" enctype="multipart/form-data">
                         <div class="box-header with-border">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                         </div>
