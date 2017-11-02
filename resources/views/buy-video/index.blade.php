@@ -131,7 +131,7 @@
                         @if(isset($buyInfo['status']) &&  $buyInfo['status']=== 'no_pay')
                             <button type="submit" class="btn btn-block btn-info">支付费用</button>
                         @elseif(isset($buyInfo['status']) &&  $buyInfo['status']=== 'paid')
-                            有效期：{{$buyInfo['start_time']}} - {{$bufInfo['end_time']}}
+                            有效期：{{$buyInfo['start_time']}} - {{$buyInfo['end_time']}}
                         @else
                             <button type="submit" class="btn btn-block btn-info">提交信息</button>
                         @endif
