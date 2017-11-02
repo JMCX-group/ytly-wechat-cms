@@ -88,7 +88,7 @@ class VideoCourseController extends Controller
                     Log::info('upload-video', ['context' => $e->getMessage()]);
                 }
 
-                $videoFileUrl = '/' . $destinationPath . $filename;
+                $videoFileUrl = $destinationPath . $filename;
             }
         }
 

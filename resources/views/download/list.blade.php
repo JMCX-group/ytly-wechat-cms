@@ -29,7 +29,7 @@
                                         <tr>
                                             <td class="text-center">{{$item['name']}}</td>
                                             @if($item['status'] == 1)
-                                                <td class="text-center"><a class="btn btn-success btn-block" name="btn-download" id="download-{{$item['id']}}" clicked="" href="{{URL::to('download/file/' . $item['id']. $user_info['phone'])}}">下载</a></td>
+                                                <td class="text-center"><a class="btn btn-success btn-block" name="btn-download" id="download-{{$item['id']}}" clicked="" href="{{URL::to('dl/file/' . $item['id']. $user_info['phone'])}}">下载</a></td>
                                             @else
                                                 <td class="text-center"><a class="btn btn-default btn-block" disabled>已下载</a></td>
                                             @endif
