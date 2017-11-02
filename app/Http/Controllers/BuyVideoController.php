@@ -51,9 +51,12 @@ class BuyVideoController extends Controller
             $user_info['phone'] = $phone->phone;
         }
 
+        // 确认用户是否已经购买
+        $buyInfo = VideoBuyList::where('open_id', $user_info['user_openid'])->first();
+
         $series = VideoSeries::where('status', '启用')->get();
 
-        return view('buy-video.index', compact('user_info', 'series'));
+        return view('buy-video.index', compact('user_info', 'buyInfo', 'series'));
     }
 
     /**

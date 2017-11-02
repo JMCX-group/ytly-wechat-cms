@@ -79,7 +79,11 @@
                             @foreach($series as $item)
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="series" style="margin-bottom: 15px;" value="{{$item['id']}}">{{$item['name']}}
+                                        @if(isset($buyInfo['series_id']) && $buyInfo['series_id'] === $item['id'])
+                                            <input type="radio" name="series" style="margin-bottom: 15px;" checked value="{{$item['id']}}">{{$item['name']}}
+                                        @else
+                                            <input type="radio" name="series" style="margin-bottom: 15px;" value="{{$item['id']}}">{{$item['name']}}
+                                        @endif
                                     </label>
                                 </div>
                             @endforeach
@@ -94,12 +98,20 @@
                         <div class="col-xs-7 column" style="margin-left: -15px;">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="price" style="margin-bottom: 15px;" value="half">半年费用：129元
+                                    @if(isset($buyInfo['type']) && $buyInfo['type'] === 'half')
+                                        <input type="radio" name="price" style="margin-bottom: 15px;" checked value="half">半年费用：129元
+                                    @else
+                                        <input type="radio" name="price" style="margin-bottom: 15px;" value="half">半年费用：129元
+                                    @endif
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="price" style="margin-bottom: 15px;" value="all">全年费用：199元
+                                    @if(isset($buyInfo['type']) && $buyInfo['type'] === 'all')
+                                        <input type="radio" name="price" style="margin-bottom: 15px;" checked value="all">全年费用：199元
+                                    @else
+                                        <input type="radio" name="price" style="margin-bottom: 15px;" value="all">全年费用：199元
+                                    @endif
                                 </label>
                             </div>
                         </div>
@@ -116,7 +128,13 @@
                 <div class="box-footer" style="margin-top: 45px;">
                     <div class="col-xs-1 column"></div>
                     <div class="col-xs-10 column">
-                        <button type="submit" class="btn btn-block btn-info">提交信息</button>
+                        @if(isset($buyInfo['status']) &&  $buyInfo['status']=== 'no_pay')
+                            <button type="submit" class="btn btn-block btn-info">支付费用</button>
+                        @elseif(isset($buyInfo['status']) &&  $buyInfo['status']=== 'paid')
+                            有效期：{{$buyInfo['start_time']}} - {{$bufInfo['end_time']}}
+                        @else
+                            <button type="submit" class="btn btn-block btn-info">提交信息</button>
+                        @endif
                     </div>
                     <div class="col-xs-1 column"></div>
                 </div>
