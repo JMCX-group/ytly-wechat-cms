@@ -37,9 +37,9 @@ class DownLoadFileController extends Controller
             return view('errors.download');
         }
 
-        $fileName = VideoLibrary::find($id);
-        $fileName = $fileName->unsigned_name;
-        $filePath = $fileName->v_url;
+        $videoInfo = VideoLibrary::find($id);
+        $fileName = $videoInfo->unsigned_name;
+        $filePath = $videoInfo->v_url;
 
         if(file_exists($filePath)) {
             $this->download_send_headers($fileName);
