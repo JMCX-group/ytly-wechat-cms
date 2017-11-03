@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Business;
 
+use App\People;
 use App\VideoBuyList;
 use App\VideoDownloadList;
 use App\VideoLearnSchedule;
@@ -120,7 +121,9 @@ class VideoCourseController extends Controller
                 ->where('status', '已完成') // 两种状态：已完成、已下载
                 ->get();
             $peopleOpenIdList = $learnSchedule->lists('open_id');
-            $peoples = VideoBuyList::whereIn('open_id', $peopleOpenIdList)->get();
+            $buyPeoples = VideoBuyList::whereIn('open_id', $peopleOpenIdList)->get();
+            $buyPeoplesIdList = $buyPeoples->lists('open_id');
+            $peoples = People::whereIn('open_id', $buyPeoplesIdList)->get();
             $videoDL = array();
             foreach ($peoples as $people) {
                 array_push($videoDL, array(
