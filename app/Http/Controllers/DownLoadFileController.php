@@ -45,12 +45,19 @@ class DownLoadFileController extends Controller
             /**
              * 部署学习信息
              */
-            VideoLearnSchedule::insert(array(
-                'open_id' => $people->open_id,
-                'series_id' => $videoInfo->series_id,
-                'num' => $videoInfo->num,
-                'status' => '已下载' // 两种状态：已完成、已下载
-            ));
+            $videoLearn = VideoLearnSchedule::where('open_id', $people->open_id)->where('series_id', $videoInfo->series_id)->first();
+            if($videoLearn != null && $videoLearn != ''){
+                $videoLearn->num = $videoInfo->num;
+                $videoLearn->status = '已下载'; // 两种状态：已完成、已下载
+                $videoLearn->save();
+            } else {
+                VideoLearnSchedule::insert(array(
+                    'open_id' => $people->open_id,
+                    'series_id' => $videoInfo->series_id,
+                    'num' => $videoInfo->num,
+                    'status' => '已下载' // 两种状态：已完成、已下载
+                ));
+            }
 
             $this->download_send_headers($fileName);
             readfile($filePath);
