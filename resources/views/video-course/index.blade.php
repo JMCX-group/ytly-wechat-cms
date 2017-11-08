@@ -45,12 +45,12 @@
                         </tr>
                         @forelse($videos as $video)
                             <tr>
-                                <td>{{$video->id}}</td>
-                                <td>{{$video->unsigned_name}}</td>
-                                <td>{{$video->series_name}}</td>
-                                <td>{{$video->num}}</td>
-                                <td>{{$video->desc}}</td>
-                                <td>
+                                <td class="col-md-1">{{$video->id}}</td>
+                                <td class="col-md-2">{{$video->unsigned_name}}</td>
+                                <td class="col-md-2">{{$video->series_name}}</td>
+                                <td class="col-md-1">{{$video->num}}</td>
+                                <td class="col-md-5">{{$video->desc}}</td>
+                                <td class="col-md-1">
                                     <a class="btn btn-info" href="{{URL::to('video-course/'.$video->id.'/edit')}}">
                                         编辑
                                     </a>
@@ -83,4 +83,11 @@
             modal.find('form').attr('action', url);
         })
     </script>
+@stop
+@section('style')
+    <style>
+        td {
+            vertical-align: middle!important;
+        }
+    </style>
 @stop
