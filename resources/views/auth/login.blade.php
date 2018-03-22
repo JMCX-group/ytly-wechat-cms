@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>艺同六艺 | Log in</title>
+    <title>音维时间 | Log in</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link href="{{ asset("/assets/css/app.css") }}" rel="stylesheet" type="text/css"/>
 </head>
@@ -16,7 +16,7 @@
     </div>
     <div class="login-box-body">
         <a href="#">
-            <p class="login-box-msg">艺同六艺微信后台管理系统</p>
+            <p class="login-box-msg">音维时间微信后台管理系统</p>
         </a>
 
         <form action="{{URL::to('/auth/login')}}" method="post" enctype="multipart/form-data">

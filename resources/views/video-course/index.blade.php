@@ -48,7 +48,7 @@
                                 <td class="col-md-1">{{$video->id}}</td>
                                 <td class="col-md-2">{{$video->unsigned_name}}</td>
                                 <td class="col-md-2">{{$video->series_name}}</td>
-                                <td class="col-md-1">{{$video->num}}</td>
+                                <td class="col-md-1" style="text-align: center">{{$video->num}}</td>
                                 <td class="col-md-5">{{$video->desc}}</td>
                                 <td class="col-md-1">
                                     <a class="btn btn-info" href="{{URL::to('video-course/'.$video->id.'/edit')}}">

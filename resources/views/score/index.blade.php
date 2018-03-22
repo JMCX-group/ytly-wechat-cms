@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <title>艺同六艺</title>
+    <title>音维时间</title>
     <base href="http://wx.yitongliuyi.com/ytly/">
     <link rel="stylesheet" href="css/lib/core.css">
     <style>

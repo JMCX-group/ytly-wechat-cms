@@ -9,7 +9,7 @@
 
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-        艺同六艺
+        音维时间
     </div>
     <strong>Copyright © {{date('Y')}}
         <a href="http://mobile.yitongliuyi.com">yitongliuyi.com </a>

@@ -20,7 +20,7 @@
                     <div class="col-xs-12 column imgs-class">
                         <div style="text-align: center; font-size: 20px;">
                             <p style="color: #65696f">
-                                <span>艺同六艺菁英教育</span>
+                                <span>音维时间菁英教育</span>
                             </p>
                         </div>
                     </div>

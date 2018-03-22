@@ -9,7 +9,7 @@
 
 <header class="main-header">
     <a href="{{url('/')}}" class="logo" style="font-family:'Microsoft YaHei',Arial,Helvetica,sans-serif,'宋体';">
-        艺同六艺
+        音维时间
     </a>
 
     <nav class="navbar navbar-static-top" role="navigation">

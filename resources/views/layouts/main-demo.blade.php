@@ -11,7 +11,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>艺同六艺Demo</title>
+    <title>音维时间Demo</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
     <!-- why begin: 引入评论插件的css，在bootstrap的css之前引入 -->
